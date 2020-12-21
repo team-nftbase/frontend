@@ -1,11 +1,15 @@
 <script>
-	export let name;
-</script>
+	import { onMount } from "svelte";
+	let data;
+	let videoEl;
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+	onMount(async () => {
+		const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+		videoEl.srcObject = stream;
+		videoEl.play();
+	});
+</script>
 
 <style>
 	main {
@@ -28,3 +32,10 @@
 		}
 	}
 </style>
+
+<main>
+	<h1 id="test">존나 좋군 asdadsa!</h1>
+	<video bind:this={videoEl} width="600" height="480">
+		<track kind="captions" />
+	</video>
+</main>
