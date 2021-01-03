@@ -1,4 +1,4 @@
-<div class="flex flex-row justify-between">
+<div class="flex flex-row justify-between items-center px-5 py-2 shadow-md">
   <p class="text-blue-700 text-3xl font-extrabold">NFTBase</p>
   <p>검색</p>
   <div>
