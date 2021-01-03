@@ -1,5 +1,7 @@
 <script>
-	import Button from '@smui/button';
+	import Header from "./common/Header.svelte";
+	import Main from "./pages/Main.svelte";
+	import Footer from "./common/Footer.svelte";
 	// import { onMount } from "svelte";
 	// let data;
 	// let videoEl;
@@ -12,19 +14,14 @@
 	// });
 </script>
 
-<style>
+<style global>
+  @import 'tailwindcss/base';
+  @import 'tailwindcss/components';
+  @import 'tailwindcss/utilities';
 </style>
 
 <main>
-	<div class="flex flex-row justify-between">
-		<p>NFTBase</p>
-		<p>검색</p>
-		<Button on:click={() => alert('Clicked!')}>Just a Button</Button>
-		<div>
-			<a href="/">Explore</a>
-			<a href="/">F&Q</a>
-			<a href="/">Community</a>
-			<a href="/">Create</a>
-		</div>
-	</div>
+	<Header />
+	<Main />
+	<Footer />
 </main>
