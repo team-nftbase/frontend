@@ -62,17 +62,11 @@
       title: "Smiling Smurf",
       price: 23.24,
     },
-    {
-      img: img_demoURL,
-      collection: "Town Star",
-      title: "Smiling Smurf",
-      price: 23.24,
-    },
   ];
 </script>
 
-<div class="bg-blue-700 p-12">
-  <p class="text-5xl text-white font-bold">
+<div class="bg-blue-700 p-24">
+  <p class="text-5xl text-white font-bold mb-12">
     The marketplace where<br />Valuable digital assets are
   </p>
   <p class="text-xl text-white">
