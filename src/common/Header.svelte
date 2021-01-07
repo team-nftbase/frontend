@@ -8,10 +8,10 @@
         placeholder="Search items, collections, and accounts" />
     </div>
   </div>
-  <div>
-    <a href="/">Explore</a>
-    <a href="/">F&Q</a>
-    <a href="/">Community</a>
+  <div class="text-2xl font-bold text-black">
+    <a class="mr-4" href="/">Explore</a>
+    <a class="mr-4" href="/">F&Q</a>
+    <a class="mr-4" href="/">Community</a>
     <a href="/">Create</a>
   </div>
 </div>

@@ -1,6 +1,5 @@
 <script>
-  import Card from "./comp.main/Card.svelte";
-  import CardList from "./comp.main/CardList.svelte";
+  import CardList from "./comp/main/CardList.svelte";
   let img_demoURL =
     "https://allonline365.com/wp-content/uploads/2019/08/technology-in-digital-transformation-1440x1008-1024x717.jpg";
 
