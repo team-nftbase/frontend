@@ -10,7 +10,9 @@
   <div class="flex flex-col w-4/5">
     <div class="flex justify-between">
       <Categories />
-      <p>filter & sort</p>
+      <button class="flex items-center px-4 focus:outline-none rounded-2xl">
+        <span class="material-icons"> filter_list </span><p> Filter & Sort</p>
+      </button>
     </div>
     <ItemList />
   </div>
