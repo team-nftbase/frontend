@@ -21,5 +21,5 @@
 </script>
 
 <button
-  class={`${className} rounded-lg p-2 text-left`}
+  class={`${className} rounded-lg p-2 text-left focus:outline-none`}
   on:click={(_) => handlerStatus(name)}>{name}</button>

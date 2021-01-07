@@ -23,7 +23,7 @@
   <div class="flex flex-col pt-2">
     {#each Object.keys(collections_value) as collItem}
       <button
-        class={`${collections_value[collItem] ? 'bg-gray-700 text-white' : ''} rounded-lg p-2 text-left`}
+        class={`${collections_value[collItem] ? 'bg-gray-700 text-white' : ''} rounded-lg p-2 text-left focus:outline-none`}
         on:click={(_) => handlerCollections(collItem)}>
         {collItem}
       </button>

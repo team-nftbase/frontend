@@ -18,7 +18,7 @@
 <div>
   {#each Object.keys(categories_value) as catItem}
     <button
-      class={`${categories_value[catItem] ? 'bg-gray-700 text-white' : ''} rounded-2xl py-1 px-4 mr-4`}
+      class={`${categories_value[catItem] ? 'bg-gray-700 text-white' : ''} rounded-2xl py-1 px-4 mr-4 focus:outline-none`}
       on:click={(_) => handlerCategories(catItem)}>
       {catItem}
     </button>
