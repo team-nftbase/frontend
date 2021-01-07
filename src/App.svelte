@@ -3,6 +3,7 @@
 	import Footer from "./common/Footer.svelte";
 	import Main from "./pages/Main.svelte";
 	import Explore from "./pages/Explore.svelte";
+	import ItemDetail from "./pages/ItemDetail.svelte";
 </script>
 
 <style global>
@@ -13,7 +14,8 @@
 
 <main>
 	<Header />
-	<Explore />
+	<ItemDetail />
+	<!-- <Explore /> -->
 	<!-- <Main /> -->
 	<Footer />
 </main>

@@ -11,7 +11,7 @@
     <div class="flex justify-between">
       <Categories />
       <button class="flex items-center px-4 focus:outline-none rounded-2xl">
-        <span class="material-icons"> filter_list </span><p> Filter & Sort</p>
+        <span class="material-icons"> tune </span><p> Filter & Sort</p>
       </button>
     </div>
     <ItemList />
