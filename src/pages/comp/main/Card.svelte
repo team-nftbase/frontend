@@ -6,11 +6,11 @@
   <img class="rounded-t-lg" src={itemInfo.img} alt="main_image" />
   <hr />
   <div class="flex flex-row justify-between p-4">
-    <div class="left-0">
+    <div class="text-left">
       <p class="text-sm text-gray-400">{itemInfo.collection}</p>
       <p>{itemInfo.title}</p>
     </div>
-    <div>
+    <div class="text-right">
       <p class="text-sm text-gray-400">price</p>
       <p>{itemInfo.price}</p>
     </div>
