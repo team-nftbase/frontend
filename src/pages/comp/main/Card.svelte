@@ -1,8 +1,10 @@
 <script>
+  import Link from "svelte-routing/src/Link.svelte";
+
   export let itemInfo;
 </script>
 
-<button class="rounded-lg">
+<Link to="itemdetail" class="rounded-lg border-2 text-black">
   <img class="rounded-t-lg" src={itemInfo.img} alt="main_image" />
   <hr />
   <div class="flex flex-row justify-between p-4">
@@ -15,4 +17,4 @@
       <p>{itemInfo.price}</p>
     </div>
   </div>
-</button>
+</Link>

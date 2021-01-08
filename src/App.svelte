@@ -1,9 +1,12 @@
 <script>
+	import { Router, Route } from "svelte-routing";
 	import Header from "./common/Header.svelte";
 	import Footer from "./common/Footer.svelte";
 	import Main from "./pages/Main.svelte";
 	import Explore from "./pages/Explore.svelte";
 	import ItemDetail from "./pages/ItemDetail.svelte";
+
+	export let url = "";
 </script>
 
 <style global>
@@ -12,10 +15,20 @@
 	@import "tailwindcss/utilities";
 </style>
 
+<Router url="{url}">
+  <div>
+		<Header />
+    <Route path="itemdetail" component="{ItemDetail}" />
+    <Route path="explore" component="{Explore}" />
+		<Route path="/"><Main /></Route>
+		<Footer />
+  </div>
+</Router>
+
 <main>
-	<Header />
-	<ItemDetail />
+	
+	
 	<!-- <Explore /> -->
 	<!-- <Main /> -->
-	<Footer />
+	
 </main>
