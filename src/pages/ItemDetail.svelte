@@ -41,11 +41,15 @@
     </div>
     <div class="flex flex-row w-full mt-12">
       <button
-        class="bg-blue-500 text-white focus:outline-none w-1/2 py-2 rounded-3xl mx-1">Buy</button>
-      <button
+        class="bg-blue-500 text-white focus:outline-none w-full py-2 rounded-3xl mx-1"
+        >Buy</button
+      >
+      <!-- <button
         class="bg-blue-200 text-blue-500 focus:outline-none w-1/2 py-2 rounded-3xl mx-1"
-        disabled>Bid</button>
+        disabled>Bid</button> -->
     </div>
-    <p class="text-gray-400 text-sm text-center mt-2">Service fee <span class="text-black font-bold">2.5%</span>, {price*2.5} $66.23</p>
+    <p class="text-gray-400 text-sm text-center mt-2">
+      Service fee <span class="text-black font-bold">2.5%</span>, {price * 2.5} $66.23
+    </p>
   </div>
 </div>

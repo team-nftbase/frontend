@@ -2,8 +2,11 @@
 	import { Router, Route } from "svelte-routing";
 	import Header from "./common/Header.svelte";
 	import Footer from "./common/Footer.svelte";
+
 	import Main from "./pages/Main.svelte";
 	import Explore from "./pages/Explore.svelte";
+	import Mypage from "./pages/Mypage.svelte";
+
 	import ItemDetail from "./pages/ItemDetail.svelte";
 
 	export let url = "";
@@ -20,6 +23,7 @@
 		<Header />
     <Route path="itemdetail" component="{ItemDetail}" />
     <Route path="explore" component="{Explore}" />
+    <Route path="mypage" component="{Mypage}" />
 		<Route path="/"><Main /></Route>
 		<Footer />
   </div>
