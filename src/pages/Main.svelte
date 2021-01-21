@@ -70,7 +70,7 @@
     The marketplace where<br />Valuable digital assets are
   </p>
   <p class="text-xl text-white">
-    Buy,sell, own digital assets - Art, ENS Domains, Game items, Collectibles
+    You can buy, sell, own digital assets - Art, ENS Domains, Game items, Collectibles
   </p>
 </div>
 
