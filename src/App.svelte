@@ -6,6 +6,7 @@
 	import Main from "./pages/Main.svelte";
 	import Explore from "./pages/Explore.svelte";
 	import Mypage from "./pages/Mypage.svelte";
+	import FNQ from "./pages/FNQ.svelte";
 
 	import ItemDetail from "./pages/ItemDetail.svelte";
 
@@ -24,6 +25,7 @@
     <Route path="itemdetail" component="{ItemDetail}" />
     <Route path="explore" component="{Explore}" />
     <Route path="mypage" component="{Mypage}" />
+    <Route path="fnq" component="{FNQ}" />
 		<Route path="/"><Main /></Route>
 		<Footer />
   </div>
