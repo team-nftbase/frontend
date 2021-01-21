@@ -30,11 +30,3 @@
 		<Footer />
   </div>
 </Router>
-
-<main>
-	
-	
-	<!-- <Explore /> -->
-	<!-- <Main /> -->
-	
-</main>
