@@ -9,24 +9,45 @@
 	import FNQ from "./pages/FNQ.svelte";
 
 	import ItemDetail from "./pages/ItemDetail.svelte";
+	import {
+		init,
+		addMessages,
+		getLocaleFromNavigator,
+		isLoading,
+	} from "svelte-i18n";
+
+	import en from "./locale/en.json";
+	import kr from "./locale/kr.json";
+
+	addMessages("en", en);
+	addMessages("kr", kr);
+
+	init({
+		fallbackLocale: "en",
+		initialLocale: getLocaleFromNavigator(),
+	});
 
 	export let url = "";
 </script>
+
+{#if $isLoading}
+	Now Loading
+{:else}
+	<Router {url}>
+		<div>
+			<Header />
+			<Route path="itemdetail" component={ItemDetail} />
+			<Route path="explore" component={Explore} />
+			<Route path="mypage" component={Mypage} />
+			<Route path="fnq" component={FNQ} />
+			<Route path="/"><Main /></Route>
+			<Footer />
+		</div>
+	</Router>
+{/if}
 
 <style global>
 	@import "tailwindcss/base";
 	@import "tailwindcss/components";
 	@import "tailwindcss/utilities";
 </style>
-
-<Router url="{url}">
-  <div>
-		<Header />
-    <Route path="itemdetail" component="{ItemDetail}" />
-    <Route path="explore" component="{Explore}" />
-    <Route path="mypage" component="{Mypage}" />
-    <Route path="fnq" component="{FNQ}" />
-		<Route path="/"><Main /></Route>
-		<Footer />
-  </div>
-</Router>

@@ -1,6 +1,7 @@
 <script>
   import { Link } from "svelte-routing";
   import { user } from "./store/common.store";
+  import { locale, locales } from "svelte-i18n";
 
   let userData;
 
@@ -49,6 +50,11 @@
     </div>
   </div>
   <div class="text-2xl font-bold text-black">
+    <select bind:value={$locale}>
+      {#each $locales as locale}
+        <option value={locale}>{locale}</option>
+      {/each}
+    </select>
     <Link class="mr-4" to="explore">Explore</Link>
     <Link class="mr-4" to="fnq">F&Q</Link>
     <Link class="mr-4" to="community">Community</Link>

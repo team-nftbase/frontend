@@ -1,5 +1,6 @@
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
+import json from "@rollup/plugin-json";
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
@@ -45,14 +46,14 @@ export default {
 				hydratable: true,
 			},
 			preprocess: sveltePreprocess({
-        sourceMap: !production,
-        postcss: {
-            plugins: [
-                require("tailwindcss"), 
-                require("autoprefixer")
-            ],
-        },
-    }),
+				sourceMap: !production,
+				postcss: {
+					plugins: [
+						require("tailwindcss"),
+						require("autoprefixer")
+					],
+				},
+			}),
 		}),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
@@ -68,7 +69,7 @@ export default {
 			dedupe: ['svelte']
 		}),
 		commonjs(),
-
+		json(),
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
 		!production && serve(),
