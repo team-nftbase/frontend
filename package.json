@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "autoprefixer": "^10.1.0",
     "postcss": "^8.2.2",
@@ -24,6 +25,7 @@
     "sirv-cli": "^1.0.0",
     "smelte": "^1.0.18",
     "svelte-clipboard": "0.0.2",
+    "svelte-i18n": "^3.3.0",
     "svelte-routing": "^1.5.0"
   }
 }
