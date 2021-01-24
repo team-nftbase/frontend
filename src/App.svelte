@@ -11,6 +11,9 @@
 	import Mypage from "./pages/Mypage.svelte";
 	
 	import ItemDetail from "./pages/ItemDetail.svelte";
+
+	// import { getUserLocales } from 'get-user-locale';
+
 	import {
 		init,
 		addMessages,
@@ -33,7 +36,7 @@
 </script>
 
 {#if $isLoading}
-	Now Loading
+	<p>Now Loading...</p>
 {:else}
 	<Router {url}>
 		<div>

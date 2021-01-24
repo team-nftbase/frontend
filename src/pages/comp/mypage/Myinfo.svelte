@@ -8,6 +8,8 @@
   const unsubscribe = user.subscribe((value) => {
     userData = value;
   });
+
+  if (!window.ethereum.selectedAddress) location.href = "/";
 </script>
 
 <div class="flex flex-col justify-center my-32">
