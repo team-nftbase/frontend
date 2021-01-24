@@ -20,7 +20,7 @@
         return user;
       });
     } catch (error) {
-      alert(JSON.stringify(error));
+      alert(error.message);
     }
   };
 

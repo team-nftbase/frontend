@@ -12,8 +12,3 @@
     >
   </div>
 </div>
-
-<style>
-  .btn_create {
-  }
-</style>
