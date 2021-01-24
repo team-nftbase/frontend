@@ -1,3 +1,9 @@
 {
-  "main_title": "The marketplace where Valuable digital assets are"
+  "main_title": "The marketplace where Valuable digital assets are",
+  "sub_title": "You can buy, sell, own digital assets - Art, ENS Domains, Game items, Collectibles",
+  "view_all": "View all",
+  "price": "price",
+  "fnq": {
+    "whatisnft": "What is NFT?"
+  }
 }

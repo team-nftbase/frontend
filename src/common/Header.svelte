@@ -2,6 +2,7 @@
   import { Link } from "svelte-routing";
   import { user } from "./store/common.store";
   import { locale, locales } from "svelte-i18n";
+  // import { Us, Kr } from "svelte-flagicon";
 
   let userData;
 
@@ -50,7 +51,7 @@
     </div>
   </div>
   <div class="text-2xl font-bold text-black">
-    <select bind:value={$locale}>
+    <select class="mr-4 px-1 border-none" bind:value={$locale}>
       {#each $locales as locale}
         <option value={locale}>{locale}</option>
       {/each}

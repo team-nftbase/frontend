@@ -1,5 +1,6 @@
 <script>
   import Link from "svelte-routing/src/Link.svelte";
+  import { _ } from "svelte-i18n";
 
   export let itemInfo;
 </script>
@@ -13,7 +14,7 @@
       <p>{itemInfo.title}</p>
     </div>
     <div class="text-right">
-      <p class="text-sm text-gray-400">price</p>
+      <p class="text-sm text-gray-400">{$_("price")}</p>
       <p>{itemInfo.price}</p>
     </div>
   </div>
