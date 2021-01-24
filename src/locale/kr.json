@@ -4,6 +4,9 @@
   "view_all": "더 보기",
   "price": "가격",
   "fnq": {
-    "whatisnft": "NFT가 뭔가요?"
+    "whatisnft": "NFT가 뭔가요?",
+    "whatisnft_paragraph1": "NFT는 의미적으로는 ERC721, ERC1155과 같은 이더리움 표준을 따르는 대체불가능 토큰(Non Fungible Token)을 의미해요. NFT는 유니크함을 가져서 대체 불가능한 암호화폐 토큰이죠. NFT는 다른 것과 대체될 수 없는 성질을 가져요. 이더리움과 비교를 해서 이야기하자면, 내가 가진 이더리움과 다른 사람이 가진 이더리움은 다를 것이 없지만, NFT는 상호 대체가 불가능한 토큰을 말해요.",
+    "whatisnft_paragraph2": "NFTs are one of the key building blocks of a Distributed Ledger powered world. Fractional ownership of high-value items is achievable and allows partial ownership of digital or digital represented goods.",
+    "whatisnft_paragraph3": "NFT stands for non-fungible tokens like ERC-721 (a smart contract standard) tokens which are hosted on Ethereum’s own blockchain. NFTs are unique digital items such as collectibles or artworks or game items. As an artist, by tokenizing your work you both ensure that it is unique and brand it as your work. The actual ownership is blockchain-managed."
   }
 }

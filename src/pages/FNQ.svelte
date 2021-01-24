@@ -5,10 +5,7 @@
 <div class="container mx-auto py-12 px-72">
   <p class="text-4xl font-bold">{$_("fnq.whatisnft")}</p>
   <p>
-    A non-fungible token (NFT) is a special type of cryptographic token which
-    represents something unique; non-fungible tokens are thus not mutually
-    interchangeable. This is in contrast to cryptocurrencies like bitcoin, and
-    many network or utility tokens that are fungible in nature.
+    {$_("fnq.whatisnft_paragraph1")}
   </p>
   <p>
     NFTs are one of the key building blocks of a Distributed Ledger powered
