@@ -1,22 +1,17 @@
+<script>
+  import { _ } from "svelte-i18n";
+</script>
+
 <div class="container mx-auto py-12 px-72">
-  <p class="text-4xl font-bold">What is NFT and ERC721?</p>
+  <p class="text-4xl font-bold">{$_("fnq.whatisnft")}</p>
   <p>
-    A non-fungible token (NFT) is a special type of cryptographic token which
-    represents something unique; non-fungible tokens are thus not mutually
-    interchangeable. This is in contrast to cryptocurrencies like bitcoin, and
-    many network or utility tokens that are fungible in nature.
+    {$_("fnq.whatisnft_paragraph1")}
   </p>
   <p>
-    NFTs are one of the key building blocks of a Distributed Ledger powered
-    world. Fractional ownership of high-value items is achievable and allows
-    partial ownership of digital or digital represented goods.
+    {$_("fnq.whatisnft_paragraph2")}
   </p>
   <p>
-    NFT stands for non-fungible tokens like ERC-721 (a smart contract standard)
-    tokens which are hosted on Ethereum’s own blockchain. NFTs are unique
-    digital items such as collectibles or artworks or game items. As an artist,
-    by tokenizing your work you both ensure that it is unique and brand it as
-    your work. The actual ownership is blockchain-managed.
+    {$_("fnq.whatisnft_paragraph3")}
   </p>
   <p>
     If you want to go in-depth into NFTs, I suggest this read:

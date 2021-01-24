@@ -1,6 +1,6 @@
 <script>
   import CardList from "./comp/main/CardList.svelte";
-  import { _ } from 'svelte-i18n'
+  import { _ } from "svelte-i18n";
 
   let img_demoURL =
     "https://allonline365.com/wp-content/uploads/2019/08/technology-in-digital-transformation-1440x1008-1024x717.jpg";
@@ -69,10 +69,10 @@
 
 <div class="bg-blue-700 p-24">
   <p class="text-5xl text-white font-bold mb-12">
-    {$_('main_title')}
+    {$_("main_title")}
   </p>
   <p class="text-xl text-white">
-    You can buy, sell, own digital assets - Art, ENS Domains, Game items, Collectibles
+    {$_("sub_title")}
   </p>
 </div>
 

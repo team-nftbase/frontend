@@ -5,9 +5,11 @@
 
 	import Main from "./pages/Main.svelte";
 	import Explore from "./pages/Explore.svelte";
-	import Mypage from "./pages/Mypage.svelte";
 	import FNQ from "./pages/FNQ.svelte";
-
+	import Create from "./pages/Create.svelte";
+	import CreateSingle from "./pages/Create.single.svelte";
+	import Mypage from "./pages/Mypage.svelte";
+	
 	import ItemDetail from "./pages/ItemDetail.svelte";
 	import {
 		init,
@@ -36,11 +38,13 @@
 	<Router {url}>
 		<div>
 			<Header />
-			<Route path="itemdetail" component={ItemDetail} />
-			<Route path="explore" component={Explore} />
-			<Route path="mypage" component={Mypage} />
-			<Route path="fnq" component={FNQ} />
 			<Route path="/"><Main /></Route>
+			<Route path="explore" component={Explore} />
+			<Route path="itemdetail" component={ItemDetail} />
+			<Route path="fnq" component={FNQ} />
+			<Route path="create" component={Create} />
+			<Route path="create_single" component={CreateSingle} />
+			<Route path="mypage" component={Mypage} />
 			<Footer />
 		</div>
 	</Router>
