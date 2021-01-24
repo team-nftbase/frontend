@@ -1,10 +1,11 @@
 <script>
   import { Link } from "svelte-routing";
+  import { slide } from "svelte/transition";
   import { user } from "./store/common.store";
   import { locale, locales } from "svelte-i18n";
   // import { Us, Kr } from "svelte-flagicon";
 
-  let userData;
+  let userData, isMenuOpen = true;
 
   const unsubscribe = user.subscribe((value) => {
     userData = value;
@@ -20,7 +21,15 @@
         return user;
       });
     } catch (error) {
-      alert(JSON.stringify(error));
+      if (error.code === -32002) {
+        alert(
+          "Metamask에 요청을 전달하였습니다. 메타마스크를 눌러 로그인 해주세요."
+        );
+      } else if (error.code === 4001) {
+        alert("로그인을 위해서 요청을 수락해주세요.");
+      } else {
+        alert(error.message);
+      }
     }
   };
 
@@ -37,11 +46,19 @@
   getWallet();
 </script>
 
-<div class="flex flex-row justify-between items-center px-5 py-2 shadow-md">
-  <div class="flex flex-row items-center">
+<div
+  class="flex flex-col sm:flex-row justify-between items-center px-5 py-2 shadow-md"
+>
+  <div class="flex flex-col w-full sm:w-auto sm:flex-row items-center">
     <Link to="/" class="text-blue-700 text-3xl font-extrabold">NFTBase</Link>
+    <button
+      class="sm:invisible"
+      on:click={() => {
+        isMenuOpen = !isMenuOpen;
+      }}>눌러</button
+    >
     <div
-      class="flex flex-row px-4 py-2 ml-4 w-96 rounded-lg border-2 border-gray-300"
+      class="flex flex-row px-4 py-2 sm:ml-4 w-full sm:w-96 rounded-lg border-2 border-gray-300"
     >
       <span class="material-icons mr-2"> search </span>
       <input
@@ -50,25 +67,30 @@
       />
     </div>
   </div>
-  <div class="text-2xl font-bold text-black">
-    <select class="mr-4 px-1 border-none" bind:value={$locale}>
-      {#each $locales as locale}
-        <option value={locale}>{locale}</option>
-      {/each}
-    </select>
-    <Link class="mr-4" to="explore">Explore</Link>
-    <Link class="mr-4" to="fnq">F&Q</Link>
-    <Link class="mr-4" to="community">Community</Link>
-    <Link class="mr-4" to="create">Create</Link>
-    {#if userData.wallet}
-      <Link to="mypage">My page</Link>
-    {:else}
-      <Link
-        on:click={() => {
-          login();
-        }}
-      >Login</Link
-      >
-    {/if}
-  </div>
+  {#if isMenuOpen}
+    <div
+      class="flex flex-col sm:flex-row text-2xl font-bold text-black"
+      transition:slide
+    >
+      <select class="mr-4 px-1 border-none" bind:value={$locale}>
+        {#each $locales as locale}
+          <option value={locale}>{locale}</option>
+        {/each}
+      </select>
+      <Link class="mr-4" to="explore">Explore</Link>
+      <Link class="mr-4" to="fnq">F&Q</Link>
+      <Link class="mr-4" to="community">Community</Link>
+      <Link class="mr-4" to="create">Create</Link>
+      {#if userData.wallet}
+        <Link to="mypage">My page</Link>
+      {:else}
+        <Link
+          on:click={() => {
+            login();
+          }}
+        >Login</Link
+        >
+      {/if}
+    </div>
+  {/if}
 </div>
