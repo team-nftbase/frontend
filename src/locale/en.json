@@ -8,7 +8,7 @@
     "whatisnft_paragraph1": "A non-fungible token (NFT) is a special type of cryptographic token which represents something unique; non-fungible tokens are thus not mutually interchangeable. This is in contrast to cryptocurrencies like bitcoin, and many network or utility tokens that are fungible in nature.",
     "whatisnft_paragraph2": "NFTs are one of the key building blocks of a Distributed Ledger powered world. Fractional ownership of high-value items is achievable and allows partial ownership of digital or digital represented goods.",
     "whatisnft_paragraph3": "NFT stands for non-fungible tokens like ERC-721 (a smart contract standard) tokens which are hosted on Ethereum’s own blockchain. NFTs are unique digital items such as collectibles or artworks or game items. As an artist, by tokenizing your work you both ensure that it is unique and brand it as your work. The actual ownership is blockchain-managed.",
-    "whatisnft_paragraph4": "If you want to go in-depth into NFTs, I suggest this read: https://opensea.io/blog/guides/non-fungible-tokens/",
+    "whatisnft_paragraph4": "If you want to go in-depth into NFTs, I suggest this read:",
 
     "whatisnftbase": "What is NFTbase ?",
     "whatisnftbase_paragraph1": "NFTbase is a marketplace where you can buy and sell digital goods, including collectibles, gaming items, digital art, and other digital assets that are backed by the Ethereum blockchain. ",
