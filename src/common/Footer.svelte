@@ -1,9 +1,3 @@
-<style>
-  p {
-    color: rgb(219, 219, 219);
-  }
-</style>
-
 <div class="grid grid-cols-1 md:grid-cols-2 bg-blue-700 p-4">
   <div>
     <p class="text-3xl font-extrabold">NFTBase</p>
@@ -27,11 +21,9 @@
       <p>Others</p>
     </div>
     <div>
-      <p>Explore</p>
-      <p>F&Q</p>
-      <p>Community</p>
-      <p>Create</p>
-      <p>Blog</p>
+      <p><a href="/explore">Explore</a></p>
+      <p><a href="/fnq">F&Q</a></p>
+      <p><a href="/create">Create</a></p>
     </div>
     <div>
       <p>Company</p>
@@ -40,3 +32,10 @@
     </div>
   </div>
 </div>
+
+<style>
+  a,
+  p {
+    color: white;
+  }
+</style>

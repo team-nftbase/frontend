@@ -60,7 +60,7 @@
     "canisendmynft_paragraph1": "물론 보낼 수 있어요. 'My page'에 들어가서, 보내고자 하는 아이템을 클릭하고, 우측하단의 '전송하기' 버튼을 누르고 보내고자 하는 지갑주소를 입력 후 메타마스크에서 승인을 하면 해당 주소로 전송이 됩니다.",
 
     "ihavesuggestion" : "NFTbase에 제안하고 싶어요.",
-    "ihavesuggestion_paragraph1": "좋은 제안이 있다면 이쪽으로 연락주세요 : contact@NFTbase.ai",
-    "ihavesuggestion_paragraph2": "NFTbase 활용에 문제가 있거나 도움이 필요하면 이쪽으로 연락주세요 : service@NFTbase.ai"
+    "ihavesuggestion_paragraph1": "좋은 제안이 있다면 이쪽으로 연락주세요",
+    "ihavesuggestion_paragraph2": "NFTbase 활용에 문제가 있거나 도움이 필요하면 이쪽으로 연락주세요"
   }
 }
