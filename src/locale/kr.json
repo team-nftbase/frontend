@@ -6,8 +6,61 @@
   "fnq": {
     "whatisnft": "NFT가 뭔가요?",
     "whatisnft_paragraph1": "NFT는 의미적으로는 ERC721, ERC1155과 같은 이더리움 표준을 따르는 대체불가능 토큰(Non Fungible Token)을 의미해요. NFT는 유니크함을 가져서 대체 불가능한 암호화폐 토큰이죠. NFT는 다른 것과 대체될 수 없는 성질을 가져요. 이더리움과 비교를 해서 이야기하자면, 내가 가진 이더리움과 다른 사람이 가진 이더리움은 다를 것이 없지만, NFT는 상호 대체가 불가능한 토큰을 말해요.",
-    "whatisnft_paragraph2": "NFTs are one of the key building blocks of a Distributed Ledger powered world. Fractional ownership of high-value items is achievable and allows partial ownership of digital or digital represented goods.",
-    "whatisnft_paragraph3": "NFT stands for non-fungible tokens like ERC-721 (a smart contract standard) tokens which are hosted on Ethereum’s own blockchain. NFTs are unique digital items such as collectibles or artworks or game items. As an artist, by tokenizing your work you both ensure that it is unique and brand it as your work. The actual ownership is blockchain-managed.",
-    "whatisnft_paragraph4": "고구마감자"
+    "whatisnft_paragraph2": "NFT는 분산원장 기술을 활용한 블록체인에서 가장 핵심적인 역할을 수행할 수 있어요. 가치있는 디지털 자산의 소유권이 분할되어 토큰으로 관리될 수 있기 때문이죠.",
+    "whatisnft_paragraph3": "NFT를 활용하면 예술품이나 게임 아이템 같은 수집품을 만들고 관리하는데 활용할 수 있어요. 당신이 만약 예술가라면 NFT를 통해서 예술가로서 예술품을 디지털 자산화하고, 당신만의 브랜드와 아이덴티티를 가질 수 있어요. 이 모든 디지털 자산의 소유권은 이더리움 블록체인을 통해 투명하고 안전하게 보관될 수 있어요.",
+    "whatisnft_paragraph4": "NFT에 대한 조금 더 자세한 정보를 원한다면 이 링크를 한 번 확인해보세요.",
+
+    "whatisnftbase": "NFTbase가 무엇인가요 ?",
+    "whatisnftbase_paragraph1": "NFTbase는 여러분이 이더리움 기반의 디지털 자산을 구매하고, 판매할 수 있는 마켓플레이스예요. 게임 아이템, 디지털 예술품, 수집품, ENS 도메인 등 다양한 이더리움 블록체인 기반의 디지털 자산을 거래할 수 있어요.",
+    "whatisnftbase_paragraph2": "NFTbase는 전 세계의 유저들이 모여 디지털 자산을 거래할 수 있는 곳이예요. NFTbase가 이더리움의 스마트 컨트랙트 위에서 운영되기 때문에 가능하죠. 이 때문에 여러분의 귀중한 디지털 자산의 거래를 위해 제 3자 서비스에 의존할 필요가 없어요. 이더리움 블록체인 위에서 거래를 하기 때문이죠.",
+    "whatisnftbase_paragraph3": "NFTbase는 분산화된 마켓으로 운영되고, 전 세계의 모든 사람들이 인터넷에만 접속할 수 있다면 언제든지 참여가 가능한 시장이예요. 심지어 NFTbase의 소스코드는 언제든지 여러분이 직접 확인해볼 수 있답니다.",
+
+    "whatcanidowithnftbase": "NFTbase로 뭘 할 수 있나요?",
+    "whatcanidowithnftbase_paragraph1": "NFTbase에서 여러분의 디지털 자산 NFT를 사거나 팔거나 거래할 수 있어요. NFT 시장이 점점 성장하고 성숙할수록 NFT가 높은 가격에 거래되는 일이 점점 많아지겠죠.",
+    "whatcanidowithnftbase_paragraph2": "우선, 무엇보다 NFTbase를 활용하기 위해서는 메타마스크를 설치해야해요. 메타마스크를 활용하고 있다면 NFTbase에 로그인하기 위해서 별도의 정보를 입력할 필요가 없어요.",
+
+    "whatdoiuseforpayment": "NFTbase에서 뭘로 결제할 수 있나요?",
+    "whatdoiuseforpayment_paragraph1": "NFTbase는 이더리움 블록체인 기반에서 운영되기 때문에, 이더리움 기반의 토큰 혹은 이더리움으로 거래가 가능해요. USDC, USDT, ETH 등을 활용할 수 있어요.",
+
+    "iamanartist": "나는 예술가예요. 이더리움 블록체인에 나의 예술품을 만들고 싶어요!",
+    "iamanartist_paragraph1": "NFTbase에서 이더리움 기반의 디지털 자산을 만들 수 있어요. 상단 메뉴의 Create를 누르고 ERC721 혹은 ERC1155 기반의 디지털 자산을 만들어 보세요!",
+
+    "whatismetamask" : "메타마스크가 뭔가요?",
+    "whatismetamask_paragraph1": "메타마스크는 가장 안전하고 대중적인 이더리움 기반의 지갑 어플리케이션이예요. 크롬 브라우저를 쓰고 계신다면 크롬 브라우저용 메타마스크를 설치하세요. 메타마스크로 NFTbase에 로그인 할 수 있어요. 메타마스크를 설치하려면 여기를 방문하세요. 설치하는 방법에 대한 안내도 볼 수 있어요.",
+
+    "isnftbasesafe": "NFTbase는 거래하기에 안전한가요?",
+    "isnftbasesafe_paragraph1": "NFTbase는 가장 신뢰할 수 있는 이더리움 블록체인 위에서 운영되고 있어요. NFTbase에서는 여러분의 거래를 위해서는 반드시 각각의 거래건에 대해 여러분의 승인이 필요합니다. 해당 거래를 위한 승인을 하신 이후에, NFTbase는 여러분을 대신해서 해당 거래를 진행하지만, 반드시 이하의 조건이 충족되었을 때만 진행됩니다.",
+    "isnftbasesafe_paragraph2": "A) 회원이 해당 아이템을 판매하기 위한 거래에 서명을 했을 때,",
+    "isnftbasesafe_paragraph3": "B) 구매자가 판매자에게 지불하는 금액이 정확하게 매칭되는 경우",
+    "isnftbasesafe_paragraph4": "그렇기 때문에 여러분의 디지털 자산은 팔리기 이전에는 여러분의 지갑에서 관리되며, 오직 정상적인 거래가 체결되었을 경우에만 아이템의 이전이 진행됩니다.",
+
+    "howcanireverse": "이미 진행한 거래를 취소하고 되돌릴 수 있나요?",
+    "howcanireverse_paragraph1": "아쉽게도 블록체인의 특성상 거래가 한 번 이루어지면 그 거래를 되돌릴 수는 없어요. NFTbase에서는 여러분의 거래에 대한 환불을 진행해드릴 수 없어요. 거래를 취소하거나 되돌리거나 조정할 수 있는 권한이 없고, 이는 모두 이더리움 블록체인 네트워크에서 진행되었기 때문이죠.",
+
+    "iwanttobuyanitem" : "NFTbase에서 아이템을 사고 싶은데 어떻게 해야 하나요 ?",
+    "iwanttobuyanitem_paragraph1": "우선 메타마스크를 통해서 NFTbase에 로그인하고, 사고 싶은 아이템을 찾으세요. '구매하기' 버튼을 누르면, NFTbase가 여러분의 메타마스크를 통해 정말 구매를 진행할 것인지에 대해 확인을 요청할 거예요. 여러분이 해당 거래에 대해 승인을 한다면, 메타마스크에 있던 여러분의 이더리움 혹은 기타 자산(USDT, USDC) 등은 판매자에게 전달되고, 판매자가 보유했던 아이템은 여러분의 지갑으로 이전됩니다. 이 절차를 위해서 여러분은 메타마스크에서 한 두번의 거래 승인을 하기만 하면 됩니다.",
+    "iwanttobuyanitem_paragraph2": "이런 거래들은 모두 NFTbase의 스마트 컨트랙트를 통해 진행되기 때문에,  30초에서 1분 정도의 시간이 소요됩니다. 이 거래가 종료되면 아이템은 여러분의 것이 되고, 여러분이 지불한 이더리움은 판매자의 것이 됩니다. 모든 거래는 이더리움의 블록체인을 통해 진행됩니다. 거래가 완료되면 “My page”에서 여러분이 가진 아이템을 확인할 수 있어요.",
+
+    "howdoiselldigital": "NFTbase에서 아이템을 팔고 싶은데 어떻게 해야 하나요?",
+    "howdoiselldigital_paragraph1": "우선 NFT 아이템을 판매하기 위해서는 판매 등록을 올려야합니다. 여러분의 “My account”에서 판매하고자 하는 아이템을 찾으세요. 아이템을 클릭하고 우측 하단의 “Sell” 버튼을 누르면 판매를 등록할 수 있어요. 여러분은 판매 등록을 위해서 스마트 컨트랙트에서 요청하는 한 두번의 메타마스크 승인 절차를 거치게 됩니다. 이러한 단계를 모두 마치면, 판매가 등록이 됩니다. 별도의 이더리움 가스 수수료를 지불하지 않고서도 등록이 가능합니다.",
+
+    "iwanttomakemyfirstlisting" : "NFT 아이템을 처음으로 판매 등록하는데, 어떤 트랜잭션이 필요한가요? ",
+    "iwanttomakemyfirstlisting_paragraph1": "NFTbase의 판매 시스템은 이더리움의 온체인 거래를 최소화하도록 설계되었습니다. 판매할 때 마다 많은 전송 수수료를 지불하지 않기 위해서 설계되었어요. 사실, 처음에만 중요한 몇 단계를 거친다면, 판매를 위한 온체인 거래는 더 이상 요구되지 않아요.",
+    "iwanttomakemyfirstlisting_paragraph2": "한 번 설명을 드릴게요.",
+    "iwanttomakemyfirstlisting_paragraph3": "1. NFTbase에서 처음으로 판매한다면, 여러분은 최초로 여러분의 계정이 수수료없이 온체인 거래를 한다는 것에 대해 동의할 필요가 있습니다. 이 단계는 최초 한 번만 진행됩니다.",
+    "iwanttomakemyfirstlisting_paragraph4": "2. 만약 여러분이 새로운 타입의 아이템을 판매한다면, (예를 들어, 당신의 첫번째 크립토키티 혹은 직접 디자인한 디지털 예술품) 해당 아이템 타입에 대해 스마트 컨트랙트가 접근할 수 있도록 승인하는 절차가 있습니다. 대부분의 경우에, 이러한 아이템 타입에 대해서 최초 한 번은 꼭 해야하는 과정입니다. 예를 들어, 만약 여러분이 CryptoKitty 아이템 타입에 대해 이미 승인했다면, 크립토키티 아이템을 판매등록 할 때, 더 이상 온체인 거래가 필요하지 않아요.",
+    "iwanttomakemyfirstlisting_paragraph5": "3. 여러분이 특정한 아이템 타입에 대해 승인을 했다면, 이제 더 이상 가스가 필요한 거래는 필요하지 않고, 메타마스크에서 서명만 하면 된답니다.",
+    "iwanttomakemyfirstlisting_paragraph6": "위에서 언급한 것처럼, 몇 번의 거래가 필요하지만 대부분의 경우 매우 저렴하고 빠르게 진행될 수 있는 트랜잭션이니 참고하세요!",
+
+    "doesnftbasecharge": "NFTbase에서 거래하면 수수료가 있나요?",
+    "doesnftbasecharge_paragraph1": "네, 성공적인 거래에 대해서 2.5%의 수수료를 받습니다. 최초 디지털 자산의 창작자 (예를 들어 게임 개발자)는 최종 거래에 대해서 별도의 로열티를 설정할 수도 있어요. ",
+    "doesnftbasecharge_paragraph2": "하지만 NFT를 등록하기 위한 리스팅에는 별도의 비용이 들지 않아요. NFT 아이템을 등록할 때, 실제 판매가 되었을 때 얼마만큼의 수수료가 발생하는지 적혀 있으니 확인할 수 있어요.",
+
+    "canisendmynft": "NFT 아이템을 다른 사람에게 보낼 수 있나요?",
+    "canisendmynft_paragraph1": "물론 보낼 수 있어요. 'My page'에 들어가서, 보내고자 하는 아이템을 클릭하고, 우측하단의 '전송하기' 버튼을 누르고 보내고자 하는 지갑주소를 입력 후 메타마스크에서 승인을 하면 해당 주소로 전송이 됩니다.",
+
+    "ihavesuggestion" : "NFTbase에 제안하고 싶어요.",
+    "ihavesuggestion_paragraph1": "좋은 제안이 있다면 이쪽으로 연락주세요 : contact@NFTbase.ai",
+    "ihavesuggestion_paragraph2": "NFTbase 활용에 문제가 있거나 도움이 필요하면 이쪽으로 연락주세요 : service@NFTbase.ai"
   }
 }
