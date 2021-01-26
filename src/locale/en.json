@@ -1,66 +1,72 @@
 {
-  "main_title": "The marketplace where Valuable digital assets are",
-  "sub_title": "You can buy, sell, own digital assets - Art, ENS Domains, Game items, Collectibles",
-  "view_all": "View all",
-  "price": "price",
+  "common": {
+    "price": "price"
+  },
+  "main": {
+    "title": "The marketplace where Valuable digital assets are",
+    "sub_title": "You can buy, sell, own digital assets - Art, ENS Domains, Game items, Collectibles",
+    "view_all": "View all"
+  },
   "fnq": {
     "whatisnft": "What is NFT?",
     "whatisnft_paragraph1": "A non-fungible token (NFT) is a special type of cryptographic token which represents something unique; non-fungible tokens are thus not mutually interchangeable. This is in contrast to cryptocurrencies like bitcoin, and many network or utility tokens that are fungible in nature.",
     "whatisnft_paragraph2": "NFTs are one of the key building blocks of a Distributed Ledger powered world. Fractional ownership of high-value items is achievable and allows partial ownership of digital or digital represented goods.",
     "whatisnft_paragraph3": "NFT stands for non-fungible tokens like ERC-721 (a smart contract standard) tokens which are hosted on Ethereum’s own blockchain. NFTs are unique digital items such as collectibles or artworks or game items. As an artist, by tokenizing your work you both ensure that it is unique and brand it as your work. The actual ownership is blockchain-managed.",
     "whatisnft_paragraph4": "If you want to go in-depth into NFTs, I suggest this read:",
-
     "whatisnftbase": "What is NFTbase ?",
     "whatisnftbase_paragraph1": "NFTbase is a marketplace where you can buy and sell digital goods, including collectibles, gaming items, digital art, and other digital assets that are backed by the Ethereum blockchain. ",
     "whatisnftbase_paragraph2": "NFTbase provides users a marketplace where they can buy, sell, and trade any of these items with all around the world. It’s possible because NFTbase is operating on Ethereum's smart contract, which means reliable and secure without the third party’s intervention. You can check every source code to make sure yourself.",
     "whatisnftbase_paragraph3": "NFTbase is running as a decentralized market, and we believe that everyone around the world can participate in the market whenever they want if they can connect to the internet.",
-
     "whatcanidowithnftbase": "What can I do with NFTbase ?",
     "whatcanidowithnftbase_paragraph1": "You can buy, sell, trade NFTs. As NFTs become more and more valuable and popular, sometimes NFTs are exchanged at high prices. ",
     "whatcanidowithnftbase_paragraph2": "First of all, to buy, sell, trade NFTs, you need to set up Metamask on your browser. After logging in NFTbase, you can search NFTs.",
-
     "whatdoiuseforpayment": "What do I use for payment when buying on NFTbase?",
     "whatdoiuseforpayment_paragraph1": "Since the items you see on NFTbase are backed by the Ethereum blockchain, payment is also made in blockchain-based currencies such as USDC, USDT, ETH. ",
-
     "iamanartist": "I’m an artist. I want to make my own item on the Ethereum blockchain!",
     "iamanartist_paragraph1": "We will provide users tools to make your own item as ERC721 or NFT. We will announce the service soon.",
-
-    "whatismetamask" : "What is Metamask ?",
+    "whatismetamask": "What is Metamask ?",
     "whatismetamask_paragraph1": "Metamask is the most reliable and easy Ethereum wallet. After you download and setup on your Chrome browser, you can log in and participate in transactions on NFTbase. You can install MetaMask in your browser from the MetaMask website. A great video can be found on MetaMask here.",
-
     "isnftbasesafe": "Is NFTbase safe? ",
     "isnftbasesafe_paragraph1": "NFTbase is operating on the Ethereum blockchain. We don't control the proxies that get created, and you have to approve access to each ERC721 contract individually. Once the contract is approved, the logic of the exchange contract only allows it to transfer an asset from your proxy only if ",
     "isnftbasesafe_paragraph2": "A) you have signed an order indicating you wish to sell that item, and",
     "isnftbasesafe_paragraph3": "B) it is properly matched by a buyer paying the appropriate funds.",
     "isnftbasesafe_paragraph4": "So not only does your asset not leave your wallet until it is sold, it is only allowed to be swapped if an order you create is properly matched",
-
     "howcanireverse": "How can I reverse the transaction that I made?",
     "howcanireverse_paragraph1": "Since transactions on the blockchain are irreversible, we cannot provide refunds. We have no ability to cancel, revert, or modify any transactions on the Ethereum network.",
-
-    "iwanttobuyanitem" : "I want to buy an item on NFTbase. What should I do?",
+    "iwanttobuyanitem": "I want to buy an item on NFTbase. What should I do?",
     "iwanttobuyanitem_paragraph1": "After you log in with your Metamask, try to find an item that you want to buy. When you click 'Buy Now', NFTbase and your wallet will work together to send the ETH from your wallet to the seller. That’s all. All the things that you have to finish the process will be just clicking one or two transactions to confirm the transaction on your Metamask.",
     "iwanttobuyanitem_paragraph2": "The transaction that you made will be processed on the smart contract of NFTbase. When the transaction is processed (which usually happens after 30-70 seconds and requires no additonal action from you), the item becomes yours and the ETH becomes the seller's. All the process is operating on the Ethereum blockchain. Once it’s done, you can find the item on your “My page” and “My items” slot.",
-
     "howdoiselldigital": "How do I sell digital items on NFTbase?",
     "howdoiselldigital_paragraph1": "To list an item, you'll need to find the item on your account page and click on it. On the item detail page, click 'Sell'. Note that the first time you auction an item, you will need to complete one or two transactions in order to give the exchange contracts access to your items. After you complete these initial steps, the process will only require signing a message with your wallet. This means that you can sell items without paying gas.",
-
-    "iwanttomakemyfirstlisting" : "I want to make my first listing. What transactions are required?",
+    "iwanttomakemyfirstlisting": "I want to make my first listing. What transactions are required?",
     "iwanttomakemyfirstlisting_paragraph1": "NFTbase’'s selling system minimizes the number of on-chain Ethereum transactions required to list an item for sale. In fact, once you've completed the preliminary steps, auctioning an item will require no on-chain transaction at all.",
     "iwanttomakemyfirstlisting_paragraph2": "Let me explain the process.",
     "iwanttomakemyfirstlisting_paragraph3": "1. For your first NFTbase sale, you will need to initialize your account with a free (plus gas) on-chain transaction. You only need to do this only for one time.",
     "iwanttomakemyfirstlisting_paragraph4": "2. When you sell a new 'type' of item (for example, your first CryptoKitty), you will need to complete another free (plus gas) transaction in order to unlock access to that item type. In most cases, you only need to do this once per item type!  So, for example, once you've approved access to CryptoKitty, you can auction as many CryptoKitty as you like without having to complete another transaction.",
     "iwanttomakemyfirstlisting_paragraph5": "3. Once you've unlocked access to that item type, all auctions will simply require signing a message with your wallet. No gas required!",
     "iwanttomakemyfirstlisting_paragraph6": "While there are a few transactions up front, the overall result is a much cheaper, faster experience for the end user.",
-
     "doesnftbasecharge": "Does NFTbase charge a fee when I trade ?",
     "doesnftbasecharge_paragraph1": "Yes, we take 2.5% from the price of a successful sale. The original creator of the item (such as the developer of the game) can opt to take a fee on the final transaction as well.",
     "doesnftbasecharge_paragraph2": "There's no fee to list items or buy items. But when you list an item, the sidebar on the right (or the section on the bottom on mobile) will tell you the fee that will be deducted when the item sells.",
-
     "canisendmynft": "Can I send my NFT items to others?",
     "canisendmynft_paragraph1": "Yes, just go on the detail page of a collectible you own, open the '...' menu and select 'transfer token'",
-
-    "ihavesuggestion" : "I have a suggestion for NFTbase.",
+    "ihavesuggestion": "I have a suggestion for NFTbase.",
     "ihavesuggestion_paragraph1": "If you have any good project recommendations, please contact to",
     "ihavesuggestion_paragraph2": "you are welcome to email us if you have any problems or help"
+  },
+  "create": {
+    "create_collectible": "Create collectible",
+    "single": "Single",
+    "multiple": "Multiple",
+    "create_single_collectible": "Create single collectible",
+    "choose_file": "Choose File",
+    "name": "Name",
+    "description": "Description",
+    "create_item": "Create Item"
+  },
+  "getwallet": {
+    "need_wallet": "You need an Metamask to use NFTBase.",
+    "get_metamask": "Get MetaMask",
+    "powered_by_wallet": "Your wallet, powered by MetaMask, will be used to securely store your digital goods and cryptocurrencies."
   }
 }

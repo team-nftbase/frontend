@@ -10,7 +10,7 @@
 <div class="flex justify-between mt-12 mb-4">
   <p class="font-bold">{title}</p>
   <div class="flex">
-    <Link to="explore" class="font-bold">{$_("view_all")}</Link>
+    <Link to="explore" class="font-bold">{$_("main.view_all")}</Link>
     <span class="material-icons"> keyboard_arrow_right </span>
   </div>
 </div>
