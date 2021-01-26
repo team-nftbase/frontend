@@ -49,7 +49,6 @@
 </div>
 
 <style>
-  Link,
   p {
     color: white;
   }
