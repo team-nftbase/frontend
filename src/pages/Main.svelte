@@ -69,10 +69,10 @@
 
 <div class="bg-blue-700 p-24">
   <p class="text-5xl text-white font-bold mb-12">
-    {$_("main_title")}
+    {$_("main.title")}
   </p>
   <p class="text-xl text-white">
-    {$_("sub_title")}
+    {$_("main.sub_title")}
   </p>
 </div>
 

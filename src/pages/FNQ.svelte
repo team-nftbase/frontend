@@ -41,7 +41,6 @@
   <p>{$_("fnq.iwanttobuyanitem_paragraph2")}</p>
   <p class="text-2xl font-bold">{$_("fnq.howdoiselldigital")}</p>
   <p>{$_("fnq.howdoiselldigital_paragraph1")}</p>
-  
 
   <p class="text-2xl font-bold">{$_("fnq.iwanttomakemyfirstlisting")}</p>
   <p>{$_("fnq.iwanttomakemyfirstlisting_paragraph1")}</p>
@@ -50,7 +49,7 @@
   <p>{$_("fnq.iwanttomakemyfirstlisting_paragraph4")}</p>
   <p>{$_("fnq.iwanttomakemyfirstlisting_paragraph5")}</p>
   <p>{$_("fnq.iwanttomakemyfirstlisting_paragraph6")}</p>
-  
+
   <p class="text-2xl font-bold">{$_("fnq.doesnftbasecharge")}</p>
   <p>{$_("fnq.doesnftbasecharge_paragraph1")}</p>
   <p>{$_("fnq.doesnftbasecharge_paragraph2")}</p>
@@ -59,9 +58,12 @@
   <p>{$_("fnq.canisendmynft_paragraph1")}</p>
 
   <p class="text-2xl font-bold">{$_("fnq.ihavesuggestion")}</p>
-  <p>{$_("fnq.ihavesuggestion_paragraph1")}</p>
-  <p>{$_("fnq.ihavesuggestion_paragraph2")}</p>
-  
+  <p>
+    {$_("fnq.ihavesuggestion_paragraph1")} :
+    <a href="mailto:contact@NFTbase.ai">contact@NFTbase.ai</a><br />
+    {$_("fnq.ihavesuggestion_paragraph2")} :
+    <a href="mailto:service@NFTbase.ai">service@NFTbase.ai</a>
+  </p>
 </div>
 
 <style>

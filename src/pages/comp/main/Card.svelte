@@ -14,7 +14,7 @@
       <p>{itemInfo.title}</p>
     </div>
     <div class="text-right">
-      <p class="text-sm text-gray-400">{$_("price")}</p>
+      <p class="text-sm text-gray-400">{$_("common.price")}</p>
       <p>{itemInfo.price}</p>
     </div>
   </div>
