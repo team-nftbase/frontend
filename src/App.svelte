@@ -37,7 +37,7 @@
 		{#await balance}
 			<span>waiting...</span>
 		{:then value}
-			<span>{value}</span>
+			<p class="text-center text-20"> 지갑 잔고 : {value}</p>
 		{/await}
 		<Route path="/"><Main /></Route>
 		<Route path="explore" component={Explore} />
