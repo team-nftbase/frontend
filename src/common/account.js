@@ -8,6 +8,20 @@ const walletCheck = () => {
   return true
 }
 
+if (window.ethereum) {
+  ethereum.on('accountsChanged', (accounts) => {
+    user.update((user) => {
+      user.wallet = accounts[0];
+      return user;
+    });
+  });
+
+  ethereum.on('chainChanged', (chainId) => {
+    console.log(chainId);
+  });
+}
+
+
 export const login = async () => {
   if (!walletCheck()) return;
   try {
