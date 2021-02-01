@@ -19,6 +19,11 @@ if (window.ethereum) {
   ethereum.on('chainChanged', (chainId) => {
     console.log(chainId);
   });
+
+  ethereum.on('disconnect', err => {
+    console.log(err);
+    window.location.href = "/";
+  });
 }
 
 
