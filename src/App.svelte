@@ -39,7 +39,6 @@
 		{:then value}
 			<span>{value}</span>
 		{/await}
-		{$nativeCurrency.symbol}
 		<Route path="/"><Main /></Route>
 		<Route path="explore" component={Explore} />
 		<Route path="itemdetail" component={ItemDetail} />
