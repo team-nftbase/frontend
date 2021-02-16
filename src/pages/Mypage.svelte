@@ -1,6 +1,4 @@
 <script>
-  import { onMount } from "svelte";
-
   import { user } from "../common/store/common.store";
   import { Status, Collections, Categories } from "./comp/explore";
   import { ItemList } from "common/comp/index.js";

@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount } from "Svelte";
 
   import CardList from "./comp/main/CardList.svelte";
   import { _ } from "svelte-i18n";
