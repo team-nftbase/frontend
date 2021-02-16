@@ -59,7 +59,9 @@
           {assetsInfo.owner.user && assetsInfo.owner.user.username}
         </p>
         <p class="text-gray-400">Creator</p>
-        <p class="font-bold">{assetsInfo.creator.user.username}</p>
+        <p class="font-bold">
+          {assetsInfo.creator.user && assetsInfo.creator.user.username}
+        </p>
       </div>
       <div class="flex flex-row w-full mt-12">
         <button
