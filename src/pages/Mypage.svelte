@@ -1,10 +1,30 @@
 <script>
-  import { Status, Collections, Categories, ItemList } from "./comp/explore";
+  import { onMount } from "svelte";
+
+  import { user } from "../common/store/common.store";
+  import { Status, Collections, Categories } from "./comp/explore";
+  import { ItemList } from "common/comp/index.js";
   import { Myinfo, Floatingbutton } from "./comp/mypage";
+
+  let userData;
+  let assetsList = [];
+
+  const unsubscribe = user.subscribe(async (value) => {
+    userData = value;
+    if (value.wallet) {
+      const res = await fetch(
+        `https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=500&owner=${value.wallet}`
+      );
+      const { assets } = await res.json();
+      assetsList = assets.filter(
+        (item) => item.animation_url || item.collection.image_url
+      );
+    }
+  });
 </script>
 
 <div>
-  <Myinfo />
+  <Myinfo {userData} />
 
   <div class="flex w-full p-4">
     <div class="w-1/5">
@@ -19,8 +39,8 @@
           <p>Filter & Sort</p>
         </button>
       </div>
-      <ItemList />
+      <ItemList {assetsList} />
     </div>
   </div>
-  <Floatingbutton/>
+  <Floatingbutton />
 </div>

@@ -8,6 +8,25 @@ const walletCheck = () => {
   return true
 }
 
+if (window.ethereum) {
+  ethereum.on('accountsChanged', (accounts) => {
+    user.update((user) => {
+      user.wallet = accounts[0];
+      return user;
+    });
+  });
+
+  ethereum.on('chainChanged', (chainId) => {
+    console.log(chainId);
+  });
+
+  ethereum.on('disconnect', err => {
+    console.log(err);
+    window.location.href = "/";
+  });
+}
+
+
 export const login = async () => {
   if (!walletCheck()) return;
   try {
@@ -30,3 +49,14 @@ export const login = async () => {
     }
   }
 };
+
+export const getwallet = async () => {
+  if (!window.ethereum) return;
+  const accounts = await ethereum.request({ method: "eth_accounts" });
+  if (accounts) {
+    user.update((user) => {
+      user.wallet = accounts[0];
+      return user;
+    });
+  }
+}
