@@ -51,12 +51,12 @@ export const login = async () => {
 };
 
 export const getwallet = async () => {
-  // if (!window.ethereum) return;
-  // const accounts = await ethereum.request({ method: "eth_accounts" });
-  // if (accounts) {
-  //   user.update((user) => {
-  //     user.wallet = accounts[0];
-  //     return user;
-  //   });
-  // }
+  if (!window.ethereum) return;
+  const accounts = await ethereum.request({ method: "eth_accounts" });
+  if (accounts) {
+    user.update((user) => {
+      user.wallet = accounts[0];
+      return user;
+    });
+  }
 }

@@ -1,13 +1,7 @@
 <script>
-  import { user } from "../../../common/store/common.store";
-
   import Clipboard from "svelte-clipboard";
 
-  let userData;
-
-  const unsubscribe = user.subscribe((value) => {
-    userData = value;
-  });
+  export let userData;
 
   if (!window.ethereum.selectedAddress) location.href = "/";
 </script>

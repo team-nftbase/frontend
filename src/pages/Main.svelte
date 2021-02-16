@@ -1,70 +1,20 @@
 <script>
+  import { onMount } from "svelte";
+
   import CardList from "./comp/main/CardList.svelte";
   import { _ } from "svelte-i18n";
+  let assetsList = [];
 
-  let img_demoURL =
-    "https://allonline365.com/wp-content/uploads/2019/08/technology-in-digital-transformation-1440x1008-1024x717.jpg";
+  onMount(async () => {
+    const res = await fetch(
+      `https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=500`
+    );
+    const { assets } = await res.json();
+    assetsList = assets.filter(
+      (item) => item.animation_url || item.collection.image_url
+    );
+  });
 
-  let vw = [
-    {
-      img: img_demoURL,
-      collection: "Town Star",
-      title: "Smiling Smurf",
-      price: 23.24,
-    },
-    {
-      img: img_demoURL,
-      collection: "Town Star",
-      title: "Smiling Smurf",
-      price: 23.24,
-    },
-  ];
-  let coll = [
-    {
-      img: img_demoURL,
-      collection: "Town Star",
-      title: "Smiling Smurf",
-      price: 23.24,
-    },
-    {
-      img: img_demoURL,
-      collection: "Town Star",
-      title: "Smiling Smurf",
-      price: 23.24,
-    },
-  ];
-  let digital_art = [
-    {
-      img: img_demoURL,
-      collection: "Town Star",
-      title: "Smiling Smurf",
-      price: 23.24,
-    },
-    {
-      img: img_demoURL,
-      collection: "Town Star",
-      title: "Smiling Smurf",
-      price: 23.24,
-    },
-    {
-      img: img_demoURL,
-      collection: "Town Star",
-      title: "Smiling Smurf",
-      price: 23.24,
-    },
-    {
-      img: img_demoURL,
-      collection: "Town Star",
-      title: "Smiling Smurf",
-      price: 23.24,
-    },
-    {
-      img: img_demoURL,
-      collection: "Town Star",
-      title: "Smiling Smurf",
-      price: 23.24,
-    },
-  ];
 </script>
 
 <div class="bg-blue-700 p-24">
@@ -77,7 +27,7 @@
 </div>
 
 <div class="container mx-auto my-12">
-  <CardList title="Digital Art" list={digital_art} />
-  <CardList title="Virtual Worlds" list={coll} />
-  <CardList title="COLLECTIBLES" list={vw} />
+  <CardList title="Digital Art" list={assetsList.slice(0, 5)} />
+  <CardList title="Virtual Worlds" list={assetsList.slice(5, 10)} />
+  <CardList title="COLLECTIBLES" list={assetsList.slice(10, 15)} />
 </div>

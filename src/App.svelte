@@ -1,7 +1,7 @@
 <script>
 	import { Router, Route } from "svelte-routing";
-	import Header from "./common/Header.svelte";
-	import Footer from "./common/Footer.svelte";
+	import Header from "common/Header.svelte";
+	import Footer from "common/Footer.svelte";
 
 	import { getwallet } from "./common/account";
 	import { initI18n } from "./common/i18n";
@@ -15,15 +15,15 @@
 	import GetWallet from "./pages/GetWallet.svelte";
 	import ItemDetail from "./pages/ItemDetail.svelte";
 
-	import { ethStore, web3, selectedAccount, connected, nativeCurrency } from "svelte-web3";
-	// import { getUserLocales } from 'get-user-locale';
+	// import { ethStore, web3, selectedAccount, connected, nativeCurrency } from "svelte-web3";
+	// // import { getUserLocales } from 'get-user-locale';
 
-	ethStore.setBrowserProvider();
-	ethStore.setProvider("http://localhost:8545");
+	// ethStore.setBrowserProvider();
+	// ethStore.setProvider("http://localhost:8545");
 
-	$: checkAccount =
-		$selectedAccount || "0x0000000000000000000000000000000000000000";
-	$: balance = $connected ? $web3.eth.getBalance(checkAccount) : "";
+	// $: checkAccount =
+	// 	$selectedAccount || "0x0000000000000000000000000000000000000000";
+	// $: balance = $connected ? $web3.eth.getBalance(checkAccount) : "";
 
 	getwallet();
 	initI18n();
@@ -34,14 +34,16 @@
 <Router {url}>
 	<div>
 		<Header />
-		{#await balance}
+		<!-- {#await balance}
 			<span>waiting...</span>
 		{:then value}
 			<p class="text-center text-20"> 지갑 잔고 : {value}</p>
-		{/await}
+		{/await} -->
 		<Route path="/"><Main /></Route>
 		<Route path="explore" component={Explore} />
-		<Route path="itemdetail" component={ItemDetail} />
+		<Route path="itemdetail/:contract_address/:token_id" let:params>
+			<ItemDetail {params} />
+		</Route>
 		<Route path="fnq" component={FNQ} />
 		<Route path="create" component={Create} />
 		<Route path="create_single" component={CreateSingle} />
