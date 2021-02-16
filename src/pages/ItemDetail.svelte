@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "Svelte";
+  import { onMount } from "svelte";
 
   let img_URL, assetsInfo;
   let price = 0.1;

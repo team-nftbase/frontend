@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "Svelte";
+  import { onMount } from "svelte";
   import { Status, Collections, Categories } from "./comp/explore";
   import { ItemList} from 'common/comp/index.js';
 
