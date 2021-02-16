@@ -3,6 +3,8 @@
   import { _ } from "svelte-i18n";
 
   export let itemInfo;
+
+
 </script>
 
 <Link to={`itemdetail/${itemInfo.asset_contract.address}/${itemInfo.token_id}`} class="rounded-lg border-2 text-black">
@@ -13,13 +15,12 @@
         src={itemInfo.image_thumbnail_url}
         alt="main_image"
       />
-    {:else}
+    {:else if itemInfo.image_thumbnail_url}
       <video src={itemInfo.image_thumbnail_url}
         ><track default kind="captions" />
         Sorry, your browser doesn't support embedded videos.
       </video>
-    {/if}
-    {#if itemInfo.animation_url}
+    {:else if itemInfo.animation_url}
       <video src={itemInfo.animation_url}
         ><track default kind="captions" />
         Sorry, your browser doesn't support embedded videos.
