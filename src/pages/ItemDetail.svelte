@@ -52,7 +52,7 @@
         <p class="text-gray-500">$64.61 3 of 3</p>
       </div>
       <p class="border-2 rounded-3xl w-12 text-center my-6">Art</p>
-      <p class="mt-4">{assetsInfo.description}</p>
+      <p class="mt-4 text-sm">{assetsInfo.description}</p>
       <div class="my-24">
         <p class="text-gray-400">Owner</p>
         <p class="font-bold">
