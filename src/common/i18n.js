@@ -5,13 +5,13 @@ import {
   isLoading,
 } from "svelte-i18n";
 
-import cn from "./locale/cn.json";
 import en from "./locale/en.json";
+import cn from "./locale/cn.json";
 import kr from "./locale/kr.json";
 
 export const initI18n = () => {
-  addMessages("cn", cn);
   addMessages("en", en);
+  addMessages("cn", cn);
   addMessages("kr", kr);
 
   init({
