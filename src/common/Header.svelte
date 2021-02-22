@@ -41,7 +41,7 @@
     >
       <select class="mr-4 px-1 border-none" bind:value={$locale}>
         {#each $locales as locale}
-          <option value={locale}>{locale}</option>
+          <option value={locale} selected={locale==="en"}>{locale}</option>
         {/each}
       </select>
       <Link class="mr-4" to="explore">Explore</Link>
