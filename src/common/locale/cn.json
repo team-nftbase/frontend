@@ -1,0 +1,71 @@
+{
+  "common": {
+    "price": "价码"
+  },
+  "main": {
+    "title": "具价值数码资产的市场",
+    "sub_title": "你可以购买、出售、拥有数字资产 - 艺术、ENS领域、游戏项目、收藏品",
+    "view_all": "全看"
+  },
+  "fnq": {
+    "whatisnft": "什么是NFT？",
+    "whatisnft_paragraph1": "不可替代令牌（NFT）是一种特殊类型的加密令牌，代表独特的事物。 因此，不可替代的令牌不能相互互换。 这与诸如比特币之类的加密货币以及本质上可替代的许多网络或实用程序令牌形成对比。",
+    "whatisnft_paragraph2": "NFT是分布式账本支持的世界的关键构建块之一。 高价值物品的部分所有权是可以实现的，并允许数字或数字代表商品的部分所有权。",
+    "whatisnft_paragraph4": "NFT代表以Ethereum自己的区块链托管的ERF-721（智能合约标准）令牌之类的不可替代令牌。 NFT是独特的数字产品，例如收藏品或艺术品或游戏产品。 作为艺术家，通过标记您的作品，既可以确保作品的独特性，又可以将其标记为作品。 实际所有权是由区块链管理的。如果您想深入了解NFT，建议阅读以下内容：https://opensea.io/blog/guides/non-fungible-tokens/",
+    "whatisnftbase": "什么是NFTbase？",
+    "whatisnftbase_paragraph1": "NFTbase是一个可以买卖数字商品的市场，其中包括以太坊区块链支持的收藏品，游戏物品，数字艺术以及其他数字资产。",
+    "whatisnftbase_paragraph2": "NFTbase为用户提供了一个可以在世界各地购买，出售和交易这些物品的市场。 这是有可能的，因为NFTbase是基于以太坊的智能合约运行的，这意味着可靠，安全的交易无需第三方的干预。 您可以检查每个源代码以确保自己。",
+    "whatisnftbase_paragraph3": "NFTbase正在作为一个去中心化市场运行，我们相信世界各地的每个人都可以在他们希望连接到Internet的情况下随时参与该市场。",
+    "whatcanidowithnftbase": "我可以使用NFTbase做什么？",
+    "whatcanidowithnftbase_paragraph1": "您可以买卖NFT。 随着NFT越来越有价值和受欢迎，有时NFT会以高价交易。",
+    "whatcanidowithnftbase_paragraph2": "首先，要买卖NFT，您需要在浏览器上设置Metamask。 登录NFTbase后，您可以搜索NFT。",
+    "whatdoiuseforpayment": "在NFTbase上购买时，我用什么付款？",
+    "whatdoiuseforpayment_paragraph1": "由于您在NFTbase上看到的项目均由以太坊区块链支持，因此付款也以基于区块链的货币进行，例如USDC，USDT，ETH。",
+    "iamanartist": "我是一位艺术家。 我想在以太坊区块链上制作自己的物品！",
+    "iamanartist_paragraph1": "我们将为用户提供制作自己的商品的工具，如ERC721或ERC1155。 我们将尽快宣布服务。",
+    "whatismetamask": "什么是Metamask？",
+    "whatismetamask_paragraph1": "Metamask是最可靠，最简单的以太坊钱包。 在Chrome浏览器上下载并设置后，即可登录并参与NFTbase上的交易。 您可以从MetaMask网站在浏览器中安装MetaMask。 可以在此处的MetaMask上找到精彩的视频。",
+    "isnftbasesafe": "NFTbase安全吗？",
+    "isnftbasesafe_paragraph1": "NFTbase在以太坊区块链上运行。 我们不控制创建的代理，您必须分别批准对每个ERC721合同的访问。 合同获得批准后，交换合同的逻辑仅允许其从您的代理人中转移资产",
+    "isnftbasesafe_paragraph2": "A）您已经签署了指示要出售该物品的订单，并且",
+    "isnftbasesafe_paragraph3": "B）支付适当资金的买方适当匹配。",
+    "isnftbasesafe_paragraph4": "因此，不仅您的资产在出售之前不会离开您的钱包，而且只有在您创建的订单正确匹配后才可以交换资产。",
+    "howcanireverse": "我该如何撤销我进行的交易？",
+    "howcanireverse_paragraph1": "由于区块链上的交易是不可逆的，因此我们无法提供退款。 我们无法取消，还原或修改以太坊网络上的任何交易。",
+    "iwanttobuyanitem": "我想在NFTbase上购买商品。 我该怎么办？",
+    "iwanttobuyanitem_paragraph1": "使用Metamask登录后，尝试找到要购买的商品。 当您单击’立即购买’时，NFTbase和您的钱包将一起工作以将ETH从您的钱包发送给卖方。 就这样。 完成此过程所需要做的所有事情就是单击一两个交易以确认Metamask上的交易。",
+    "iwanttobuyanitem_paragraph2": "您进行的交易将根据NFTbase的智能合约进行处理。 当交易被处理后（通常在30-70秒后发生，不需要您采取其他行动），该项目将成为您的，而ETH将成为卖方的。 所有过程都在以太坊区块链上运行。 完成后，您可以在“我的页面”和“我的项目”插槽中找到该项目。",
+    "howdoiselldigital": "如何在NFTbase上销售数字商品？",
+    "howdoiselldigital_paragraph1": "要列出项目，您需要在帐户页面上找到该项目，然后单击它。 在项目详细信息页面上，单击’出售’。 请注意，第一次拍卖物品时，您需要完成一两次交易，以便交易合同可以访问您的物品。 完成这些初始步骤后，该过程仅需要使用您的钱包签名消息。 这意味着您可以不用支付汽油就可以出售物品。",
+    "iwanttomakemyfirstlisting": "我想做我的第一个清单。 需要进行哪些交易？",
+    "iwanttomakemyfirstlisting_paragraph1": "NFTbase的销售系统最大程度地减少了列出要出售物品所需的以太坊链上交易的数量。 实际上，一旦您完成了初步步骤，拍卖一件物品将完全不需要链上交易。",
+    "iwanttomakemyfirstlisting_paragraph2": "让我解释一下这个过程。",
+    "iwanttomakemyfirstlisting_paragraph3": "1.对于您的第一次NFTbase销售，您将需要使用免费（加汽油）链上交易来初始化帐户。 您只需要执行一次。",
+    "iwanttomakemyfirstlisting_paragraph4": "2.当您出售一种新的“类型”的物品（例如，您的第一个CryptoKitty）时，您将需要完成另一笔免费（加汽油）交易，以解锁对该物品类型的访问权限。 在大多数情况下，每个项目类型只需要执行一次！ 因此，例如，一旦您批准了对CryptoKitty的访问，就可以拍卖任意数量的CryptoKitty，而无需完成另一笔交易。",
+    "iwanttomakemyfirstlisting_paragraph5": "3.解锁该项目类型的访问权限后，所有拍卖仅需使用您的钱包签名消息即可。 无需 ETH gas！",
+    "iwanttomakemyfirstlisting_paragraph6": "尽管预先进行了一些交易，但总的结果是最终用户获得了更便宜，更快速的体验。",
+    "doesnftbasecharge": "我交易时NFTbase会收取费用吗？",
+    "doesnftbasecharge_paragraph1": "是的，我们从成功销售的价格中扣除2.5％。 项目的原始创建者（例如游戏的开发者）也可以选择对最终交易收取费用。",
+    "doesnftbasecharge_paragraph2": "列出商品或购买商品无需付费。 但是，当您列出商品时，右侧的侧边栏（或移动设备底部的部分）会告诉您在商品出售时要扣除的费用。",
+    "canisendmynft": "我可以将我的NFT物品发送给其他人吗？",
+    "canisendmynft_paragraph1": "是的，只需进入您拥有的收藏品的详细信息页面，打开 ‘...’菜单，然后选择’转移令牌’",
+    "ihavesuggestion": "我对NFTbase有一个建议。",
+    "ihavesuggestion_paragraph1": "如果您有任何好的项目建议，请联系：contact@NFTbase.ai",
+    "ihavesuggestion_paragraph2": "如果您有任何问题或帮助，欢迎给我们发送电子邮件：service@nftbase.ai"
+  },
+  "create": {
+    "create_collectible": "制作收藏品",
+    "single": "单数",
+    "multiple": "复数",
+    "create_single_collectible": "制作单数收藏品",
+    "choose_file": "选择文件",
+    "name": "名称",
+    "description": "详细说明",
+    "create_item": "制作收藏品"
+  },
+  "getwallet": {
+    "need_wallet": "要登录 NFTbase， 必须使用 Metamask 。",
+    "get_metamask": "请安装Metamask",
+    "powered_by_wallet": "你的钱包由MetaMask驱动，将用于安全地存储数字产品和密码货币。"
+  }
+}
