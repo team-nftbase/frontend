@@ -16,15 +16,24 @@
 	import GetWallet from "./pages/GetWallet.svelte";
 	import ItemDetail from "./pages/ItemDetail.svelte";
 
+	// import Web3 from "web3";
+
 	// import { ethStore, web3, selectedAccount, connected, nativeCurrency } from "svelte-web3";
-	// // import { getUserLocales } from 'get-user-locale';
+	// import contract from "truffle-contract";
+	// import NFTContract from "./contracts/NFTbase.json";
+	
+	// const NFTbase = contract(NFTContract);
+	// import { getUserLocales } from 'get-user-locale';
 
 	// ethStore.setBrowserProvider();
-	// ethStore.setProvider("http://localhost:8545");
+	// // ethStore.setProvider("http://localhost:8545");
+
+	// let web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
 
 	// $: checkAccount =
 	// 	$selectedAccount || "0x0000000000000000000000000000000000000000";
 	// $: balance = $connected ? $web3.eth.getBalance(checkAccount) : "";
+	// NFTbase.setProvider(web3.currentProvider);
 
 	getwallet();
 	initI18n();
