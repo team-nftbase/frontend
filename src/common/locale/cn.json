@@ -1,6 +1,7 @@
 {
   "common": {
-    "price": "价码"
+    "price": "价码",
+    "no_assets": "没有注册资产"
   },
   "main": {
     "title": "具价值数码资产的市场",
