@@ -18,7 +18,7 @@
 
 	// import Web3 from "web3";
 
-	import { ethStore, web3, selectedAccount, connected, nativeCurrency } from "svelte-web3";
+	// import { ethStore, web3, selectedAccount, connected, nativeCurrency } from "svelte-web3";
 	// import contract from "truffle-contract";
 	// import NFTContract from "./contracts/NFTbase.json";
 	

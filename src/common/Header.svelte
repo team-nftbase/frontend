@@ -17,7 +17,7 @@
   class="flex flex-col sm:flex-row justify-between items-center px-5 py-2 shadow-md"
 >
   <div class="flex flex-col w-full sm:w-auto sm:flex-row items-center">
-    <Link to="/" class="text-blue-700 text-3xl font-extrabold">NFTBase</Link>
+    <Link to="/" class="text-blue-700 text-3xl font-extrabold"><img class="w-32" src="images/logo.png" alt="metamask_image" /></Link>
     <button
       class="sm:invisible"
       on:click={() => {
