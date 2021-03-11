@@ -1,5 +1,6 @@
 <script>
   import Card from "common/comp/Card.svelte";
+  import { _ } from "svelte-i18n";
 
   export let assetsList;
 </script>
@@ -13,6 +14,6 @@
 </div>
 {#if assetsList.length === 0}
   <div>
-    <p class="flex justify-center items-center mt-24">등록된 자산이 없습니다.</p>
+    <p class="flex justify-center items-center mt-24">{$_("common.no_assets")}</p>
   </div>
 {/if}

@@ -1,6 +1,7 @@
 {
   "common": {
-    "price": "price"
+    "price": "price",
+    "no_assets": "no assets"
   },
   "main": {
     "title": "The marketplace where Valuable digital assets are",
