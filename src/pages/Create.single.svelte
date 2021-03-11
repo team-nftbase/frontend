@@ -1,4 +1,5 @@
 <script>
+  import axios from "axios";
   import Dropzone from "svelte-file-dropzone";
   import { _ } from "svelte-i18n";
 
@@ -11,9 +12,18 @@
 
   function handleFilesSelect(e) {
     const { acceptedFiles, fileRejections } = e.detail;
-    // console.log(acceptedFiles);
     files.accepted = [...acceptedFiles];
     files.rejected = [...fileRejections];
+    if (files.accepted.length) {
+      let formData = new FormData();
+      formData.append('file', acceptedFiles);
+      console.log(formData)
+      const request = axios.post(
+        "http://localhost:3000" + "/api/fileupload/singleImage",
+        formData
+      );
+      // return () => request.then((response) => console.log(response.data.data));
+    }
     let reader = new FileReader();
     reader.readAsDataURL(acceptedFiles[0]);
     reader.onload = (e) => {
@@ -31,7 +41,9 @@
     {:else}
       <p class="my-24">png, gif, webp, mp4 or mp5</p>
     {/if}
-    <button class="w-64 mx-auto">{$_("create.create_single_collectible")}</button>
+    <button class="w-64 mx-auto"
+      >{$_("create.create_single_collectible")}</button
+    >
   </Dropzone>
 
   <p class="text-xl mt-8">{$_("create.name")} *</p>
