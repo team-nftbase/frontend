@@ -1,5 +1,4 @@
 <script>
-  import axios from "axios";
   import Dropzone from "svelte-file-dropzone";
   import { _ } from "svelte-i18n";
 
@@ -16,11 +15,17 @@
     files.rejected = [...fileRejections];
     if (files.accepted.length) {
       let formData = new FormData();
-      formData.append('file', acceptedFiles);
-      console.log(formData)
-      const request = axios.post(
-        "http://localhost:3000" + "/api/fileupload/singleImage",
-        formData
+      formData.append("file", acceptedFiles);
+      console.log(formData);
+      const request = fetch(
+        "http://localhost:3000" + "/api/imageUpload/singleImage",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ data: formData }),
+        }
       );
       // return () => request.then((response) => console.log(response.data.data));
     }
