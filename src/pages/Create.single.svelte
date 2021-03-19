@@ -11,9 +11,24 @@
 
   function handleFilesSelect(e) {
     const { acceptedFiles, fileRejections } = e.detail;
-    // console.log(acceptedFiles);
     files.accepted = [...acceptedFiles];
     files.rejected = [...fileRejections];
+    if (files.accepted.length) {
+      let formData = new FormData();
+      console.log(acceptedFiles[0])
+      formData.append("file", acceptedFiles[0]);
+      const request = fetch(
+        "http://localhost:3000" + "/api/imageUpload/singleImage",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "image/png",
+          },
+          body: { data: acceptedFiles[0] },
+        }
+      );
+      // return () => request.then((response) => console.log(response.data.data));
+    }
     let reader = new FileReader();
     reader.readAsDataURL(acceptedFiles[0]);
     reader.onload = (e) => {
@@ -31,7 +46,9 @@
     {:else}
       <p class="my-24">png, gif, webp, mp4 or mp5</p>
     {/if}
-    <button class="w-64 mx-auto">{$_("create.create_single_collectible")}</button>
+    <button class="w-64 mx-auto"
+      >{$_("create.create_single_collectible")}</button
+    >
   </Dropzone>
 
   <p class="text-xl mt-8">{$_("create.name")} *</p>
