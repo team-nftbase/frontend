@@ -15,16 +15,16 @@
     files.rejected = [...fileRejections];
     if (files.accepted.length) {
       let formData = new FormData();
-      formData.append("file", acceptedFiles);
-      console.log(formData);
+      console.log(acceptedFiles[0])
+      formData.append("file", acceptedFiles[0]);
       const request = fetch(
         "http://localhost:3000" + "/api/imageUpload/singleImage",
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "image/png",
           },
-          body: JSON.stringify({ data: formData }),
+          body: { data: acceptedFiles[0] },
         }
       );
       // return () => request.then((response) => console.log(response.data.data));
