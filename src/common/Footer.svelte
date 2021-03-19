@@ -10,21 +10,17 @@
   });
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-2 bg-blue-700 p-4">
+<div class="bg-fixed grid grid-cols-2 p-4" id="footerMain">
   <div>
-    <p class="text-3xl font-extrabold">NFTBase</p>
+    <img
+      src="images/logo_letter_white.png"
+      width="268px"
+      height="152px"
+      alt="footerLogo"
+      id="footerLogo"
+    />
   </div>
-  <div class="grid grid-cols-2 sm:grid-cols-4">
-    {#if userData.wallet}
-      <Link to="mypage"><p>My page</p></Link>
-    {:else}
-      <Link
-        on:click={() => {
-          login();
-        }}
-      ><p>Login</p></Link
-      >
-    {/if}
+  <div class="grid grid-cols-4">
     <div>
       <Link to="explore"><p>Marketplace</p></Link>
       <Link to="explore"><p>Art</p></Link>
@@ -37,7 +33,7 @@
     </div>
     <div>
       <Link to="explore"><p>Explore</p></Link>
-      <Link to="fnq"><p>F&Q</p></Link>
+      <Link to="fnq"><p>FAQ</p></Link>
       <Link to="create"><p>Create</p></Link>
     </div>
     <div>
@@ -46,10 +42,30 @@
       <p>Suggestions</p>
     </div>
   </div>
+  <div />
+  <div class="flex justify-end">
+    <p id="socialLink">SOCIAL MEDIA LINKS</p>
+  </div>
 </div>
 
 <style>
   p {
     color: white;
+    margin-bottom: 28px;
+  }
+
+  #footerMain {
+    background-image: url(/images/Gradient.png);
+    padding-top: 62px;
+  }
+
+  #footerLogo {
+    margin-left: 152px;
+    margin-top: 2.37px;
+  }
+  #socialLink {
+    color: white;
+    font-size: 36px;
+    margin-right: 148px;
   }
 </style>

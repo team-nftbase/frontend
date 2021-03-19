@@ -14,10 +14,9 @@
       (item) => item.animation_url || item.collection.image_url
     );
   });
-
 </script>
 
-<div class="bg-blue-700 p-24">
+<div id="headerMain">
   <p class="text-5xl text-white font-bold mb-12">
     {$_("main.title")}
   </p>
@@ -31,3 +30,15 @@
   <CardList title="Virtual Worlds" list={assetsList.slice(5, 10)} />
   <CardList title="COLLECTIBLES" list={assetsList.slice(10, 15)} />
 </div>
+
+<style>
+  p {
+    color: white;
+  }
+
+  #headerMain {
+    background-image: url(/images/Gradient.png);
+    margin-left: 231px;
+    margin-top: 81px;
+  }
+</style>
