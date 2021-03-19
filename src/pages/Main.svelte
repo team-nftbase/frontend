@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
-
   import CardList from "./comp/main/CardList.svelte";
+  import Tagbar from "./comp/main/Tagbar.svelte";
   import { _ } from "svelte-i18n";
   let assetsList = [];
 
@@ -14,9 +14,9 @@
       (item) => item.animation_url || item.collection.image_url
     );
   });
-
 </script>
 
+<Tagbar />
 <div class="bg-blue-700 p-24">
   <p class="text-5xl text-white font-bold mb-12">
     {$_("main.title")}

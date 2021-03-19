@@ -18,11 +18,11 @@
   id="header"
 >
   <div class="flex flex-col w-full sm:w-auto sm:flex-row items-center">
-    <Link to="/" class="text-blue-700 text-3xl font-extrabold"><img class="w-32" src="images/logo.png" alt="metamask_image" /></Link>
+    <Link to="/" class="text-blue-700 text-3xl font-extrabold"><img class="w-32" src="images/logo.png" alt="logoimage" /></Link>
     <div
       class="flex flex-row px-4 py-2 w-full sm:w-96 rounded-lg border-2 border-gray-300"
     >
-      <img id="search_icon" src="images/search.png" alt="metamask_image" />
+      <img id="search_icon" src="images/search.png" alt="search_image" />
       <input
         class="border-transparent focus:outline-none w-full"
         placeholder="Search by creator or collectable"
