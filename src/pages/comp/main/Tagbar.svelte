@@ -27,4 +27,8 @@
     font-size: 14px;
     color: white;
   }
+
+  p:hover {
+    text-decoration: underline;
+  }
 </style>
