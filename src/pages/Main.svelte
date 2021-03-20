@@ -44,6 +44,7 @@
     padding-top: 81px;
     padding-bottom: 85px;
     background-repeat: no-repeat;
+    background-size: cover;
   }
   #title {
     width: 772px;
