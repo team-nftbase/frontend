@@ -1,6 +1,7 @@
 <script>
   import * as THREE from "svelthree";
   import { onMount } from "svelte";
+  import { MeshLambertMaterial } from "svelthree";
 
   let imageList = [];
 
@@ -13,6 +14,14 @@
       (item) => item.animation_url || item.collection.image_url
     );
   });
+
+  let groundTexture = new THREE.TextureLoader().load(
+    "images/grasslight-big.jpg"
+  );
+  groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+  groundTexture.repeat.set(25, 25);
+  groundTexture.anisotropy = 16;
+  groundTexture.encoding = THREE.sRGBEncoding;
 </script>
 
 <THREE.Canvas let:sti w={window.innerWidth} h={700}>
@@ -20,7 +29,7 @@
     <THREE.PerspectiveCamera
       {scene}
       id="cam1"
-      pos={[0, 0, 100]}
+      pos={[100, 100, 100]}
       lookAt={[0, 0, 0]}
     />
     <THREE.AmbientLight {scene} intensity={1.25} />
@@ -73,8 +82,10 @@
 
     <THREE.Mesh
       {scene}
-      geometry={new THREE.PlaneBufferGeometry(4, 4, 1)}
-      material={new THREE.MeshStandardMaterial()}
+      geometry={new THREE.PlaneBufferGeometry(20000, 20000, 1)}
+      material={new THREE.MeshLambertMaterial({
+        map: groundTexture,
+      })}
       mat={{
         roughness: 0.5,
         metalness: 0.5,
