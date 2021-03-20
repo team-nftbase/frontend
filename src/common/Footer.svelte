@@ -64,12 +64,10 @@
   }
 
   #footerLogo {
-    margin-left: 152px;
     margin-top: 2.37px;
   }
   #socialLink {
     color: white;
     font-size: 36px;
-    margin-right: 148px;
   }
 </style>

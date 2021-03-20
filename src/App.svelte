@@ -21,7 +21,7 @@
 	// import { ethStore, web3, selectedAccount, connected, nativeCurrency } from "svelte-web3";
 	// import contract from "truffle-contract";
 	// import NFTContract from "./contracts/NFTbase.json";
-	
+
 	// const NFTbase = contract(NFTContract);
 	// import { getUserLocales } from 'get-user-locale';
 
@@ -54,6 +54,7 @@
 		<Route path="itemdetail/:contract_address/:token_id" let:params>
 			<ItemDetail {params} />
 		</Route>
+		<Route path="itemdetail" component={ItemDetail} />
 		<Route path="fnq" component={FNQ} />
 		<Route path="three" component={Three} />
 		<Route path="create" component={Create} />
@@ -68,4 +69,12 @@
 	@import "tailwindcss/base";
 	@import "tailwindcss/components";
 	@import "tailwindcss/utilities";
+	* {
+		font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+			Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	}
+
+	.recoleta_font {
+		font-family: "Recoleta", sans-serif;
+	}
 </style>

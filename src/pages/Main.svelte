@@ -18,13 +18,17 @@
 
 <Tagbar />
 <div id="headerMain" class="bg-fixed">
-  <p id="title" class="text-white font-bold">
-    {$_("main.title")}
-  </p>
-  <p id="subtitle" class="text-white">
-    {$_("main.sub_title")}
-  </p>
-  <button class="bg-black text-white border-0">Explore artworks</button>
+  <div class="container mx-auto">
+    <p id="title" class="text-white font-bold recoleta_font">
+      {$_("main.title")}
+    </p>
+    <p id="subtitle" class="text-white">
+      {$_("main.sub_title")}
+    </p>
+    <button class="bg-black text-white border-0" on:click={() => {}}
+      >Explore artworks</button
+    >
+  </div>
 </div>
 
 <div class="container mx-auto my-12">
@@ -40,7 +44,7 @@
 
   #headerMain {
     background-image: url(/images/Gradient.png);
-    padding-left: 231px;
+    padding-left: 180px;
     padding-top: 81px;
     padding-bottom: 85px;
     background-repeat: no-repeat;
