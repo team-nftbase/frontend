@@ -50,6 +50,7 @@
     margin-top: 24px;
     margin-bottom: 46.5px;
     margin-left: 171px;
+    border-color: rgba(0, 0, 0, 1);
   }
   #caption {
     color: rgba(143, 143, 143, 1);
