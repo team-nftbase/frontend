@@ -18,13 +18,15 @@
 
 <Tagbar />
 <div id="headerMain" class="bg-fixed">
-  <p id="title" class="text-white font-bold">
+  <p id="title" class="text-white font-bold recoleta_font">
     {$_("main.title")}
   </p>
   <p id="subtitle" class="text-white">
     {$_("main.sub_title")}
   </p>
-  <button class="bg-black text-white border-0">Explore artworks</button>
+  <button class="bg-black text-white border-0" on:click={() => {}}
+    >Explore artworks</button
+  >
 </div>
 
 <div class="container mx-auto my-12">

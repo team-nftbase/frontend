@@ -69,8 +69,13 @@
 	@import "tailwindcss/components";
 	@import "tailwindcss/utilities";
 	@import url("http://fonts.cdnfonts.com/css/dm-sans");
+	@import url('http://fonts.cdnfonts.com/css/recoleta');
 	* {
 		font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
 			Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	}
+
+	.recoleta_font {
+		font-family: "Recoleta", sans-serif;
 	}
 </style>
