@@ -5,17 +5,10 @@
   export let itemInfo;
 </script>
 
-<Link
-  to={`itemdetail/${itemInfo.asset_contract.address}/${itemInfo.token_id}`}
-  class="rounded-lg border-2 text-black"
->
+<Link to={`itemdetail/${itemInfo.asset_contract.address}/${itemInfo.token_id}`}>
   <div class="flex justify-center">
     {#if itemInfo.image_thumbnail_url && itemInfo.image_thumbnail_url.slice(-3) !== "mp4"}
-      <img
-        class="h-64 rounded-t-lg"
-        src={itemInfo.image_thumbnail_url}
-        alt="main_image"
-      />
+      <img src={itemInfo.image_thumbnail_url} alt="main_image" />
     {:else if itemInfo.image_thumbnail_url}
       <video src={itemInfo.image_thumbnail_url}
         ><track default kind="captions" />
@@ -29,25 +22,108 @@
     {/if}
   </div>
   <hr />
-  <div class="flex flex-row justify-between p-4">
-    <div class="text-left">
-      <p class="flex text-sm text-gray-400">
-        {#if itemInfo.collection.image_url}
-          <img
-            class="w-6 max-h-6 mr-1"
-            src={itemInfo.collection.image_url}
-            alt="collection_image"
-          />
-        {/if}
-        {itemInfo.collection.name}
-      </p>
-      <p>{itemInfo.name}</p>
-    </div>
-    {#if itemInfo.price}
-      <div class="text-right">
-        <p class="text-sm text-gray-400">{$_("common.price")}</p>
-        <p>{itemInfo.price}</p>
-      </div>
+  <div class="info">
+    {#if itemInfo.name}
+      <p id="title">{itemInfo.name}</p>
+    {/if}
+    {#if itemInfo.owner && itemInfo.owner.user && itemInfo.owner.user.username}
+      <p id="username">{itemInfo.owner.user.username}</p>
     {/if}
   </div>
+
+  <div class="bid grid grid-cols-3 flex flex-row items-center jusify-items-center">
+    <div class="flex flex-col items-center">
+      <p class="currnt_bid">Current Bid</p>
+      <p class="eth">{itemInfo.price} ETH</p>
+    </div>
+    <div class="flex flex-col justify-center items-center">
+      <div class="heart flex flex-col justify-center items-center">
+        <img class="heart_img" src="images/heart.png" alt="images/heart.png"/>
+      </div>
+    </div>
+    <div class="flex flex-row items-center justify-center">
+      <img class="eye" src="images/eye.png" alt="images/eye.png">
+      <p>View</p>
+    </div>
+  </div>
 </Link>
+
+<style>
+  img {
+    width: 264px;
+    height: 265px;
+  }
+
+  .info {
+    margin-left: 22px;
+    margin-bottom: 10px
+  }
+
+  #title {
+    width: 176px;
+    height: 25px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+    margin-top: 22px;
+  }
+
+  #username {
+    width: 55px;
+    height: 17px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+  }
+
+  .bid {
+    height: 76px;
+    background: #000000;
+    box-shadow: 0px 9px 32px rgba(69, 109, 252, 0.1);
+    border-radius: 15px;
+  }
+
+  .bid p {
+    color: #ffffff;
+  }
+
+  .currnt_bid {
+    font-size: 12px;
+  }
+
+  .eth {
+    font-size: 16px;
+  }
+
+  .heart {
+    width: 46px;
+    height: 46px;
+    background-image: url(/images/Gradient.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 200px;
+  }
+  .heart_img {
+    width: 22.65px;
+    height: 20.51px;
+  }
+
+  .vl {
+    border-left: 1px solid #ffffff;
+    /* height: 500px; */
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+  }
+  .eye {
+    width: 26px;
+    height: 27px;
+    margin-right: 11px;
+  }
+</style>

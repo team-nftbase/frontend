@@ -10,7 +10,7 @@
     );
     const { assets } = await res.json();
     assetsList = assets.filter(
-      (item) => item.animation_url || item.collection.image_url
+      (item) => item.image_thumbnail_url
     );
   console.log(assetsList);
   });
