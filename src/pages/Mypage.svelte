@@ -1,89 +1,49 @@
 <script>
   import { user } from "../common/store/common.store";
-  import Clipboard from "svelte-clipboard";
-  import { Status, Collections, Categories } from "./comp/explore";
   import { ItemList } from "common/comp/index.js";
-  import { Myinfo, Floatingbutton } from "./comp/mypage";
+  import { Banner } from "./comp/mypage";
 
   let userData;
-  let assetsList = [];
+  let tempAsset = {
+    token_id:
+      "46025880712763272316592122038128663120854570524676624434522209160153639419905",
+    name: "CryptoPunk #2145",
+    price: 1.50,
+    image_thumbnail_url: "https://lh3.googleusercontent.com/VqbZvsvsFHvggE6J4glL29he19_jBeitwxs-SiL90vS6pKQvQ69yhVubTX25aipanM62Z5691Q9lMc_JImW-izNnxXs2AHgAYQVko4w=s128",
+    asset_contract: {
+      address: "0x495f947276749ce646f68ac8c248420045cb7b5e",
+    },
+    owner : {
+      user : {
+        username : "@priyum"
+      }
+    }
+  };
+  let assetsList = Array(8).fill({ ...tempAsset });
 
   const unsubscribe = user.subscribe(async (value) => {
     userData = value;
-    if (value.wallet) {
-      const res = await fetch(
-        `https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=500&owner=${value.wallet}`
-      );
-      const { assets } = await res.json();
-      assetsList = assets.filter(
-        (item) => item.animation_url || item.collection.image_url
-      );
-    }
   });
 </script>
 
 <div>
-  <div id="banner" class="w-full flex flex-col justify-center items-center">
-    <p class="banner_text">Banner Image Here</p>
-
-    <div
-      class="grid grid-cols-3 banner_bottom w-full flex flex-row items-center justify-items-center"
-    >
-      <div
-        id="clipboard"
-        class="flex flex-row items-center bg-black justify-between text-white border-0"
-      >
-        <p>{userData.wallet}</p>
-        <Clipboard
-          text={userData.wallet}
-          let:copy
-          on:copy={() => {
-            alert("wallet has copied");
-          }}
-        >
-          <button class="border-none text-2xl" on:click={copy}>
-            <img src="images/copy.png" alt="copy_image" />
-          </button>
-        </Clipboard>
-      </div>
-
-      <div id="profile_image">
-        {#if userData && userData.image}
-          <img src="images/${userData.image}.png" alt="ExperimentalLogo" />
-        {:else}
-          <img src="images/ExperimentalLogo.png" alt="ExperimentalLogo" />
-        {/if}
-      </div>
-
-      <div class="sns flex flex-col justify-center items-center">
-        <button class="sns_content flex items-center">
-          <img src="images/instagram.png" alt="images/instagram.png" />
-          <p>Instagram Id</p>
-        </button>
-        <button class="sns_content flex items-center">
-          <img src="images/twitter.png" alt="images/twitter.png" />
-          <p>Twitter Username</p>
-        </button>
-        <button class="sns_content flex items-center">
-          <img src="images/facebook.png" alt="images/facebook.png" />
-          <p>Facebook URL</p>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="flex flex-col justify-between items-center margin-top-100 ">
+  <Banner/>
+  <div class="profile flex flex-col justify-between items-center margin-top-100 ">
     <p class="title">Priyum Kochhar</p>
     <p class="subTitle">@priyum</p>
     <p class="text">
       Priyum Kochhar is a 3D specialist about the artist etc lorem ipsum about
       themselves and quirky description.
     </p>
+    <div class="w-full flex flex-row-reverse">
+      <button class="edit_profile_button flex justify-center items-center"><p>Edit Profile</p></button>
+    </div>
+    <ItemList {assetsList} />
   </div>
 </div>
 
 <style>
-  p {
+    p {
     width: 136px;
     height: 16px;
     font-family: DM Sans;
@@ -92,72 +52,11 @@
     font-size: 12px;
     line-height: 16px;
   }
-
-  #banner {
-    height: 335px;
-    background-image: url(/images/Gradient.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+  .profile {
+    margin-left: 150px;
+    margin-right: 150px;
   }
 
-  .banner_text {
-    width: 438px;
-    height: 62px;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 62px;
-    color: #ffffff;
-  }
-
-  .banner_bottom {
-    position: absolute;
-    margin-top: 333px;
-  }
-
-  #clipboard {
-    width: 400px;
-    height: 35px;
-    background: #000000;
-    border: 1px solid #292929;
-    box-sizing: border-box;
-    box-shadow: 0px 19px 36px rgba(87, 95, 121, 0.31);
-    backdrop-filter: blur(265px);
-    border-radius: 15px;
-    padding: 18px;
-  }
-
-  #profile_image {
-    width: 146px;
-    height: 146px;
-    border-radius: 200px;
-  }
-
-  .sns {
-    width: 206px;
-    height: 148px;
-    background: rgba(255, 255, 255, 0.96);
-    box-shadow: 0px 19px 35px rgba(80, 101, 173, 0.25);
-    backdrop-filter: blur(265px);
-    border-radius: 15px;
-    padding: 16px 16px 5px 16px;
-  }
-
-  .sns_content {
-    width: 175px;
-    height: 32px;
-    background: #000000;
-    border: 0.5px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 19px 35px rgba(80, 101, 173, 0.25);
-    border-radius: 15px;
-    margin-bottom: 10px;
-    padding-left: 13px;
-  }
-
-  .sns_content p {
-    color: #ffffff;
-  }
   .margin-top-100 {
     margin-top: 100px;
   }
@@ -203,5 +102,28 @@
     line-height: 23px;
     text-align: center;
     color: #8f8f8f;
+  }
+
+  .edit_profile_button {
+    width: 243px;
+    height: 45px;
+    background-image: url(/images/Gradient.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+  }
+
+  .edit_profile_button p {
+    width: 106px;
+    height: 19px;
+    left: 1122px;
+    top: 877px;
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #ffffff;
   }
 </style>
