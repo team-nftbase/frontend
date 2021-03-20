@@ -21,7 +21,7 @@
 	// import { ethStore, web3, selectedAccount, connected, nativeCurrency } from "svelte-web3";
 	// import contract from "truffle-contract";
 	// import NFTContract from "./contracts/NFTbase.json";
-	
+
 	// const NFTbase = contract(NFTContract);
 	// import { getUserLocales } from 'get-user-locale';
 
@@ -68,4 +68,9 @@
 	@import "tailwindcss/base";
 	@import "tailwindcss/components";
 	@import "tailwindcss/utilities";
+	@import url("http://fonts.cdnfonts.com/css/dm-sans");
+	* {
+		font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+			Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	}
 </style>

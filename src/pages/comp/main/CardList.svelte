@@ -44,6 +44,7 @@
   #view_all {
     font-weight: 400;
     font-size: 24px;
+    margin-right: 15px;
     color: black;
   }
   .short_line {
