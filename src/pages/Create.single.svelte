@@ -1,39 +1,21 @@
 <script>
-  import { _ } from "svelte-i18n";
+  import { json, _ } from "svelte-i18n";
 
-  // let files = {
-  //   accepted: [],
-  //   rejected: [],
-  // };
+  let preview;
+  let reader = new FileReader();
 
-  // let uploadedImg;
-
-  // function handleFilesSelect(e) {
-  //   const { acceptedFiles, fileRejections } = e.detail;
-  //   files.accepted = [...acceptedFiles];
-  //   files.rejected = [...fileRejections];
-  //   if (files.accepted.length) {
-  //     let formData = new FormData();
-  //     console.log(acceptedFiles[0]);
-  //     formData.append("file", acceptedFiles[0]);
-  //     const request = fetch(
-  //       "http://localhost:3000" + "/api/imageUpload/singleImage",
-  //       {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "image/png",
-  //         },
-  //         body: { data: acceptedFiles[0] },
-  //       }
-  //     );
-  //     // return () => request.then((response) => console.log(response.data.data));
-  //   }
-  //   let reader = new FileReader();
-  //   reader.readAsDataURL(acceptedFiles[0]);
-  //   reader.onload = (e) => {
-  //     uploadedImg = e.target.result;
-  //   };
-  // }
+  async function handleUpload(data, callback) {
+    const formData = new FormData();
+    formData.append("file", data.file);
+    const request = await fetch(
+      "http://localhost:3000" + "/api/imageUpload/singleImage",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+    callback(request);
+  }
 </script>
 
 <div id="container" class="container mx-auto flex flex-col items-center">
@@ -51,12 +33,35 @@
   </div>
 
   <div class="flex">
-    <div style="margin-right:42px;"> 
+    <div style="margin-right:42px;">
       <p class="font-bold" style="font-size:24px;">Upload file</p>
       <div id="uploadBox" class="flex flex-col items-center border">
         <p style="font-size:14px;">PNG, GIF, WEBP, MP4 or MP3 ( MAX 30 mb )</p>
-        <input class="hidden" id="upload" type="file" />
-        <label for="upload">
+        <input
+          class="hidden"
+          id="upload"
+          name="upload"
+          type="file"
+          on:change={(e) => {
+            if (e.target.files.length > 0) {
+              handleUpload(
+                {
+                  file: e.target.files[0],
+                },
+                async (response) => {
+                  let result = await response.json();
+                  if (result) {
+                    reader.readAsDataURL(e.target.files[0]);
+                    reader.onload = (e) => {
+                      preview = e.target.result;
+                    };
+                  }
+                }
+              );
+            }
+          }}
+        />
+        <label for={"upload"}>
           <button class="relative text-white border-0" style="margin-top:15px;"
             ><img src="images/uploadButton.png" alt="uploadbutton" />
             <p id="btn_text">Choose Photo or Video</p></button
@@ -98,21 +103,27 @@
     <div>
       <p class="font-bold" style="font-size:24px;">Preview</p>
 
-      <div id="previewBox" class='border'/>
+      <div id="previewBox" class="border flex justify-center items-center">
+        {#if preview}
+          <img class="mb-4" src={preview} alt="preview_image" />
+        {:else}
+          <p style="font-size:14px;">Please upload your file</p>
+        {/if}
+      </div>
 
-      <div id="createBox" class='border flex justify-center items-center'>
+      <div id="createBox" class="border flex justify-center items-center">
         <button class="relative text-white border-0"
-        ><img src="images/createButton.png" alt="createbutton" />
-        <p id="btn_txt_create">{$_("create.create_item")}</p></button
-      >
+          ><img src="images/createButton.png" alt="createbutton" />
+          <p id="btn_txt_create">{$_("create.create_item")}</p></button
+        >
       </div>
     </div>
   </div>
 </div>
 
 <style>
-  #container{
-    margin-top:106px;
+  #container {
+    margin-top: 106px;
   }
   #back {
     width: 48px;
@@ -205,7 +216,7 @@
     border-color: rgba(0, 0, 0, 1);
   }
 
-  #createBox{
+  #createBox {
     border-radius: 15px;
     width: 448px;
     height: 161px;
