@@ -1,5 +1,5 @@
 <script>
-  import { json, _ } from "svelte-i18n";
+  import { _ } from "svelte-i18n";
 
   let preview;
   let reader = new FileReader();
@@ -14,7 +14,15 @@
         body: formData,
       }
     );
-    callback(request);
+    let result = await request.json();
+    if (result) {
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload = (e) => {
+        preview = e.target.result;
+      };
+    } else {
+      preview = "Fail to upload, please reupload file";
+    }
   }
 </script>
 
@@ -44,20 +52,7 @@
           type="file"
           on:change={(e) => {
             if (e.target.files.length > 0) {
-              handleUpload(
-                {
-                  file: e.target.files[0],
-                },
-                async (response) => {
-                  let result = await response.json();
-                  if (result) {
-                    reader.readAsDataURL(e.target.files[0]);
-                    reader.onload = (e) => {
-                      preview = e.target.result;
-                    };
-                  }
-                }
-              );
+              handleUpload({ file: e.target.files[0] });
             }
           }}
         />

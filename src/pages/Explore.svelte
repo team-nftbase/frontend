@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { Status, Collections, Categories } from "./comp/explore";
-  import { ItemList} from 'common/comp/index.js';
+  import { ItemList } from "common/comp/index.js";
 
   let assetsList = [];
   onMount(async () => {
@@ -9,10 +9,8 @@
       `https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=500`
     );
     const { assets } = await res.json();
-    assetsList = assets.filter(
-      (item) => item.image_thumbnail_url
-    );
-  console.log(assetsList);
+    assetsList = assets.filter((item) => item.image_thumbnail_url);
+    console.log(assetsList);
   });
 </script>
 

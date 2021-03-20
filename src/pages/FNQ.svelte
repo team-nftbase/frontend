@@ -1,9 +1,11 @@
 <script>
   import { _ } from "svelte-i18n";
+  import { HorizenLine } from "common/comp/index.js";
 </script>
 
 <div class="container mx-auto py-12 px-72">
-  <p class="text-4xl font-bold">{$_("fnq.whatisnft")}</p>
+  <p class="text-4xl font-bold mb-3">{$_("fnq.whatisnft")}</p>
+  <HorizenLine width={160} />
   <p>{$_("fnq.whatisnft_paragraph1")}</p>
   <p>{$_("fnq.whatisnft_paragraph2")}</p>
   <p>{$_("fnq.whatisnft_paragraph3")}</p>
@@ -13,7 +15,8 @@
       https://opensea.io/blog/guides/non-fungible-tokens/
     </a>
   </p>
-  <p class="text-4xl font-bold pt-24">{$_("fnq.whatisnftbase")}</p>
+  <p class="text-4xl font-bold pt-24 mb-3">{$_("fnq.whatisnftbase")}</p>
+  <HorizenLine width={160} />
   <p>{$_("fnq.whatisnftbase_paragraph1")}</p>
   <p>{$_("fnq.whatisnftbase_paragraph2")}</p>
   <p>{$_("fnq.whatisnftbase_paragraph3")}</p>

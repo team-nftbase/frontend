@@ -1,7 +1,7 @@
 <script>
   import Skeleton from "svelte-skeleton";
   import Link from "svelte-routing/src/Link.svelte";
-  import Card from "common/comp/Card.svelte";
+  import { Card, HorizenLine } from "common/comp/index.js";
   import { _ } from "svelte-i18n";
 
   export let list;
@@ -17,9 +17,9 @@
     </div>
   </Link>
 </div>
-<div class="flex justify-between">
-  <div class="short_line bg-black" />
-  <div class="short_line bg-black" />
+<div class="flex justify-between" style="margin-bottom:22px;">
+  <HorizenLine width={30} />
+  <HorizenLine width={30} />
 </div>
 <div
   class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 md:grid-cols-4 gap-4"
@@ -46,10 +46,5 @@
     font-size: 24px;
     margin-right: 15px;
     color: black;
-  }
-  .short_line {
-    width: 30px;
-    height: 1px;
-    margin-bottom: 22px;
   }
 </style>
