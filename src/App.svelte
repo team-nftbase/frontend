@@ -54,6 +54,7 @@
 		<Route path="itemdetail/:contract_address/:token_id" let:params>
 			<ItemDetail {params} />
 		</Route>
+		<Route path="itemdetail" component={ItemDetail} />
 		<Route path="fnq" component={FNQ} />
 		<Route path="three" component={Three} />
 		<Route path="create" component={Create} />

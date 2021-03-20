@@ -2,24 +2,47 @@
   import { onMount } from "svelte";
   import ethPrice from "eth-price";
 
-  let img_URL, assetsInfo, ethprice;
+  let img_URL,
+    assetsInfo,
+    ethprice = "0",
+    ethpricenum;
   let price = 0.1;
   export let params;
+
+  $: ethpricenum = Number(ethprice[0].slice(4));
+
   onMount(async () => {
     ethprice = await ethPrice("usd");
-    ethprice = Number(ethprice.slice(4));
-    const res = await fetch(
-      `https://api.opensea.io/api/v1/asset/${params.contract_address}/${params.token_id}/`
-    );
-    assetsInfo = await res.json();
-    if (assetsInfo.animation_url) {
-      img_URL = assetsInfo.animation_url;
-    } else if (assetsInfo.image_preview_url) {
-      img_URL = assetsInfo.image_preview_url;
-    } else {
-    }
-    console.log(assetsInfo);
   });
+
+  if (params) {
+    onMount(async () => {
+      const res = await fetch(
+        `https://api.opensea.io/api/v1/asset/${params.contract_address}/${params.token_id}/`
+      );
+      assetsInfo = await res.json();
+      if (assetsInfo.animation_url) {
+        img_URL = assetsInfo.animation_url;
+      } else if (assetsInfo.image_preview_url) {
+        img_URL = assetsInfo.image_preview_url;
+      } else {
+      }
+      console.log(assetsInfo);
+    });
+  } else {
+    img_URL =
+      "https://cdn.decrypt.co/resize/1400/wp-content/uploads/2021/02/Trump-win.png";
+    assetsInfo = {
+      name: "MEMOJI #0001",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing 
+elit. Sed sed suspendisse feugiat feugiat amet, morbi
+libero, a. Amet, sed aliquam facilisi massa mauris nunc. 
+Leo egestas turpis nisl tincidunt imperdiet aliquet viverra
+odio. Nam vitae nibh eget porta velit, sem.`,
+      owner: { user: { username: "limkukhyun" } },
+      creator: { user: { username: "limkukhyun" } },
+    };
+  }
 </script>
 
 <div class="container flex mx-auto">
@@ -51,18 +74,18 @@
       <p class="text-2xl">{assetsInfo.name}</p>
       <div class="flex flex-row mt-2">
         <p class="font-bold mr-3">{price} ETH</p>
-        <p class="text-gray-500">${price * ethprice} 3 of 3</p>
+        <p class="text-gray-500">${Math.ceil(price * ethpricenum)} 3 of 3</p>
       </div>
       <p class="border-2 rounded-3xl w-12 text-center my-6">Art</p>
       <p class="mt-4 text-sm">{assetsInfo.description}</p>
       <div class="my-24">
         <p class="text-gray-400">Owner</p>
         <p class="font-bold">
-          {assetsInfo.owner.user && assetsInfo.owner.user.username}
+          @{assetsInfo.owner.user && assetsInfo.owner.user.username}
         </p>
         <p class="text-gray-400">Creator</p>
         <p class="font-bold">
-          {assetsInfo.creator.user && assetsInfo.creator.user.username}
+          @{assetsInfo.creator.user && assetsInfo.creator.user.username}
         </p>
       </div>
       <div class="flex flex-row w-full mt-12">
@@ -76,7 +99,7 @@
       </div>
       <p class="text-gray-400 text-sm text-center mt-2">
         Service fee <span class="text-black font-bold">2.5%</span>, {price *
-          2.5} $66.23
+          2.5}ETH ${Math.ceil(price * 2.5 * ethpricenum)}
       </p>
     {/if}
   </div>
