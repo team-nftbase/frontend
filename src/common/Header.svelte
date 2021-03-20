@@ -42,7 +42,7 @@
     >
       <Link to="explore"><p>Explore</p></Link>
       <Link to="fnq"><p>F&Q</p></Link>
-      <Link to="community"><p>Community</p></Link>
+      <Link to="three"><p>Showcase</p></Link>
       <Link to="create"><p>Create</p></Link>
       {#if userData.wallet}
         <Link to="mypage"><p>My page</p></Link>

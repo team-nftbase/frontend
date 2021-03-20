@@ -1,6 +1,9 @@
 <script>
   import * as THREE from "svelthree";
+  import { navigate } from "svelte-routing";
   import { onMount } from "svelte";
+
+  import gsap from "gsap";
 
   let imageList = [];
 
@@ -21,10 +24,26 @@
   groundTexture.repeat.set(50, 50);
   groundTexture.anisotropy = 4;
   groundTexture.encoding = THREE.sRGBEncoding;
+
+  const triggerOnOverAni = (e) => {
+    let obj = e.detail.target;
+    gsap.to(obj.scale, {
+      duration: 1,
+      x: 1.5,
+      y: 1.5,
+      z: 1.5,
+      ease: "elastic.out",
+    });
+  };
+
+  const triggerOnOutAni = (e) => {
+    let obj = e.detail.target;
+    gsap.to(obj.scale, { duration: 1, x: 1, y: 1, z: 1, ease: "elastic.out" });
+  };
 </script>
 
 <div class="container mx-auto">
-  <THREE.Canvas let:sti w={1536} h={800}>
+  <THREE.Canvas let:sti w={1536} h={800} interactive>
     <THREE.Scene
       {sti}
       let:scene
@@ -80,7 +99,13 @@
             ),
             side: THREE.DoubleSide,
           })}
-          pos={[-90 + (i % 10) * 35, 20, Math.floor(i / 6) * 50 - 100]}
+          pos={[-90 + (i % 10) * 35, 40, Math.floor(i / 6) * 50 - 100]}
+          interact
+          onPointerOver={triggerOnOverAni}
+          onPointerLeave={triggerOnOutAni}
+          on:click={()=>{
+            navigate(`itemdetail/${image.asset_contract.address}/${image.token_id}`, { replace: true });
+          }}
           castShadow
           receiveShadow
         />
@@ -106,8 +131,6 @@
           map: groundTexture,
         })}
         mat={{
-          roughness: 0.5,
-          metalness: 0.5,
           side: THREE.DoubleSide,
           color: 0xf7fafc,
         }}
