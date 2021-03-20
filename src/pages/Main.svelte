@@ -18,12 +18,13 @@
 
 <Tagbar />
 <div id="headerMain">
-  <p class="text-5xl text-white font-bold mb-12">
+  <p id="title" class="text-white font-bold mb-12">
     {$_("main.title")}
   </p>
-  <p class="text-xl text-white">
+  <p id="subtitle" class="text-white">
     {$_("main.sub_title")}
   </p>
+  <button class="bg-black text-white border-0">Explore artworks</button>
 </div>
 
 <div class="container mx-auto my-12">
@@ -39,7 +40,22 @@
 
   #headerMain {
     background-image: url(/images/Gradient.png);
-    margin-left: 231px;
-    margin-top: 81px;
+    padding-left: 231px;
+    padding-top: 81px;
+    padding-bottom: 85px;
+  }
+  #title {
+    width: 772px;
+    font-size: 72px;
+  }
+  #subtitle {
+    font-size: 18px;
+  }
+  button {
+    width: 212px;
+    padding: 22px 37px 22px 37px;
+    font-size: 18px;
+    margin-top: 33px;
+    border-radius: 15px;
   }
 </style>
