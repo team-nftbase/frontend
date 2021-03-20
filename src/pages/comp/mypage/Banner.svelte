@@ -11,7 +11,7 @@
 <div id="banner" class="w-full flex flex-col justify-center items-center">
     <p class="banner_text">Banner Image Here</p>
 
-    <div class="grid grid-cols-3 banner_bottom w-full flex flex-row items-center justify-items-center">
+    <div class="grid grid-cols-3 banner_bottom w-full items-center justify-items-center">
         <div id="clipboard" class="flex flex-row items-center bg-black justify-between text-white border-0">
             <p>{userData.wallet}</p>
             <Clipboard

@@ -1,12 +1,13 @@
 <script>
   import { Link } from "svelte-routing";
+  import { HorizenLine } from "common/comp/index.js";
   import { _ } from "svelte-i18n";
 </script>
 
 <div class="container mx-auto flex flex-col items-center" id="container">
-  <div>
+  <div id="layout">
     <p class="font-bold" id="title">{$_("create.create_collectible")}</p>
-    <div id="line" />
+    <HorizenLine width={307.5}/>
     <p id="caption">
       Create a ‘Single’ collectible if you wish to sell a single limited edition
       of a collectible or choose ‘Multiple’ if you wish to sell a collectible
@@ -18,7 +19,7 @@
       <div id="single" class="flex flex-col items-center">
         <p class="text-black">{$_("create.single")}</p>
         <img id="single_image" src="images/Vector_single.png" alt="single" />
-        <img src="images/logo.png" alt="logo" width="83px;" height="48px;" />
+        <img src="images/logo.png" alt="logo" width="60px"/>
       </div>
     </Link>
     <Link to="create_single">
@@ -29,7 +30,7 @@
           src="images/Vector_multiple.png"
           alt="multiple"
         />
-        <img src="images/logo.png" alt="logo" width="83px;" height="48px;" />
+        <img src="images/logo.png" alt="logo" width="60px"/>
       </div>
     </Link>
   </div>
@@ -42,23 +43,18 @@
   }
   #title {
     font-size: 36px;
-    margin-left: 171px;
+    margin-bottom: 24px;
   }
-  #line {
-    border-bottom-width: 1px;
-    width: 307.5px;
-    margin-top: 24px;
-    margin-bottom: 46.5px;
-    margin-left: 171px;
-    border-color: rgba(0, 0, 0, 1);
+  #layout {
+    margin-left: 120px;
   }
   #caption {
     color: rgba(143, 143, 143, 1);
     width: 705px;
     font-weight: 500;
     font-size: 18px;
+    margin-top: 46.5px;
     margin-bottom: 132.5px;
-    margin-left: 171px;
   }
   #createBox {
     width: 1017px;

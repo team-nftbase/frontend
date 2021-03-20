@@ -1,9 +1,7 @@
 <script>
-  import { user } from "../common/store/common.store";
   import { ItemList } from "common/comp/index.js";
   import { Banner } from "./comp/mypage";
 
-  let userData;
   let tempAsset = {
     token_id:
       "46025880712763272316592122038128663120854570524676624434522209160153639419905",
@@ -20,10 +18,6 @@
     }
   };
   let assetsList = Array(8).fill({ ...tempAsset });
-
-  const unsubscribe = user.subscribe(async (value) => {
-    userData = value;
-  });
 </script>
 
 <div>
