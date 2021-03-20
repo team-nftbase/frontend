@@ -1,5 +1,6 @@
 <script>
   import { user } from "../common/store/common.store";
+  import Clipboard from "svelte-clipboard";
   import { Status, Collections, Categories } from "./comp/explore";
   import { ItemList } from "common/comp/index.js";
   import { Myinfo, Floatingbutton } from "./comp/mypage";
@@ -22,29 +23,56 @@
 </script>
 
 <div>
-  <!-- <Myinfo {userData} /> -->
-
   <div id="banner" class="w-full flex flex-col justify-center items-center">
     <p class="banner_text">Banner Image Here</p>
 
-    <div class="banner_bottom w-full flex flex-row justify-between items-center">
+    <div
+      class="grid grid-cols-3 banner_bottom w-full flex flex-row items-center justify-items-center"
+    >
       <div
         id="clipboard"
-        class="flex flex-row justify-between items-center bg-black text-white border-0"
+        class="flex flex-row items-center bg-black justify-between text-white border-0"
       >
         <p>{userData.wallet}</p>
-        <button>
-          <img src="images/copy.png" alt="copy_image" />
-        </button>
+        <Clipboard
+          text={userData.wallet}
+          let:copy
+          on:copy={() => {
+            alert("wallet has copied");
+          }}
+        >
+          <button class="border-none text-2xl" on:click={copy}>
+            <img src="images/copy.png" alt="copy_image" />
+          </button>
+        </Clipboard>
       </div>
 
-      <div id="profile">asd</div>
+      <div id="profile_image">
+        {#if userData && userData.image}
+          <img src="images/${userData.image}.png" alt="ExperimentalLogo" />
+        {:else}
+          <img src="images/ExperimentalLogo.png" alt="ExperimentalLogo" />
+        {/if}
+      </div>
 
-      <div class="sns" />
+      <div class="sns flex flex-col justify-center items-center">
+        <button class="sns_content flex items-center">
+          <img src="images/instagram.png" alt="images/instagram.png" />
+          <p>Instagram Id</p>
+        </button>
+        <button class="sns_content flex items-center">
+          <img src="images/twitter.png" alt="images/twitter.png" />
+          <p>Twitter Username</p>
+        </button>
+        <button class="sns_content flex items-center">
+          <img src="images/facebook.png" alt="images/facebook.png" />
+          <p>Facebook URL</p>
+        </button>
+      </div>
     </div>
   </div>
 
-  <div class="flex flex-col justify-between items-center">
+  <div class="flex flex-col justify-between items-center margin-top-100 ">
     <p class="title">Priyum Kochhar</p>
     <p class="subTitle">@priyum</p>
     <p class="text">
@@ -68,6 +96,8 @@
   #banner {
     height: 335px;
     background-image: url(/images/Gradient.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .banner_text {
@@ -80,10 +110,9 @@
     color: #ffffff;
   }
 
-  .banner_bottom{
+  .banner_bottom {
     position: absolute;
     margin-top: 333px;
-    
   }
 
   #clipboard {
@@ -98,26 +127,39 @@
     padding: 18px;
   }
 
-  #profile {
+  #profile_image {
     width: 146px;
     height: 146px;
-    left: 647px;
-    top: 524px;
     border-radius: 200px;
   }
 
   .sns {
     width: 206px;
     height: 148px;
-    left: 1087px;
-    top: 520px;
-
     background: rgba(255, 255, 255, 0.96);
     box-shadow: 0px 19px 35px rgba(80, 101, 173, 0.25);
     backdrop-filter: blur(265px);
-    /* Note: backdrop-filter has minimal browser support */
-
     border-radius: 15px;
+    padding: 16px 16px 5px 16px;
+  }
+
+  .sns_content {
+    width: 175px;
+    height: 32px;
+    background: #000000;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 19px 35px rgba(80, 101, 173, 0.25);
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding-left: 13px;
+  }
+
+  .sns_content p {
+    color: #ffffff;
+  }
+  .margin-top-100 {
+    margin-top: 100px;
   }
 
   .title {
@@ -143,7 +185,9 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 31px;
-    color: linear-gradient(272.31deg, #fea1c1 -31.28%, #667dff 92.53%);
+    background: linear-gradient(272.31deg, #fea1c1 -31.28%, #667dff 92.53%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 21px;
   }
   .text {
@@ -158,7 +202,6 @@
     font-size: 18px;
     line-height: 23px;
     text-align: center;
-
     color: #8f8f8f;
   }
 </style>
