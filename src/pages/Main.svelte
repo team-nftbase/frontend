@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
-
   import CardList from "./comp/main/CardList.svelte";
+  import Tagbar from "./comp/main/Tagbar.svelte";
   import { _ } from "svelte-i18n";
   let assetsList = [];
 
@@ -16,6 +16,7 @@
   });
 </script>
 
+<Tagbar />
 <div id="headerMain">
   <p class="text-5xl text-white font-bold mb-12">
     {$_("main.title")}

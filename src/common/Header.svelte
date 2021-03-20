@@ -14,40 +14,29 @@
 </script>
 
 <div
-  class="flex flex-col sm:flex-row justify-between items-center px-5 py-2 shadow-md"
+  class="flex flex-col sm:flex-row justify-between items-center px-5 py-2"
+  id="header"
 >
   <div class="flex flex-col w-full sm:w-auto sm:flex-row items-center">
-    <Link to="/" class="text-blue-700 text-3xl font-extrabold"><img class="w-32" src="images/logo.png" alt="metamask_image" /></Link>
-    <button
-      class="sm:invisible"
-      on:click={() => {
-        isMenuOpen = !isMenuOpen;
-      }}>눌러</button
-    >
+    <Link to="/" class="text-blue-700 text-3xl font-extrabold"><img class="w-32" src="images/logo.png" alt="logoimage" /></Link>
     <div
-      class="flex flex-row px-4 py-2 sm:ml-4 w-full sm:w-96 rounded-lg border-2 border-gray-300"
+      class="flex flex-row px-4 py-2 w-full sm:w-96 rounded-lg border-2 border-gray-300"
     >
-      <span class="material-icons mr-2"> search </span>
+      <img id="search_icon" src="images/search.png" alt="search_image" />
       <input
         class="border-transparent focus:outline-none w-full"
-        placeholder="Search items, collections, and accounts"
+        placeholder="Search by creator or collectable"
       />
     </div>
   </div>
-  {#if isMenuOpen}
     <div
       class="flex flex-col sm:flex-row text-2xl font-bold text-black"
       transition:slide
     >
-      <select class="mr-4 px-1 border-none" bind:value={$locale}>
-        {#each $locales as locale}
-          <option value={locale} selected={locale==="en"}>{locale}</option>
-        {/each}
-      </select>
-      <Link class="mr-4" to="explore">Explore</Link>
-      <Link class="mr-4" to="fnq">F&Q</Link>
-      <Link class="mr-4" to="community">Community</Link>
-      <Link class="mr-4" to="create">Create</Link>
+      <Link to="explore"><p id="link">Explore</p></Link>
+      <Link to="fnq"><p id="link">F&Q</p></Link>
+      <Link to="community"><p id="link">Community</p></Link>
+      <Link to="create"><p id="link">Create</p></Link>
       {#if userData.wallet}
         <Link to="mypage">My page</Link>
       {:else}
@@ -55,9 +44,27 @@
           on:click={() => {
             login();
           }}
-        >Login</Link
+        ><p id="link">login</p></Link
         >
       {/if}
     </div>
-  {/if}
 </div>
+
+<style>
+
+ #header {
+   margin-left: 150px;
+   margin-right: 150px;
+ }
+
+ #search_icon {
+    width: 20.67px;
+    height: 21.33px
+ }
+  #link{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    margin-right: 35px
+  }
+</style>

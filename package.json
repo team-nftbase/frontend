@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "eth-price": "^0.1.5",
     "get-user-locale": "^1.4.0",
     "sirv-cli": "^1.0.0",
     "smelte": "^1.0.18",
