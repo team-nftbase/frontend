@@ -3,11 +3,12 @@
   import { _ } from "svelte-i18n";
 
   export let itemInfo;
-
-
 </script>
 
-<Link to={`itemdetail/${itemInfo.asset_contract.address}/${itemInfo.token_id}`} class="rounded-lg border-2 text-black">
+<Link
+  to={`itemdetail/${itemInfo.asset_contract.address}/${itemInfo.token_id}`}
+  class="rounded-lg border-2 text-black"
+>
   <div class="flex justify-center">
     {#if itemInfo.image_thumbnail_url && itemInfo.image_thumbnail_url.slice(-3) !== "mp4"}
       <img

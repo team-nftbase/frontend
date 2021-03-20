@@ -8,12 +8,18 @@
   export let title;
 </script>
 
-<div class="flex justify-between mt-12 mb-4">
-  <p class="font-bold">{title}</p>
-  <div class="flex">
-    <Link to="explore" class="font-bold">{$_("main.view_all")}</Link>
-    <span class="material-icons"> keyboard_arrow_right </span>
-  </div>
+<div class="flex justify-between mt-12 mb-3">
+  <p id="title">{title}</p>
+  <Link to="explore">
+    <div class="flex items-center">
+      <p id="view_all">{$_("main.view_all")}</p>
+      <img class="h-6" src="images/arrow-right.png" alt="arrow" />
+    </div>
+  </Link>
+</div>
+<div class="flex justify-between">
+  <div class="short_line bg-black" />
+  <div class="short_line bg-black" />
 </div>
 <div
   class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 md:grid-cols-4 gap-4"
@@ -29,3 +35,20 @@
     {/each}
   {/if}
 </div>
+
+<style>
+  #title {
+    font-weight: 700;
+    font-size: 24px;
+  }
+  #view_all {
+    font-weight: 400;
+    font-size: 24px;
+    color: black;
+  }
+  .short_line {
+    width: 30px;
+    height: 1px;
+    margin-bottom: 22px;
+  }
+</style>

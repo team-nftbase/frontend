@@ -1,11 +1,13 @@
 <script>
   import { onMount } from "svelte";
+  import ethPrice from "eth-price";
 
-  let img_URL, assetsInfo;
+  let img_URL, assetsInfo, ethprice;
   let price = 0.1;
   export let params;
-
   onMount(async () => {
+    ethprice = await ethPrice("usd");
+    ethprice = Number(ethprice.slice(4));
     const res = await fetch(
       `https://api.opensea.io/api/v1/asset/${params.contract_address}/${params.token_id}/`
     );
@@ -49,7 +51,7 @@
       <p class="text-2xl">{assetsInfo.name}</p>
       <div class="flex flex-row mt-2">
         <p class="font-bold mr-3">{price} ETH</p>
-        <p class="text-gray-500">$64.61 3 of 3</p>
+        <p class="text-gray-500">${price * ethprice} 3 of 3</p>
       </div>
       <p class="border-2 rounded-3xl w-12 text-center my-6">Art</p>
       <p class="mt-4 text-sm">{assetsInfo.description}</p>

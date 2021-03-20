@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
-
   import CardList from "./comp/main/CardList.svelte";
+  import Tagbar from "./comp/main/Tagbar.svelte";
   import { _ } from "svelte-i18n";
   let assetsList = [];
 
@@ -14,16 +14,17 @@
       (item) => item.animation_url || item.collection.image_url
     );
   });
-
 </script>
 
-<div class="bg-blue-700 p-24">
-  <p class="text-5xl text-white font-bold mb-12">
+<Tagbar />
+<div id="headerMain" class="bg-fixed">
+  <p id="title" class="text-white font-bold">
     {$_("main.title")}
   </p>
-  <p class="text-xl text-white">
+  <p id="subtitle" class="text-white">
     {$_("main.sub_title")}
   </p>
+  <button class="bg-black text-white border-0">Explore artworks</button>
 </div>
 
 <div class="container mx-auto my-12">
@@ -31,3 +32,33 @@
   <CardList title="Virtual Worlds" list={assetsList.slice(5, 10)} />
   <CardList title="COLLECTIBLES" list={assetsList.slice(10, 15)} />
 </div>
+
+<style>
+  p {
+    color: white;
+  }
+
+  #headerMain {
+    background-image: url(/images/Gradient.png);
+    padding-left: 231px;
+    padding-top: 81px;
+    padding-bottom: 85px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #title {
+    width: 772px;
+    font-size: 72px;
+    margin-bottom: 11px;
+  }
+  #subtitle {
+    font-size: 18px;
+  }
+  button {
+    width: 212px;
+    padding: 22px 37px 22px 37px;
+    font-size: 18px;
+    margin-top: 33px;
+    border-radius: 15px;
+  }
+</style>
