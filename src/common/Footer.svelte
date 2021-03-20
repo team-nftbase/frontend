@@ -57,6 +57,7 @@
   #footerMain {
     background-image: url(/images/Gradient.png);
     padding-top: 62px;
+    background-repeat: no-repeat;
   }
 
   #footerLogo {

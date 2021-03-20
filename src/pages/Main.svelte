@@ -17,8 +17,8 @@
 </script>
 
 <Tagbar />
-<div id="headerMain">
-  <p id="title" class="text-white font-bold mb-12">
+<div id="headerMain" class="bg-fixed">
+  <p id="title" class="text-white font-bold">
     {$_("main.title")}
   </p>
   <p id="subtitle" class="text-white">
@@ -43,10 +43,12 @@
     padding-left: 231px;
     padding-top: 81px;
     padding-bottom: 85px;
+    background-repeat: no-repeat;
   }
   #title {
     width: 772px;
     font-size: 72px;
+    margin-bottom: 11px;
   }
   #subtitle {
     font-size: 18px;
