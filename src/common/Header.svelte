@@ -3,8 +3,6 @@
   import { slide } from "svelte/transition";
   import { user } from "./store/common.store";
   import { login } from "./account";
-  import { locale, locales } from "svelte-i18n";
-  // import { Us, Kr } from "svelte-flagicon";
 
   let userData,
     isMenuOpen = true;
@@ -15,7 +13,7 @@
 </script>
 
 <div
-  class="flex flex-col sm:flex-row justify-between items-center px-5 py-2"
+  class="flex flex-col justify-between items-center px-5 py-2"
   id="header_container"
 >
   <div class="flex flex-col w-full sm:w-auto sm:flex-row items-center">
@@ -47,7 +45,7 @@
       <Link to="community"><p>Community</p></Link>
       <Link to="create"><p>Create</p></Link>
       {#if userData.wallet}
-        <Link to="mypage">My page</Link>
+        <Link to="mypage"><p>My page</p></Link>
       {:else}
         <Link
           on:click={() => {
@@ -78,8 +76,6 @@
     border : 0;
     border-radius: 15px;
     box-shadow: 0px 19px 35px rgba(115, 154, 176, 0.12);
-    /* box-shadow: 0px 19px 35px rgba(115, 154, 176, 0.12); */
-
     margin-right: 37px;
     padding-left : 44px;
     padding-right : 0px;
@@ -102,6 +98,6 @@
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
-    margin-right: 35px;
+    margin-right: 20px;
   }
 </style>
