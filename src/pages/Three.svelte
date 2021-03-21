@@ -2,19 +2,24 @@
   import * as THREE from "svelthree";
   import { navigate } from "svelte-routing";
   import { onMount } from "svelte";
+  import axios from "axios";
+  import { base_url } from "common/properties.js";
 
   import gsap from "gsap";
 
   let imageList = [];
+  let height = 70;
+  let zIndex = [1, 2, 3, 4, 5, 6, 7, 8, 8, 7, 6, 5, 4, 3, 2, 1];
+  let zIndex_123 = [1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2, 1];
+  let rotIndex = [30, 30, 30, 30, 30, 30, 30, 30, -30, -30, -30, -30, -30, -30, -30, -30];
+  let rotIndex_123 = [30, 30, 30, 30, 30, 30, -30, -30, -30, -30, -30, -30];
 
   onMount(async () => {
-    const res = await fetch(
-      `https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=500`
+    const assets = await axios.post(
+      base_url + "api/explore/selectListAll",
+      null
     );
-    const { assets } = await res.json();
-    imageList = assets.filter(
-      (item) => item.animation_url || item.collection.image_url
-    );
+    imageList = assets.data.filter((item) => item.image_thumbnail).slice(0, 12);
   });
 
   let groundTexture = new THREE.TextureLoader().load(
@@ -60,7 +65,7 @@
       <THREE.PerspectiveCamera
         {scene}
         id="cam1"
-        pos={[300, 300, 300]}
+        pos={[0, 150, 300]}
         lookAt={[0, 0, 0]}
         props={{
           far: 20000,
@@ -90,21 +95,23 @@
         <THREE.Mesh
           {scene}
           id="mesh_2"
-          geometry={new THREE.PlaneBufferGeometry(24, 34, 3)}
+          geometry={new THREE.PlaneBufferGeometry(48, 68, 3)}
           material={new THREE.MeshBasicMaterial({
             map: new THREE.TextureLoader().load(
-              image.animation_url
-                ? image.animation_url
-                : image.collection.image_url
+              base_url + "images/" + image.image_thumbnail
             ),
             side: THREE.DoubleSide,
           })}
-          pos={[-90 + (i % 10) * 35, 40, Math.floor(i / 6) * 50 - 100]}
+          pos={[-240 + i * 60, height, -zIndex_123[i] * 40]}
+          rot={[0, 3.14 * rotIndex_123[i] / 180, 0]}
           interact
           onPointerOver={triggerOnOverAni}
           onPointerLeave={triggerOnOutAni}
-          on:click={()=>{
-            navigate(`itemdetail/${image.asset_contract.address}/${image.token_id}`, { replace: true });
+          on:click={() => {
+            navigate(
+              `itemdetail/${image.asset_contract.address}/${image.token_id}`,
+              { replace: true }
+            );
           }}
           castShadow
           receiveShadow

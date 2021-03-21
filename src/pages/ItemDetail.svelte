@@ -2,10 +2,11 @@
   import { onMount } from "svelte";
   import { OptionButton, UserInfo, PriceInfo } from "./comp/itemdetail";
   import { HorizenLine } from "common/comp/index.js";
+  import axios from "axios";
   import ethPrice from "eth-price";
+  import { base_url } from "common/properties.js";
 
-  let img_URL,
-    assetsInfo,
+  let assetsInfo = {},
     ethprice = "0",
     ethpricenum;
   let price = 0.1;
@@ -19,30 +20,28 @@
 
   if (params) {
     onMount(async () => {
-      const res = await fetch(
-        `https://api.opensea.io/api/v1/asset/${params.contract_address}/${params.token_id}/`
+      const response = await axios.post(
+        base_url + "api/itemdetail/selectList",
+        {
+          id: params.item_id,
+        }
       );
-      assetsInfo = await res.json();
-      if (assetsInfo.animation_url) {
-        img_URL = assetsInfo.animation_url;
-      } else if (assetsInfo.image_preview_url) {
-        img_URL = assetsInfo.image_preview_url;
-      } else {
-      }
+      assetsInfo = response.data[0];
+
       console.log(assetsInfo);
     });
   } else {
-    img_URL =
-      "https://cdn.decrypt.co/resize/1400/wp-content/uploads/2021/02/Trump-win.png";
     assetsInfo = {
       name: "MEMOJI #0001",
+      image_thumbnail:
+        "https://cdn.decrypt.co/resize/1400/wp-content/uploads/2021/02/Trump-win.png",
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing 
 elit. Sed sed suspendisse feugiat feugiat amet, morbi
 libero, a. Amet, sed aliquam facilisi massa mauris nunc. 
 Leo egestas turpis nisl tincidunt imperdiet aliquet viverra
 odio. Nam vitae nibh eget porta velit, sem.`,
-      owner: { user: { username: "limkukhyun" } },
-      creator: { user: { username: "limkukhyun" } },
+      owner_name: "limkukhyun",
+      creator_name: "limkukhyun",
     };
   }
 </script>
@@ -51,13 +50,12 @@ odio. Nam vitae nibh eget porta velit, sem.`,
   <OptionButton />
   <div class="flex justify-center">
     <div id="image_frame">
-      {#if img_URL && img_URL.slice(-3) === "mp4"}
-        <video src={img_URL}
-          ><track default kind="captions" />
-          Sorry, your browser doesn't support embedded videos.
-        </video>
-      {:else if img_URL}
-        <img id="main_image" src={img_URL} alt="item_image" />
+      {#if assetsInfo.image_thumbnail}
+        <img
+          id="main_image"
+          src={base_url+"images/"+assetsInfo.image_thumbnail}
+          alt="item_image"
+        />
       {/if}
     </div>
     <div id="item_info">
@@ -73,14 +71,8 @@ odio. Nam vitae nibh eget porta velit, sem.`,
         class="bg-blue-200 text-blue-500 focus:outline-none w-1/2 py-2 rounded-3xl mx-1"
         disabled>Bid</button> -->
         <div class="mt-8">
-          <UserInfo
-            userType="Creator"
-            userName={assetsInfo.creator.user.username}
-          />
-          <UserInfo
-            userType="Owner"
-            userName={assetsInfo.owner.user.username}
-          />
+          <UserInfo userType="Creator" userName={assetsInfo.creator_name} />
+          <UserInfo userType="Owner" userName={assetsInfo.owner_name} />
         </div>
         <p class="text-gray-400 text-sm text-center mt-2">
           Service fee <span class="text-black font-bold">2.5%</span>, {price *

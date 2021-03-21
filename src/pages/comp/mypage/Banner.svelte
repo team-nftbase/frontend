@@ -1,5 +1,5 @@
 <script>
-  import { user } from "common/store/common.store.js";
+  import { user } from "../../../common/store/common.store";
   import Clipboard from "svelte-clipboard";
 
   let userData;
