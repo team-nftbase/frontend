@@ -66,7 +66,6 @@
 
 <style>
   p {
-    width: 136px;
     height: 16px;
     font-family: DM Sans;
     font-style: normal;
@@ -84,7 +83,7 @@
   }
 
   .title {
-    text-align: center;
+    /* text-align: center; */
     height: 47px;
 
     top: 690px;
@@ -96,7 +95,7 @@
     color: #000000;
   }
   .subTitle {
-    text-align: center;
+    /* text-align: center; */
     height: 31px;
 
     top: 737px;
