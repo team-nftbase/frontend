@@ -7,9 +7,12 @@
   let assetsList = [];
   import axios from "axios";
   import { base_url } from "common/properties.js";
-  
+
   onMount(async () => {
-    const response = await axios.post(base_url + "api/main/selectListAll", null);
+    const response = await axios.post(
+      base_url + "api/main/selectListAll",
+      null
+    );
     assetsList = response.data;
   });
 </script>
@@ -52,7 +55,7 @@
     background-size: cover;
   }
   #title {
-    width: 772px;
+    width: 900px;
     font-size: 72px;
     margin-bottom: 11px;
   }

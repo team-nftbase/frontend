@@ -35,7 +35,7 @@
   };
 
   async function handleUpload() {
-    if (!canSubmitted) {
+    if (!canSubmitted()) {
       alert("Check your items");
       return;
     }

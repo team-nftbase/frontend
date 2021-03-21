@@ -76,7 +76,7 @@
   }
 
   #title {
-    width: 176px;
+    width: 240px;
     height: 25px;
     font-family: DM Sans;
     font-style: normal;
@@ -88,7 +88,7 @@
   }
 
   #username {
-    width: 55px;
+    width: 240px;
     height: 17px;
     font-family: DM Sans;
     font-style: normal;
