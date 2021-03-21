@@ -6,6 +6,7 @@
     const unsubscribe = user.subscribe(async (value) => {
         userData = value;
     });
+    export let is_use_sns=true;
 </script>
 
 <div id="banner" class="w-full flex flex-col justify-center items-center">
@@ -34,6 +35,7 @@
             {/if}
         </div>
 
+        {#if is_use_sns == true}
         <div class="sns flex flex-col justify-center items-center">
             <button class="sns_content flex items-center">
                 <img src="images/instagram.png" alt="images/instagram.png" />
@@ -48,11 +50,17 @@
                 <p>Facebook URL</p>
             </button>
         </div>
+        {/if}
     </div>
 </div>
 
 <style>
-    #banner {
+
+  p {
+    font-size: 12px;
+  }
+
+  #banner {
     height: 335px;
     background-image: url(/images/Gradient.png);
     background-repeat: no-repeat;
@@ -114,7 +122,16 @@
     padding-left: 13px;
   }
 
+  .sns_content img {
+    margin-right : 19px;
+    width: 15px;
+    height: 15px;
+  }
+
   .sns_content p {
     color: #ffffff;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 16px;
   }
 </style>

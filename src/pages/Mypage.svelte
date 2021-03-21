@@ -1,4 +1,5 @@
 <script>
+  import { Link } from "svelte-routing";
   import { ItemList } from "common/comp/index.js";
   import { Banner } from "./comp/mypage";
 
@@ -21,7 +22,7 @@
 </script>
 
 <div>
-  <Banner/>
+  <Banner is_use_sns={true}/>
   <div class="profile flex flex-col justify-between items-center margin-top-100 ">
     <p class="title">Priyum Kochhar</p>
     <p class="subTitle">@priyum</p>
@@ -30,7 +31,10 @@
       themselves and quirky description.
     </p>
     <div class="w-full flex flex-row-reverse">
-      <button class="edit_profile_button flex justify-center items-center"><p>Edit Profile</p></button>
+      <div 
+        class="edit_profile_button flex justify-center items-center">
+        <Link to="editprofile"><p>Edit Profile</p></Link>
+      </div>
     </div>
     <ItemList {assetsList} />
   </div>
@@ -105,6 +109,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
+    margin-bottom : 57px;
   }
 
   .edit_profile_button p {
