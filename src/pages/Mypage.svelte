@@ -3,6 +3,11 @@
   import { ItemList } from "common/comp/index.js";
   import { Banner } from "./comp/mypage";
   import { HorizenLine } from "common/comp/index.js";
+  import { user } from "../common/store/common.store";
+    let userData;
+    const unsubscribe = user.subscribe(async (value) => {
+        userData = value;
+    });
 
   let tempAsset = {
     token_id:
