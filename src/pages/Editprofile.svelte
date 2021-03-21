@@ -3,8 +3,8 @@
     import { HorizenLine } from "common/comp/index.js";
 </script>
 
-<div>
-    <Banner is_use_sns={false} />
+<Banner is_use_sns={false} />
+<div class="flex justify-center">
     <div id="card" class="flex flex-col items-center justify-center">
         <p id="title">Edit your profile</p>
         <div
@@ -37,8 +37,13 @@
                     placeholder="Tell us a bit about yourselt"
                 />
                 <p class="input-label">Edit Cover Image</p>
-                <div id="edit-cover-image" class="flex justify-center items-center">
-                    <button class="upload_photo_button flex justify-center items-center">
+                <div
+                    id="edit-cover-image"
+                    class="flex justify-center items-center"
+                >
+                    <button
+                        class="upload_photo_button flex justify-center items-center"
+                    >
                         <p>Upload Photo</p>
                     </button>
                 </div>
@@ -55,6 +60,7 @@
 
 <style>
     #card {
+        width: 967px;
         margin: 136px 222px 104px 222px;
         background: #ffffff;
         box-shadow: 0px 19px 70px rgba(80, 101, 173, 0.12);
