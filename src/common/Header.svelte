@@ -98,6 +98,7 @@
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 </style>

@@ -1,27 +1,58 @@
 <script>
   import { _ } from "svelte-i18n";
+  import axios from "axios";
+  import { base_url } from "common/properties.js";
+  import { navigate } from "svelte-routing";
+  import { user } from "../common/store/common.store";
+  let userData;
+  user.subscribe(async (value) => {
+    userData = value;
+  });
 
   let preview;
+  let imagefile;
   let reader = new FileReader();
+  let listInfo = {};
 
-  async function handleUpload(data, callback) {
-    const formData = new FormData();
-    formData.append("file", data.file);
-    const request = await fetch(
-      "http://localhost:3000" + "/api/imageUpload/singleImage",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
-    let result = await request.json();
-    if (result) {
+  const imageChanged = (e) => {
+    if (e.target.files.length) {
       reader.readAsDataURL(e.target.files[0]);
       reader.onload = (e) => {
         preview = e.target.result;
       };
+      imagefile = e.target.files[0];
     } else {
       preview = "Fail to upload, please reupload file";
+    }
+  };
+
+  const handleChange = (e) => {
+    listInfo[e.target.name] = e.target.value;
+  };
+
+  const canSubmitted = () => {
+    return listInfo.name && listInfo.description && listInfo.royalty;
+  };
+
+  async function handleUpload() {
+    if (!canSubmitted) {
+      alert("Check your items");
+      return;
+    }
+    const formData = new FormData();
+    formData.append("file", imagefile);
+    formData.append("name", listInfo.name);
+    formData.append("description", listInfo.description);
+    formData.append("royalty", listInfo.royalty);
+    formData.append("user_id", userData.id);
+    const request = await axios.post(
+      base_url + "api/imageUpload/singleImage",
+      formData
+    );
+    if (request.data.result) {
+      navigate(`mypage`, { replace: true });
+    } else {
+      alert("Check your items");
     }
   }
 </script>
@@ -52,12 +83,14 @@
           type="file"
           on:change={(e) => {
             if (e.target.files.length > 0) {
-              handleUpload({ file: e.target.files[0] });
+              imageChanged(e);
             }
           }}
         />
-        <label for={"upload"}>
-          <button class="relative text-white border-0" style="margin-top:15px;"
+        <label for={"upload"} style="cursor:pointer;">
+          <button
+            class="relative text-white border-0"
+            style="margin-top:15px; z-index:-1;"
             ><img src="images/uploadButton.png" alt="uploadbutton" />
             <p id="btn_text">Choose Photo or Video</p></button
           >
@@ -66,23 +99,28 @@
 
       <div id="inputBox" class="flex flex-col border">
         <p class="font-bold" style="font-size:18px;">{$_("create.name")}</p>
-        <input placeholder="e.g T shirt" />
+        <input name="name" on:change={handleChange} placeholder="e.g T shirt" />
         <p class="font-bold" style="font-size:18px;">
           {$_("create.description")}
         </p>
         <textarea
-          name="Text1"
+          name="description"
+          on:change={handleChange}
           cols="40"
           rows="5"
           placeholder="e.g 이 제품은 메우 기깔 납니다."
         />
         <p class="font-bold" style="font-size:18px;">Royalties</p>
-        <input placeholder="% Of share of the secondary sales" />
+        <input
+          name="royalty"
+          on:change={handleChange}
+          placeholder="% Of share of the secondary sales"
+        />
         <p class="font-bold" style="font-size:18px; margin-bottom:26px;">
           Choose a collection
         </p>
 
-        <button class="collection flex items-center">
+        <button class="collection flex items-center" disabled>
           <img src="images/Emoji.png" alt="emoji" />
           Collection - First 5000 Days
         </button>
@@ -92,7 +130,9 @@
           NFTBase (NFTBASE$)
         </button>
 
-        <button id="btn_create_collection">Create a new collection</button>
+        <button id="btn_create_collection" disabled
+          >Create a new collection</button
+        >
       </div>
     </div>
     <div>
@@ -107,7 +147,7 @@
       </div>
 
       <div id="createBox" class="border flex justify-center items-center">
-        <button class="relative text-white border-0"
+        <button class="relative text-white border-0" on:click={handleUpload}
           ><img src="images/createButton.png" alt="createbutton" />
           <p id="btn_txt_create">{$_("create.create_item")}</p></button
         >

@@ -13,6 +13,7 @@
 	import Create from "./pages/Create.svelte";
 	import CreateSingle from "./pages/Create.single.svelte";
 	import Mypage from "./pages/Mypage.svelte";
+	import Editprofile from "./pages/Editprofile.svelte";
 	import GetWallet from "./pages/GetWallet.svelte";
 	import ItemDetail from "./pages/ItemDetail.svelte";
 
@@ -60,6 +61,7 @@
 		<Route path="create" component={Create} />
 		<Route path="create_single" component={CreateSingle} />
 		<Route path="mypage" component={Mypage} />
+		<Route path="editprofile" component={Editprofile} />
 		<Route path="getwallet" component={GetWallet} />
 		<Footer />
 	</div>

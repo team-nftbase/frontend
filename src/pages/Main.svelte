@@ -2,17 +2,15 @@
   import { onMount } from "svelte";
   import CardList from "./comp/main/CardList.svelte";
   import Tagbar from "./comp/main/Tagbar.svelte";
+  import { navigate } from "svelte-routing";
   import { _ } from "svelte-i18n";
   let assetsList = [];
-
+  import axios from "axios";
+  import { base_url } from "common/properties.js";
+  
   onMount(async () => {
-    const res = await fetch(
-      `https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=500`
-    );
-    const { assets } = await res.json();
-    assetsList = assets.filter(
-      (item) => item.animation_url || item.collection.image_url
-    );
+    const response = await axios.post(base_url + "api/main/selectListAll", null);
+    assetsList = response.data;
   });
 </script>
 
@@ -25,8 +23,11 @@
     <p id="subtitle" class="text-white">
       {$_("main.sub_title")}
     </p>
-    <button class="bg-black text-white border-0" on:click={() => {}}
-      >Explore artworks</button
+    <button
+      class="bg-black text-white border-0"
+      on:click={() => {
+        navigate(`explore`, { replace: true });
+      }}>Explore artworks</button
     >
   </div>
 </div>

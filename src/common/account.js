@@ -1,4 +1,6 @@
-import { user } from "./store/common.store";
+  import { base_url } from "./properties";
+  import { user } from "./store/common.store";
+  import axios from "axios";
 
 const walletCheck = () => {
   if (!window.ethereum) {
@@ -8,12 +10,18 @@ const walletCheck = () => {
   return true
 }
 
+const setAccountInfo = async (accounts) => {
+  if (!accounts || !accounts.length) return;
+  const userData = await axios.post(base_url + "api/account/login", { wallet: accounts[0] });
+  user.update((user) => {
+    user = { ...user, ...userData.data }
+    return user;
+  });
+}
+
 if (window.ethereum) {
   ethereum.on('accountsChanged', (accounts) => {
-    user.update((user) => {
-      user.wallet = accounts[0];
-      return user;
-    });
+    setAccountInfo(accounts);
   });
 
   ethereum.on('chainChanged', (chainId) => {
@@ -21,7 +29,7 @@ if (window.ethereum) {
   });
 
   ethereum.on('disconnect', err => {
-    console.log(err);
+    if (err) console.log(err);
     window.location.href = "/";
   });
 }
@@ -33,10 +41,9 @@ export const login = async () => {
     const accounts = await ethereum.request({
       method: "eth_requestAccounts",
     });
-    user.update((user) => {
-      user.wallet = accounts[0];
-      return user;
-    });
+
+    setAccountInfo(accounts);
+
   } catch (error) {
     if (error.code === -32002) {
       alert(
@@ -54,9 +61,6 @@ export const getwallet = async () => {
   if (!window.ethereum) return;
   const accounts = await ethereum.request({ method: "eth_accounts" });
   if (accounts) {
-    user.update((user) => {
-      user.wallet = accounts[0];
-      return user;
-    });
+    setAccountInfo(accounts);
   }
 }
