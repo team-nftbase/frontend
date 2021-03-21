@@ -65,8 +65,8 @@
       <THREE.PerspectiveCamera
         {scene}
         id="cam1"
-        pos={[0, 150, 300]}
-        lookAt={[0, 0, 0]}
+        pos={[0, 120, 240]}
+        rot={[0, 0, 0]}
         props={{
           far: 20000,
         }}
@@ -102,7 +102,7 @@
             ),
             side: THREE.DoubleSide,
           })}
-          pos={[-240 + i * 60, height, -zIndex_123[i] * 40]}
+          pos={[-340 + i * 60, height, -zIndex_123[i] * 40]}
           rot={[0, 3.14 * rotIndex_123[i] / 180, 0]}
           interact
           onPointerOver={triggerOnOverAni}
