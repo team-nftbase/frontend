@@ -2,28 +2,32 @@
   import { Link } from "svelte-routing";
   import { ItemList } from "common/comp/index.js";
   import { Banner } from "./comp/mypage";
+  import { HorizenLine } from "common/comp/index.js";
 
   let tempAsset = {
     token_id:
       "46025880712763272316592122038128663120854570524676624434522209160153639419905",
     name: "CryptoPunk #2145",
-    price: 1.50,
-    image_thumbnail_url: "https://lh3.googleusercontent.com/VqbZvsvsFHvggE6J4glL29he19_jBeitwxs-SiL90vS6pKQvQ69yhVubTX25aipanM62Z5691Q9lMc_JImW-izNnxXs2AHgAYQVko4w=s128",
+    price: 1.5,
+    image_thumbnail_url:
+      "https://lh3.googleusercontent.com/VqbZvsvsFHvggE6J4glL29he19_jBeitwxs-SiL90vS6pKQvQ69yhVubTX25aipanM62Z5691Q9lMc_JImW-izNnxXs2AHgAYQVko4w=s128",
     asset_contract: {
       address: "0x495f947276749ce646f68ac8c248420045cb7b5e",
     },
-    owner : {
-      user : {
-        username : "@priyum"
-      }
-    }
+    owner: {
+      user: {
+        username: "@priyum",
+      },
+    },
   };
   let assetsList = Array(8).fill({ ...tempAsset });
 </script>
 
 <div>
-  <Banner is_use_sns={true}/>
-  <div class="profile flex flex-col justify-between items-center margin-top-100 ">
+  <Banner is_use_sns={true} />
+  <div
+    class="profile flex flex-col justify-between items-center margin-top-100 "
+  >
     <p class="title">Priyum Kochhar</p>
     <p class="subTitle">@priyum</p>
     <p class="text">
@@ -31,17 +35,36 @@
       themselves and quirky description.
     </p>
     <div class="w-full flex flex-row-reverse">
-      <div 
-        class="edit_profile_button flex justify-center items-center">
+      <div class="edit_profile_button flex justify-center items-center">
         <Link to="editprofile"><p>Edit Profile</p></Link>
       </div>
     </div>
     <ItemList {assetsList} />
+    <div class="container flex justify-end" id="button_set">
+      <button class="btn_size">Sell</button>
+      <button class="flex justify-center items-center btn_size"
+        ><img
+          class="mr-2"
+          src="images/mypage/send.png"
+          alt="transfer"
+        />Transfer</button
+      >
+      <button class="flex justify-center items-center btn_size"
+        ><img
+          class="mr-2"
+          src="images/mypage/x-circle.png"
+          alt="cancel"
+        />Cancel</button
+      >
+      <!-- <button><img src="images/mypage/btn_sell.png" alt="btn_sell"/></button> -->
+    </div>
+    <HorizenLine width={471.5} />
+    <div style="margin-top:29px;" />
   </div>
 </div>
 
 <style>
-    p {
+  p {
     width: 136px;
     height: 16px;
     font-family: DM Sans;
@@ -109,7 +132,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
-    margin-bottom : 57px;
+    margin-bottom: 57px;
   }
 
   .edit_profile_button p {
@@ -124,5 +147,21 @@
     font-size: 18px;
     line-height: 23px;
     color: #ffffff;
+  }
+
+  #button_set {
+    margin-top: 66px;
+    margin-bottom: 34px;
+  }
+
+  .btn_size {
+    width: 156px;
+    height: 58px;
+    padding: 0px;
+    margin-right: 9px;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 19px 35px rgba(80, 101, 173, 0.25));
+    border-radius: 10px;
   }
 </style>
