@@ -1,61 +1,66 @@
 <script>
-    import { user } from "../../../common/store/common.store";
-    import Clipboard from "svelte-clipboard";
+  import { user } from "common/store/common.store.js";
+  import Clipboard from "svelte-clipboard";
 
-    let userData;
-    const unsubscribe = user.subscribe(async (value) => {
-        userData = value;
-    });
-    export let is_use_sns=true;
+  let userData;
+  const unsubscribe = user.subscribe(async (value) => {
+    userData = value;
+  });
+  export let is_use_sns = true;
 </script>
 
 <div id="banner" class="w-full flex flex-col justify-center items-center">
-    <p class="banner_text">Banner Image Here</p>
+  <p class="banner_text">Banner Image Here</p>
 
-    <div class="grid grid-cols-3 banner_bottom w-full items-center justify-items-center">
-        <div id="clipboard" class="flex flex-row items-center bg-black justify-between text-white border-0">
-            <p>{userData.wallet}</p>
-            <Clipboard
-                text={userData.wallet}
-                let:copy
-                on:copy={() => {
-                    alert("wallet has copied");
-                }}>
-                <button class="border-none text-2xl" on:click={copy}>
-                    <img src="images/copy.png" alt="copy_image" />
-                </button>
-            </Clipboard>
-        </div>
-
-        <div id="profile_image">
-            {#if userData && userData.image}
-                <img src="images/${userData.image}.png" alt="ExperimentalLogo"/>
-            {:else}
-                <img src="images/ExperimentalLogo.png" alt="ExperimentalLogo" />
-            {/if}
-        </div>
-
-        {#if is_use_sns == true}
-        <div class="sns flex flex-col justify-center items-center">
-            <button class="sns_content flex items-center">
-                <img src="images/instagram.png" alt="images/instagram.png" />
-                <p>Instagram Id</p>
-            </button>
-            <button class="sns_content flex items-center">
-                <img src="images/twitter.png" alt="images/twitter.png" />
-                <p>Twitter Username</p>
-            </button>
-            <button class="sns_content flex items-center">
-                <img src="images/facebook.png" alt="images/facebook.png" />
-                <p>Facebook URL</p>
-            </button>
-        </div>
-        {/if}
+  <div
+    class="grid grid-cols-3 banner_bottom w-full items-center justify-items-center"
+  >
+    <div
+      id="clipboard"
+      class="flex flex-row items-center bg-black justify-between text-white border-0"
+    >
+      <p>{userData.wallet}</p>
+      <Clipboard
+        text={userData.wallet}
+        let:copy
+        on:copy={() => {
+          alert("wallet has copied");
+        }}
+      >
+        <button class="border-none text-2xl" on:click={copy}>
+          <img src="images/copy.png" alt="copy_image" />
+        </button>
+      </Clipboard>
     </div>
+
+    <div id="profile_image">
+      {#if userData && userData.image}
+        <img src="images/${userData.image}.png" alt="ExperimentalLogo" />
+      {:else}
+        <img src="images/ExperimentalLogo.png" alt="ExperimentalLogo" />
+      {/if}
+    </div>
+
+    {#if is_use_sns == true}
+      <div class="sns flex flex-col justify-center items-center">
+        <button class="sns_content flex items-center">
+          <img src="images/instagram.png" alt="images/instagram.png" />
+          <p>Instagram Id</p>
+        </button>
+        <button class="sns_content flex items-center">
+          <img src="images/twitter.png" alt="images/twitter.png" />
+          <p>Twitter Username</p>
+        </button>
+        <button class="sns_content flex items-center">
+          <img src="images/facebook.png" alt="images/facebook.png" />
+          <p>Facebook URL</p>
+        </button>
+      </div>
+    {/if}
+  </div>
 </div>
 
 <style>
-
   p {
     font-size: 12px;
   }
@@ -123,7 +128,7 @@
   }
 
   .sns_content img {
-    margin-right : 19px;
+    margin-right: 19px;
     width: 15px;
     height: 15px;
   }
