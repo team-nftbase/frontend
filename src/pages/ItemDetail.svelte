@@ -53,7 +53,7 @@ odio. Nam vitae nibh eget porta velit, sem.`,
       {#if assetsInfo.image_thumbnail}
         <img
           id="main_image"
-          src={base_url+"images/"+assetsInfo.image_thumbnail}
+          src={base_url+"resource/"+assetsInfo.image_thumbnail}
           alt="item_image"
         />
       {/if}

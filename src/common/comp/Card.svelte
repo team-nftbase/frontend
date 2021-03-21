@@ -11,11 +11,11 @@
     <div class="flex justify-center">
       {#if itemInfo.image_thumbnail && itemInfo.image_thumbnail.slice(-3) !== "mp4"}
         <img
-          src={`${base_url}images/${itemInfo.image_thumbnail}`}
+          src={`${base_url}resource/${itemInfo.image_thumbnail}`}
           alt="main_image"
         />
       {:else if itemInfo.image_thumbnail}
-        <video src={`${base_url}images/${itemInfo.image_thumbnail}`}
+        <video src={`${base_url}resource/${itemInfo.image_thumbnail}`}
           ><track default kind="captions" />
           Sorry, your browser doesn't support embedded videos.
         </video>
