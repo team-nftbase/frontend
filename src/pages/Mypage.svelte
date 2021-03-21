@@ -7,6 +7,7 @@
   import { base_url } from "common/properties.js";
   import { HorizenLine } from "common/comp/index.js";
   import { user } from "../common/store/common.store";
+
   let userData;
   user.subscribe(async (value) => {
     userData = value;
@@ -14,9 +15,12 @@
   let assetsList = [];
 
   onMount(async () => {
-    const response = await axios.post(base_url + "api/mypage/selectListByUser", {
-      user_id: userData.id,
-    });
+    const response = await axios.post(
+      base_url + "api/mypage/selectListByUser",
+      {
+        user_id: userData.id,
+      }
+    );
     assetsList = response.data;
   });
 </script>
@@ -26,11 +30,10 @@
   <div
     class="profile flex flex-col justify-between items-center margin-top-100 "
   >
-    <p class="title">Priyum Kochhar</p>
-    <p class="subTitle">@priyum</p>
+    <p class="title">{userData.name}</p>
+    <p class="subTitle">@{userData.username}</p>
     <p class="text">
-      Priyum Kochhar is a 3D specialist about the artist etc lorem ipsum about
-      themselves and quirky description.
+      {userData.bio}
     </p>
     <div class="w-full flex flex-row-reverse">
       <div class="edit_profile_button flex justify-center items-center">
@@ -81,11 +84,10 @@
   }
 
   .title {
-    width: 276px;
+    text-align: center;
     height: 47px;
-    left: 582px;
-    top: 690px;
 
+    top: 690px;
     font-family: DM Sans;
     font-style: normal;
     font-weight: bold;
@@ -94,9 +96,9 @@
     color: #000000;
   }
   .subTitle {
-    width: 106px;
+    text-align: center;
     height: 31px;
-    left: 667px;
+
     top: 737px;
     font-family: DM Sans;
     font-style: normal;
