@@ -5,6 +5,7 @@
   import { Banner } from "./comp/mypage";
   import axios from "axios";
   import { base_url } from "common/properties.js";
+  import { HorizenLine } from "common/comp/index.js";
   import { user } from "../common/store/common.store";
   let userData;
   user.subscribe(async (value) => {
@@ -37,6 +38,26 @@
       </div>
     </div>
     <ItemList {assetsList} />
+    <div class="container flex justify-end" id="button_set">
+      <button class="btn_size">Sell</button>
+      <button class="flex justify-center items-center btn_size"
+        ><img
+          class="mr-2"
+          src="images/mypage/send.png"
+          alt="transfer"
+        />Transfer</button
+      >
+      <button class="flex justify-center items-center btn_size"
+        ><img
+          class="mr-2"
+          src="images/mypage/x-circle.png"
+          alt="cancel"
+        />Cancel</button
+      >
+      <!-- <button><img src="images/mypage/btn_sell.png" alt="btn_sell"/></button> -->
+    </div>
+    <HorizenLine width={471.5} />
+    <div style="margin-top:29px;" />
   </div>
 </div>
 
@@ -124,5 +145,21 @@
     font-size: 18px;
     line-height: 23px;
     color: #ffffff;
+  }
+
+  #button_set {
+    margin-top: 66px;
+    margin-bottom: 34px;
+  }
+
+  .btn_size {
+    width: 156px;
+    height: 58px;
+    padding: 0px;
+    margin-right: 9px;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 19px 35px rgba(80, 101, 173, 0.25));
+    border-radius: 10px;
   }
 </style>

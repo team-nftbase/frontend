@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import CardList from "./comp/main/CardList.svelte";
   import Tagbar from "./comp/main/Tagbar.svelte";
+  import { navigate } from "svelte-routing";
   import { _ } from "svelte-i18n";
   let assetsList = [];
   import axios from "axios";
@@ -22,8 +23,11 @@
     <p id="subtitle" class="text-white">
       {$_("main.sub_title")}
     </p>
-    <button class="bg-black text-white border-0" on:click={() => {}}
-      >Explore artworks</button
+    <button
+      class="bg-black text-white border-0"
+      on:click={() => {
+        navigate(`explore`, { replace: true });
+      }}>Explore artworks</button
     >
   </div>
 </div>
