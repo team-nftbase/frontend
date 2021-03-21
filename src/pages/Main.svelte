@@ -33,9 +33,9 @@
 </div>
 
 <div class="container mx-auto my-12">
-  <CardList title="Digital Art" list={assetsList.slice(0, 5)} />
-  <CardList title="Virtual Worlds" list={assetsList.slice(5, 10)} />
-  <CardList title="COLLECTIBLES" list={assetsList.slice(10, 15)} />
+  <CardList title="Digital Art" list={assetsList.slice(0, 4)} />
+  <CardList title="Virtual Worlds" list={assetsList.slice(4, 8)} />
+  <CardList title="COLLECTIBLES" list={assetsList.slice(8, 12)} />
 </div>
 
 <style>

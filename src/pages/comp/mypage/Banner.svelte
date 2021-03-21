@@ -35,7 +35,7 @@
 
     <div id="profile_image">
       {#if userData && userData.image}
-        <img src="images/${userData.image}.png" alt="ExperimentalLogo" />
+        <img src="resource/${userData.image}.png" alt="ExperimentalLogo" />
       {:else}
         <img src="images/ExperimentalLogo.png" alt="ExperimentalLogo" />
       {/if}

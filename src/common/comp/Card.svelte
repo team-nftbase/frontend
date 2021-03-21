@@ -10,9 +10,12 @@
   <div id="layout">
     <div class="flex justify-center">
       {#if itemInfo.image_thumbnail && itemInfo.image_thumbnail.slice(-3) !== "mp4"}
-        <img src={`${base_url}images/${itemInfo.image_thumbnail}`} alt="main_image" />
+        <img
+          src={`${base_url}resource/${itemInfo.image_thumbnail}`}
+          alt="main_image"
+        />
       {:else if itemInfo.image_thumbnail}
-        <video src={`${base_url}images/${itemInfo.image_thumbnail}`}
+        <video src={`${base_url}resource/${itemInfo.image_thumbnail}`}
           ><track default kind="captions" />
           Sorry, your browser doesn't support embedded videos.
         </video>
@@ -29,7 +32,7 @@
         <p id="title">{itemInfo.name}</p>
       {/if}
       {#if itemInfo.username}
-        <p id="username">{itemInfo.username}</p>
+        <p id="username">@{itemInfo.username}</p>
       {/if}
     </div>
 
@@ -37,7 +40,7 @@
       class="bid grid grid-cols-3 flex flex-row items-center jusify-items-center"
     >
       <div class="flex flex-col items-center">
-        <p class="currnt_bid">Current Bid</p>
+        <p class="currnt_bid">Current price</p>
         <p class="eth">{itemInfo.price} ETH</p>
       </div>
       <div class="flex flex-col justify-center items-center">
@@ -59,6 +62,7 @@
 
 <style>
   #layout {
+    width: 264px;
     box-shadow: 0px 9px 32px rgba(69, 109, 252, 0.1);
   }
   img {
@@ -124,14 +128,6 @@
   .heart_img {
     width: 22.65px;
     height: 20.51px;
-  }
-
-  .vl {
-    border-left: 1px solid #ffffff;
-    /* height: 500px; */
-    left: 50%;
-    margin-left: -3px;
-    top: 0;
   }
   .eye {
     width: 26px;
