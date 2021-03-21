@@ -1,17 +1,18 @@
 <script>
   import Link from "svelte-routing/src/Link.svelte";
   import { _ } from "svelte-i18n";
+  import { base_url } from "common/properties.js";
 
   export let itemInfo;
 </script>
 
-<Link to={`itemdetail/${itemInfo.asset_contract.address}/${itemInfo.token_id}`}>
+<Link to={`itemdetail/${itemInfo.id}`}>
   <div id="layout">
     <div class="flex justify-center">
-      {#if itemInfo.image_thumbnail_url && itemInfo.image_thumbnail_url.slice(-3) !== "mp4"}
-        <img src={itemInfo.image_thumbnail_url} alt="main_image" />
-      {:else if itemInfo.image_thumbnail_url}
-        <video src={itemInfo.image_thumbnail_url}
+      {#if itemInfo.image_thumbnail && itemInfo.image_thumbnail.slice(-3) !== "mp4"}
+        <img src={`${base_url}images/${itemInfo.image_thumbnail}`} alt="main_image" />
+      {:else if itemInfo.image_thumbnail}
+        <video src={`${base_url}images/${itemInfo.image_thumbnail}`}
           ><track default kind="captions" />
           Sorry, your browser doesn't support embedded videos.
         </video>
@@ -27,8 +28,8 @@
       {#if itemInfo.name}
         <p id="title">{itemInfo.name}</p>
       {/if}
-      {#if itemInfo.owner && itemInfo.owner.user && itemInfo.owner.user.username}
-        <p id="username">{itemInfo.owner.user.username}</p>
+      {#if itemInfo.username}
+        <p id="username">{itemInfo.username}</p>
       {/if}
     </div>
 

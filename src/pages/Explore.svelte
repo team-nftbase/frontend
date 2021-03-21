@@ -2,15 +2,14 @@
   import { onMount } from "svelte";
   import { Status, Collections, Categories } from "./comp/explore";
   import { ItemList } from "common/comp/index.js";
+  import axios from "axios";
+  import { base_url } from "common/properties.js";
 
   let assetsList = [];
   onMount(async () => {
-    const res = await fetch(
-      `https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=500`
-    );
-    const { assets } = await res.json();
-    assetsList = assets.filter((item) => item.image_thumbnail_url);
-    console.log(assetsList);
+    const assets = await axios.post(base_url + "api/explore/selectListAll", null);
+    assetsList = assets.data.filter((item) => item.image_thumbnail);
+    console.log(assets)
   });
 </script>
 

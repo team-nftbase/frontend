@@ -1,4 +1,5 @@
-  import { user } from "common/store/common.store.js";
+  import { base_url } from "./properties";
+  import { user } from "./store/common.store";
   import axios from "axios";
 
 const walletCheck = () => {
@@ -11,7 +12,7 @@ const walletCheck = () => {
 
 const setAccountInfo = async (accounts) => {
   if (!accounts || !accounts.length) return;
-  const userData = await axios.post("http://localhost:3000" + "/api/account/login", { wallet: accounts[0] });
+  const userData = await axios.post(base_url + "api/account/login", { wallet: accounts[0] });
   user.update((user) => {
     user = { ...user, ...userData.data }
     return user;

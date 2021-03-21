@@ -1,0 +1,3 @@
+// export const base_url = "https://nftbase.ai/"
+
+export const base_url = "http://localhost:3000/"

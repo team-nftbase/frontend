@@ -4,15 +4,12 @@
   import Tagbar from "./comp/main/Tagbar.svelte";
   import { _ } from "svelte-i18n";
   let assetsList = [];
-
+  import axios from "axios";
+  import { base_url } from "common/properties.js";
+  
   onMount(async () => {
-    const res = await fetch(
-      `https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=500`
-    );
-    const { assets } = await res.json();
-    assetsList = assets.filter(
-      (item) => item.animation_url || item.collection.image_url
-    );
+    const response = await axios.post(base_url + "api/main/selectListAll", null);
+    assetsList = response.data;
   });
 </script>
 

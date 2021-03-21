@@ -1,8 +1,9 @@
 <script>
   import { _ } from "svelte-i18n";
   import axios from "axios";
+  import { base_url } from "common/properties.js";
   import { navigate } from "svelte-routing";
-  import { user } from "common/store/common.store.js";
+  import { user } from "../common/store/common.store";
   let userData;
   user.subscribe(async (value) => {
     userData = value;
@@ -45,7 +46,7 @@
     formData.append("royalty", listInfo.royalty);
     formData.append("user_id", userData.id);
     const request = await axios.post(
-      "http://localhost:3000" + "/api/imageUpload/singleImage",
+      base_url + "api/imageUpload/singleImage",
       formData
     );
     if (request.data.result) {
