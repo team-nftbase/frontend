@@ -4,13 +4,13 @@
   <div class="flex flex-row bg-black" id="layout">
     <button on:click={() => {}}
       ><img
-        src="images/itemdetail/fa-solid_share-square.png"
+        src="/images/itemdetail/fa-solid_share-square.png"
         alt="share_icon"
       /></button
     >
     <button on:click={() => {}}
       ><img
-        src="images/itemdetail/ic_outline-fullscreen.png"
+        src="/images/itemdetail/ic_outline-fullscreen.png"
         alt="fullscreen_icon"
       /></button
     >

@@ -92,7 +92,7 @@
           id="mesh_2"
           geometry={new THREE.PlaneBufferGeometry(24, 34, 3)}
           material={new THREE.MeshBasicMaterial({
-            map: new THREE.TextureLoader().load(image.image_thumbnail),
+            map: new THREE.TextureLoader().load(base_url+"images/"+image.image_thumbnail),
             side: THREE.DoubleSide,
           })}
           pos={[-90 + (i % 10) * 35, 40, Math.floor(i / 6) * 50 - 100]}

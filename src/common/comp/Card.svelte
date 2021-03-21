@@ -29,7 +29,7 @@
         <p id="title">{itemInfo.name}</p>
       {/if}
       {#if itemInfo.username}
-        <p id="username">{itemInfo.username}</p>
+        <p id="username">@{itemInfo.username}</p>
       {/if}
     </div>
 
@@ -37,7 +37,7 @@
       class="bid grid grid-cols-3 flex flex-row items-center jusify-items-center"
     >
       <div class="flex flex-col items-center">
-        <p class="currnt_bid">Current Bid</p>
+        <p class="currnt_bid">Current price</p>
         <p class="eth">{itemInfo.price} ETH</p>
       </div>
       <div class="flex flex-col justify-center items-center">

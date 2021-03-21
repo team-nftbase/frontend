@@ -52,9 +52,9 @@
 		{/await} -->
 		<Route path="/"><Main /></Route>
 		<Route path="explore" component={Explore} />
-		<Route path="itemdetail/:contract_address/:token_id" let:params>
+		<!-- <Route path="itemdetail/:contract_address/:token_id" let:params>
 			<ItemDetail {params} />
-		</Route>
+		</Route> -->
 		<Route path="itemdetail/:item_id" let:params>
 			<ItemDetail {params} />
 		</Route>
