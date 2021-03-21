@@ -98,7 +98,7 @@
           geometry={new THREE.PlaneBufferGeometry(48, 68, 3)}
           material={new THREE.MeshBasicMaterial({
             map: new THREE.TextureLoader().load(
-              base_url + "images/" + image.image_thumbnail
+              base_url + "resource/" + image.image_thumbnail
             ),
             side: THREE.DoubleSide,
           })}
