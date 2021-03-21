@@ -2,19 +2,19 @@
   import * as THREE from "svelthree";
   import { navigate } from "svelte-routing";
   import { onMount } from "svelte";
+  import axios from "axios";
+  import { base_url } from "common/properties.js";
 
   import gsap from "gsap";
 
   let imageList = [];
 
   onMount(async () => {
-    const res = await fetch(
-      `https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=500`
+    const assets = await axios.post(
+      base_url + "api/explore/selectListAll",
+      null
     );
-    const { assets } = await res.json();
-    imageList = assets.filter(
-      (item) => item.animation_url || item.collection.image_url
-    );
+    imageList = assets.data.filter((item) => item.image_thumbnail);
   });
 
   let groundTexture = new THREE.TextureLoader().load(
@@ -92,19 +92,18 @@
           id="mesh_2"
           geometry={new THREE.PlaneBufferGeometry(24, 34, 3)}
           material={new THREE.MeshBasicMaterial({
-            map: new THREE.TextureLoader().load(
-              image.animation_url
-                ? image.animation_url
-                : image.collection.image_url
-            ),
+            map: new THREE.TextureLoader().load(image.image_thumbnail),
             side: THREE.DoubleSide,
           })}
           pos={[-90 + (i % 10) * 35, 40, Math.floor(i / 6) * 50 - 100]}
           interact
           onPointerOver={triggerOnOverAni}
           onPointerLeave={triggerOnOutAni}
-          on:click={()=>{
-            navigate(`itemdetail/${image.asset_contract.address}/${image.token_id}`, { replace: true });
+          on:click={() => {
+            navigate(
+              `itemdetail/${image.asset_contract.address}/${image.token_id}`,
+              { replace: true }
+            );
           }}
           castShadow
           receiveShadow
