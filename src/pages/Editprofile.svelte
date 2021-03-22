@@ -1,6 +1,12 @@
 <script>
     import { Banner } from "./comp/mypage";
     import { HorizenLine } from "common/comp/index.js";
+    import { user } from "../common/store/common.store";
+
+    let userData;
+        user.subscribe(async (value) => {
+        userData = value;
+    });
 </script>
 
 <Banner is_use_sns={false} />
@@ -49,7 +55,50 @@
                 </div>
             </div>
 
-            <div id="content-right" />
+            <div id="content-right" class="flex flex-col justify-center items-center">
+                {#if userData && userData.image}
+                    <img src="resource/${userData.image}.png" alt="ExperimentalLogo" />
+                {:else}
+                    <img src="images/ExperimentalLogo.png" alt="ExperimentalLogo" />
+                {/if}
+                <p id="content-right-title">Edit Profile Image</p>
+                <div style="margin-bottom:22px">
+                    <p id="content-right-sns-title">Social Links</p>
+                    <HorizenLine width={112}/>
+                </div>
+                <div class="content-right-sns-content flex flex-col items-center justify-center">
+                    <div style="margin-bottom:10px" class="sns-input-container flex jusity-center items-center">
+                        <div class="img-container flex flex-col justify-center items-center">
+                            <img src="images/instagram.png" alt="images/instagram.png">
+                        </div>                        
+                        <input
+                            style="padding-left:16%"
+                            class="sns-input border-0 focus:outline-none w-full"
+                            placeholder="Instagram Id"
+                        />
+                    </div>
+                    <div style="margin-bottom:10px" class="sns-input-container flex jusity-center items-center">
+                        <div class="img-container flex flex-col justify-center items-center">
+                            <img src="images/twitter.png" alt="images/twitter.png">
+                        </div>                        
+                        <input
+                            style="padding-left:16%"
+                            class="sns-input border-0 focus:outline-none w-full"
+                            placeholder="Twitter Username"
+                        />
+                    </div>
+                    <div style="margin-bottom:10px" class="sns-input-container flex jusity-center items-center">
+                        <div class="img-container flex flex-col justify-center items-center">
+                            <img src="images/facebook.png" alt="images/facebook.png">
+                        </div>                        
+                        <input
+                            style="padding-left:16%"
+                            class="sns-input border-0 focus:outline-none w-full"
+                            placeholder="Facebook URL"
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
 
         <button class="save flex justify-center items-center">
@@ -60,8 +109,8 @@
 
 <style>
     #card {
-        width: 967px;
-        margin: 136px 222px 104px 222px;
+        width: 70%;
+        margin: 9% 15% 7% 15%;
         background: #ffffff;
         box-shadow: 0px 19px 70px rgba(80, 101, 173, 0.12);
         border-radius: 15px;
@@ -171,6 +220,45 @@
         font-size: 18px;
         line-height: 23px;
         color: #ffffff;
+    }
+
+    #content-right-title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 31px;
+        margin-top: 27px;
+        margin-bottom: 60px;
+    }
+
+    #content-right-sns-title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .sns-input-container {
+        width: 254px;
+        height: 42px;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        box-shadow: 0px 19px 35px rgba(80, 101, 173, 0.25);
+        border-radius: 15px;
+    }
+
+    .img-container {
+        width: 58px;
+        height: 42px;
+        background: #000000;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        box-shadow: 0px 19px 35px rgba(80, 101, 173, 0.25);
+        border-radius: 15px;
+    }
+
+    .img-container img {
+
     }
 
     .save {
