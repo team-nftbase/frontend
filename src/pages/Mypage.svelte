@@ -15,6 +15,8 @@
   let assetsList = [];
 
   onMount(async () => {
+    console.log('userData')
+    console.log(userData)
     const response = await axios.post(
       base_url + "api/mypage/selectListByUser",
       {
@@ -42,7 +44,13 @@
     </div>
     <ItemList {assetsList} />
     <div class="container flex justify-end" id="button_set">
-      <button class="btn_size">Sell</button>
+      <button class="flex justify-center items-center btn_size background-gradient text-white">
+        <img
+          class="mr-2"  
+          src="images/mypage/sell.png"
+          alt="sell"
+        />Sell</button
+      >
       <button class="flex justify-center items-center btn_size"
         ><img
           class="mr-2"
@@ -162,5 +170,11 @@
     box-sizing: border-box;
     filter: drop-shadow(0px 19px 35px rgba(80, 101, 173, 0.25));
     border-radius: 10px;
+  }
+
+  .background-gradient {
+    background-image: url(/images/Gradient.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 </style>
