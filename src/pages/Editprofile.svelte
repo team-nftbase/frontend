@@ -7,6 +7,19 @@
         user.subscribe(async (value) => {
         userData = value;
     });
+
+    const imageChanged = (e) => {
+    if (e.target.files.length) {
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload = (e) => {
+        preview = e.target.result;
+      };
+      imagefile = e.target.files[0];
+    } else {
+      preview = "Fail to upload, please reupload file";
+    }
+  };
+
 </script>
 
 <Banner is_use_sns={false} />
@@ -56,11 +69,24 @@
             </div>
 
             <div id="content-right" class="flex flex-col justify-center items-center">
-                {#if userData && userData.image}
-                    <img src="resource/${userData.image}.png" alt="ExperimentalLogo" />
-                {:else}
-                    <img src="images/ExperimentalLogo.png" alt="ExperimentalLogo" />
-                {/if}
+                <input
+                    class="hidden"
+                    id="upload"
+                    name="upload"
+                    type="file"
+                    on:change={(e) => {
+                        if (e.target.files.length > 0) {
+                            imageChanged(e);
+                        }
+                    }}
+                    />
+                <label for={"upload"} style="cursor:pointer;">
+                    {#if userData && userData.image}
+                        <img src="resource/${userData.image}.png" alt="ExperimentalLogo" />
+                    {:else}
+                        <img src="images/ExperimentalLogo.png" alt="ExperimentalLogo" />
+                    {/if}
+                </label>
                 <p id="content-right-title">Edit Profile Image</p>
                 <div style="margin-bottom:22px">
                     <p id="content-right-sns-title">Social Links</p>
@@ -72,7 +98,7 @@
                             <img src="images/instagram.png" alt="images/instagram.png">
                         </div>                        
                         <input
-                            style="padding-left:16%"
+                            style="padding:0 0 0 16%;"
                             class="sns-input border-0 focus:outline-none w-full"
                             placeholder="Instagram Id"
                         />
@@ -82,7 +108,7 @@
                             <img src="images/twitter.png" alt="images/twitter.png">
                         </div>                        
                         <input
-                            style="padding-left:16%"
+                            style="padding:0 0 0 16%;"
                             class="sns-input border-0 focus:outline-none w-full"
                             placeholder="Twitter Username"
                         />
@@ -92,7 +118,7 @@
                             <img src="images/facebook.png" alt="images/facebook.png">
                         </div>                        
                         <input
-                            style="padding-left:16%"
+                            style="padding:0 0 0 16%;"
                             class="sns-input border-0 focus:outline-none w-full"
                             placeholder="Facebook URL"
                         />
@@ -243,7 +269,7 @@
         height: 42px;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        box-shadow: 0px 19px 35px rgba(80, 101, 173, 0.25);
+        box-shadow: 0px 10px 35px rgba(80, 101, 173, 0.25);
         border-radius: 15px;
     }
 
