@@ -15,8 +15,6 @@
   let assetsList = [];
 
   onMount(async () => {
-    console.log('userData')
-    console.log(userData)
     const response = await axios.post(
       base_url + "api/mypage/selectListByUser",
       {
