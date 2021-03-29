@@ -1,7 +1,8 @@
 {
   "common": {
     "price": "가격",
-    "no_assets": "등록된 자산이 없습니다."
+    "no_assets": "등록된 자산이 없습니다.",
+    "banner_here":"배너 이미지를 추가해 주세요."
   },
   "main": {
     "title": "가치있는 디지털 자산을 위한 마켓플레이스",
@@ -69,5 +70,10 @@
     "need_wallet": "NFTBase를 사용하기 위해 MetaMask가 필요합니다.",
     "get_metamask": "MetaMask 받기",
     "powered_by_wallet": "MetaMask가 제공하는 지갑은 디지털 상품과 암호 화폐를 안전하게 저장하는 데 사용됩니다."
+  },
+  "mypage":{
+    "edit_your_profile":"프로파일 정보를 수정해 주세요.",
+    "nickname":"닉네임",
+    "introduce_yourself":"자기소개를 수정해 주세요."
   }
 }

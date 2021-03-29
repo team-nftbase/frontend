@@ -3,6 +3,7 @@
   import { Link } from "svelte-routing";
   import { ItemList } from "common/comp/index.js";
   import { Banner } from "./comp/mypage";
+  import { _ } from "svelte-i18n";
   import axios from "axios";
   import { base_url } from "common/properties.js";
   import { HorizenLine } from "common/comp/index.js";
@@ -15,15 +16,15 @@
   let assetsList = [];
 
   onMount(async () => {
-    console.log('userData')
-    console.log(userData)
-    const response = await axios.post(
-      base_url + "api/mypage/selectListByUser",
-      {
-        user_id: userData.id,
-      }
-    );
-    assetsList = response.data;
+    if (userData.id) {
+      const response = await axios.post(
+        base_url + "api/mypage/selectListByUser",
+        {
+          user_id: userData.id,
+        }
+      );
+      assetsList = response.data;
+    }
   });
 </script>
 
@@ -32,10 +33,14 @@
   <div
     class="profile flex flex-col justify-between items-center margin-top-100 "
   >
-    <p class="title">{userData.name}</p>
-    <p class="subTitle">@{userData.username}</p>
+    <p class="title">
+      {userData.name ? userData.name : $_("mypage.edit_your_profile")}
+    </p>
+    <p class="subTitle">
+      @{userData.username ? userData.username : $_("mypage.nickname")}
+    </p>
     <p class="text">
-      {userData.bio}
+      {userData.bio ? userData.username : $_("mypage.introduce_yourself")}
     </p>
     <div class="w-full flex flex-row-reverse">
       <div class="edit_profile_button flex justify-center items-center">
@@ -44,12 +49,10 @@
     </div>
     <ItemList {assetsList} />
     <div class="container flex justify-end" id="button_set">
-      <button class="flex justify-center items-center btn_size background-gradient text-white">
-        <img
-          class="mr-2"  
-          src="images/mypage/sell.png"
-          alt="sell"
-        />Sell</button
+      <button
+        class="flex justify-center items-center btn_size background-gradient text-white"
+      >
+        <img class="mr-2" src="images/mypage/sell.png" alt="sell" />Sell</button
       >
       <button class="flex justify-center items-center btn_size"
         ><img

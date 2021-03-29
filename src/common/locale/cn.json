@@ -1,7 +1,8 @@
 {
   "common": {
     "price": "价码",
-    "no_assets": "没有注册资产"
+    "no_assets": "没有注册资产",
+    "banner_here":"编辑您的个人资料以更改横幅图像"
   },
   "main": {
     "title": "具价值数码资产的市场",
@@ -69,5 +70,10 @@
     "need_wallet": "要登录 NFTbase， 必须使用 Metamask 。",
     "get_metamask": "请安装Metamask",
     "powered_by_wallet": "你的钱包由MetaMask驱动，将用于安全地存储数字产品和密码货币。"
+  },
+  "mypage":{
+    "edit_your_profile":"编辑您的个人资料",
+    "nickname":"昵称",
+    "introduce_yourself":"自我介绍"
   }
 }
