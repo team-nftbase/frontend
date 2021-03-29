@@ -4,67 +4,66 @@
     import { user } from "../common/store/common.store";
 
     let userData;
-        user.subscribe(async (value) => {
+    user.subscribe(async (value) => {
         userData = value;
     });
 
-    let profilePreview = (userData && userData.image) ? userData.image : null;
+    let profilePreview = userData && userData.image ? userData.image : null;
     let imageFile;
     let coverImageFile;
     let reader = new FileReader();
     let profileInfo = {};
 
     const imageChanged = (e) => {
-      if (e.target.files.length) {
-        reader.readAsDataURL(e.target.files[0]);
-        reader.onload = (e) => {
-            profilePreview = e.target.result;
-        };
-        imageFile = e.target.files[0];
-      } else {
-        profilePreview = "Fail to upload, please reupload file";
-      }
+        if (e.target.files.length) {
+            reader.readAsDataURL(e.target.files[0]);
+            reader.onload = (e) => {
+                profilePreview = e.target.result;
+            };
+            imageFile = e.target.files[0];
+        } else {
+            profilePreview = "Fail to upload, please reupload file";
+        }
     };
 
     const coverImageChanged = (e) => {
-      if (e.target.files.length) {
-        reader.readAsDataURL(e.target.files[0]);
-        coverImageFile = e.target.files[0];
-      } else {
-        alert("Fail to upload, please reupload file") 
-      }
+        if (e.target.files.length) {
+            reader.readAsDataURL(e.target.files[0]);
+            coverImageFile = e.target.files[0];
+        } else {
+            alert("Fail to upload, please reupload file");
+        }
     };
 
-    const handleChange = e => {
+    const handleChange = (e) => {
         profileInfo[e.target.name] = e.target.value;
-    }
+    };
 
     async function editProfile() {
-        console.log('profileInfo')
-        console.log(profileInfo)
-        console.log('imageFile')
-        console.log(imageFile)
-        console.log('coverImageFile')
-        console.log(coverImageFile)
-    //   const formData = new FormData();
-    //   formData.append("name", profileInfo.name);
-    //   formData.append("username", profileInfo.username);
-    //   formData.append("email", profileInfo.email);
-    //   formData.append("bio", profileInfo.bio);
-    //   formData.append("cover", coverImageFile);
-    //   formData.append("image", imageFile);
+        console.log("profileInfo");
+        console.log(profileInfo);
+        console.log("imageFile");
+        console.log(imageFile);
+        console.log("coverImageFile");
+        console.log(coverImageFile);
+        //   const formData = new FormData();
+        //   formData.append("name", profileInfo.name);
+        //   formData.append("username", profileInfo.username);
+        //   formData.append("email", profileInfo.email);
+        //   formData.append("bio", profileInfo.bio);
+        //   formData.append("cover", coverImageFile);
+        //   formData.append("image", imageFile);
 
-    //   const request = await axios.post(
-    //     base_url + "api/profile/edit",
-    //     formData
-    //   );
-    //   if(request.data.result){
-    //     navigate(`mypage`, {replace : true});
-    //   } else {
-    //     alert("Check your info");
-    //   }
+        //   const request = await axios.post(
+        //     base_url + "api/profile/edit",
+        //     formData
+        //   );
+        //   if(request.data.result){
+        //     navigate(`mypage`, {replace : true});
+        //   } else {
+        //     alert("Check your info");
+        //   }
     }
-
 </script>
 
 <Banner is_use_sns={false} />
@@ -82,18 +81,43 @@
                 </p>
                 <HorizenLine width={112} />
                 <p class="input-label">Name</p>
-                <input name="name" class="content-input" placeholder="Full Name" on:change={handleChange}/>
+                <input
+                    name="name"
+                    class="content-input"
+                    placeholder="Full Name"
+                    on:change={handleChange}
+                />
                 <p class="input-label">Username</p>
-                <input name="username" class="content-input" placeholder="@username" on:change={handleChange}/>
+                <input
+                    name="username"
+                    class="content-input"
+                    placeholder="@username"
+                    on:change={handleChange}
+                />
                 <p class="input-label">Email ID</p>
-                <input name="email" class="content-input flex justify-center" placeholder="hello@emailid.com" on:change={handleChange}/>
+                <input
+                    name="email"
+                    class="content-input flex justify-center"
+                    placeholder="hello@emailid.com"
+                    on:change={handleChange}
+                />
                 <button class="send-email flex justify-center items-center">
                     <p>Send verification e-mail</p>
                 </button>
                 <p class="input-label">Bio</p>
-                <textarea name="bio" cols="40" rows="10" class="content-input-area flex justify-center" placeholder="Tell us a bit about yourselt" on:change={handleChange}/>
-                <p class="input-label">Edit Cover Image</p>
-                <div id="edit-cover-image" class="flex justify-center items-center">
+                <textarea
+                    name="bio"
+                    cols="40"
+                    rows="10"
+                    class="content-input-area flex justify-center"
+                    placeholder="Tell us a bit about yourselt"
+                    on:change={handleChange}
+                />
+                <p class="input-label">Edit your banner image</p>
+                <div
+                    id="edit-cover-image"
+                    class="flex justify-center items-center"
+                >
                     <input
                         class="hidden"
                         id="uploadPhoto"
@@ -106,14 +130,19 @@
                         }}
                     />
                     <label for={"uploadPhoto"} style="cursor:pointer;">
-                        <div class="upload_photo_button flex justify-center items-center">
+                        <div
+                            class="upload_photo_button flex justify-center items-center"
+                        >
                             <p>Upload Photo</p>
                         </div>
                     </label>
                 </div>
             </div>
 
-            <div id="content-right" class="flex flex-col justify-center items-center">
+            <div
+                id="content-right"
+                class="flex flex-col justify-center items-center"
+            >
                 <input
                     class="hidden"
                     id="upload"
@@ -127,21 +156,33 @@
                 />
                 <label for={"upload"} style="cursor:pointer;">
                     {#if profilePreview}
-                        <img src="resource/${profilePreview}.png" alt="ExperimentalLogo" />
+                        <img
+                            src="resource/${profilePreview}.png"
+                            alt="ExperimentalLogo"
+                        />
                     {:else}
-                        <img src="images/ExperimentalLogo.png" alt="ExperimentalLogo" />
+                        <img src="images/mypage/addimage.png" alt="addimage" />
                     {/if}
                 </label>
-                <p id="content-right-title">Edit Profile Image</p>
+                <p id="content-right-title">Edit your profile image</p>
                 <div style="margin-bottom:22px">
-                    <p id="content-right-sns-title">Social Links</p>
-                    <HorizenLine width={112}/>
+                    <p id="content-right-sns-title" class="text-center">
+                        Social Links
+                    </p>
+                    <HorizenLine width={112} />
                 </div>
-                <div class="content-right-sns-content flex flex-col items-center justify-center">
-                    <div style="margin-bottom:10px" class="sns-input-container flex jusity-center items-center">
-                        <div class="img-container flex flex-col justify-center items-center">
-                            <img src="images/instagram.png" alt="images/instagram.png">
-                        </div>                        
+                <div
+                    class="content-right-sns-content flex flex-col items-center justify-center"
+                >
+                    <div
+                        style="margin-bottom:10px"
+                        class="sns-input-container flex jusity-center items-center"
+                    >
+                        <div
+                            class="img-container flex flex-col justify-center items-center"
+                        >
+                            <img src="images/instagram.png" alt="instagram" />
+                        </div>
                         <input
                             name="instagram"
                             style="padding:0 0 0 16%;"
@@ -150,10 +191,15 @@
                             on:change={handleChange}
                         />
                     </div>
-                    <div style="margin-bottom:10px" class="sns-input-container flex jusity-center items-center">
-                        <div class="img-container flex flex-col justify-center items-center">
-                            <img src="images/twitter.png" alt="images/twitter.png">
-                        </div>                        
+                    <div
+                        style="margin-bottom:10px"
+                        class="sns-input-container flex jusity-center items-center"
+                    >
+                        <div
+                            class="img-container flex flex-col justify-center items-center"
+                        >
+                            <img src="images/twitter.png" alt="twitter" />
+                        </div>
                         <input
                             name="twitter"
                             style="padding:0 0 0 16%;"
@@ -162,10 +208,18 @@
                             on:change={handleChange}
                         />
                     </div>
-                    <div style="margin-bottom:10px" class="sns-input-container flex jusity-center items-center">
-                        <div class="img-container flex flex-col justify-center items-center">
-                            <img src="images/facebook.png" alt="images/facebook.png">
-                        </div>                        
+                    <div
+                        style="margin-bottom:10px"
+                        class="sns-input-container flex jusity-center items-center"
+                    >
+                        <div
+                            class="img-container flex flex-col justify-center items-center"
+                        >
+                            <img
+                                src="images/facebook.png"
+                                alt="images/facebook.png"
+                            />
+                        </div>
                         <input
                             name="facebook"
                             style="padding:0 0 0 16%;"
@@ -178,7 +232,10 @@
             </div>
         </div>
 
-        <button class="save flex justify-center items-center" on:click={editProfile}>
+        <button
+            class="save flex justify-center items-center"
+            on:click={editProfile}
+        >
             <p>Save Changes</p>
         </button>
     </div>
@@ -335,7 +392,6 @@
     }
 
     .img-container img {
-
     }
 
     .save {

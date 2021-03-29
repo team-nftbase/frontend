@@ -1,6 +1,7 @@
 <script>
   import { user } from "../../../common/store/common.store";
   import Clipboard from "svelte-clipboard";
+  import { _ } from "svelte-i18n";
 
   let userData;
   const unsubscribe = user.subscribe(async (value) => {
@@ -10,7 +11,7 @@
 </script>
 
 <div id="banner" class="w-full flex flex-col justify-center items-center">
-  <p class="banner_text">Banner Image Here</p>
+  <p class="banner_text text-center">{$_("common.banner_here")}</p>
 
   <div
     class="grid grid-cols-3 banner_bottom w-full items-center justify-items-center"
@@ -37,7 +38,7 @@
       {#if userData && userData.image}
         <img src="resource/${userData.image}.png" alt="ExperimentalLogo" />
       {:else}
-        <img src="images/ExperimentalLogo.png" alt="ExperimentalLogo" />
+        <img src="images/mypage/addimage.png" alt="addimage" />
       {/if}
     </div>
 
@@ -73,11 +74,11 @@
   }
 
   .banner_text {
-    width: 438px;
+    width: 620px;
     height: 62px;
     font-style: normal;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 24px;
     line-height: 62px;
     color: #ffffff;
   }
@@ -102,7 +103,9 @@
   #profile_image {
     width: 146px;
     height: 146px;
+    background-color: white;
     border-radius: 200px;
+    overflow:hidden;
   }
 
   .sns {

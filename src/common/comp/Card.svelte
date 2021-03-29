@@ -62,12 +62,11 @@
 
 <style>
   #layout {
-    width: 264px;
+    width: 100%;
     box-shadow: 0px 9px 32px rgba(69, 109, 252, 0.1);
   }
   img {
-    width: 264px;
-    height: 265px;
+    width: 100%;
   }
 
   .info {

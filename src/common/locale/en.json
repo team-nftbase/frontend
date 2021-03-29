@@ -1,7 +1,8 @@
 {
   "common": {
     "price": "price",
-    "no_assets": "no assets"
+    "no_assets": "You do not have any assets now",
+    "banner_here":"Edit your profile to change the banner image"
   },
   "main": {
     "title": "The New Metaverse Marketplace For NFT Items",
@@ -69,5 +70,10 @@
     "need_wallet": "You need an Metamask to use NFTBase.",
     "get_metamask": "Get MetaMask",
     "powered_by_wallet": "Your wallet, powered by MetaMask, will be used to securely store your digital goods and cryptocurrencies."
+  },
+  "mypage":{
+    "edit_your_profile":"Edit your profile",
+    "nickname":"nickname",
+    "introduce_yourself":"Introduce yourself"
   }
 }
