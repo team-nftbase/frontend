@@ -37,7 +37,7 @@
     </div>
 
     <div
-      class="bid grid grid-cols-3 flex flex-row items-center jusify-items-center"
+      class="bid grid grid-cols-3 items-center jusify-items-center"
     >
       <div class="flex flex-col items-center">
         <p class="currnt_bid">Current price</p>

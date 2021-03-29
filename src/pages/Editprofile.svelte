@@ -390,10 +390,6 @@
         box-shadow: 0px 19px 35px rgba(80, 101, 173, 0.25);
         border-radius: 15px;
     }
-
-    .img-container img {
-    }
-
     .save {
         width: 362px;
         height: 82px;

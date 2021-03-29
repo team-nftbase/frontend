@@ -1,7 +1,7 @@
 <script>
 
   export let imgURL;
-  export let width;
+  // export let width;
 </script>
 <div>
   {#if imgURL}
