@@ -73,8 +73,7 @@
 </script>
 
 <div id="showcase" class="flex justify-center">
-    <!-- <THREE.Canvas let:sti w={1536} h={800} interactive> -->
-    <THREE.Canvas let:sti w={809} h={537} interactive>
+    <THREE.Canvas let:sti w={1037} h={537} interactive>
         <THREE.Scene
             {sti}
             let:scene
@@ -189,10 +188,9 @@
 
 <style>
     #showcase {
-        width: 853px;
+        width: 100%;
         border: 0.5px solid #999999;
-        box-sizing: border-box;
         border-radius: 15px;
-        margin: 0 20px 0 20px;
+        overflow: hidden;
     }
 </style>
