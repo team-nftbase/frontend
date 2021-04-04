@@ -8,6 +8,7 @@
     import gsap from "gsap";
 
     let imageList = [];
+    let is_fullscreen = false;
     let height = 70;
     let zIndex = [1, 2, 3, 4, 5, 6, 7, 8, 8, 7, 6, 5, 4, 3, 2, 1];
     let zIndex_123 = [1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2, 1];
@@ -70,10 +71,52 @@
             ease: "elastic.out",
         });
     };
+
+    function openFullscreen() {
+        var elem = document.getElementById("showcase");
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+            /* Firefox */
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+            /* Chrome, Safari & Opera */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+            /* IE/Edge */
+            elem.msRequestFullscreen();
+        }
+    }
+
+    if (document.addEventListener) {
+        document.addEventListener(
+            "webkitfullscreenchange",
+            fsChangeHandler,
+            false
+        );
+        document.addEventListener(
+            "mozfullscreenchange",
+            fsChangeHandler,
+            false
+        );
+        document.addEventListener("fullscreenchange", fsChangeHandler, false);
+        document.addEventListener("MSFullscreenChange", fsChangeHandler, false);
+    }
+    function fsChangeHandler() {
+        if (
+            document.webkitIsFullScreen ||
+            document.mozFullScreen ||
+            document.msFullscreenElement !== undefined
+        ) {
+            is_fullscreen = true;
+        } else {
+            is_fullscreen = false;
+        }
+    }
 </script>
 
-<div id="showcase" class="flex justify-center">
-    <THREE.Canvas let:sti w={1037} h={537} interactive>
+<div id="showcase" class="flex justify-center relative">
+    <THREE.Canvas let:sti w={1038} h={537} interactive>
         <THREE.Scene
             {sti}
             let:scene
@@ -179,11 +222,19 @@
             {sti}
             sceneId="scene1"
             camId="cam1"
+            get
             config={{ antialias: true, alpha: true }}
             enableShadowMap
             shadowMapType={THREE.PCFSoftShadowMap}
         />
     </THREE.Canvas>
+    {#if !is_fullscreen}
+        <button
+            id="fullscreen"
+            class="absolute bg-black text-white rounded-lg"
+            on:click={openFullscreen}>Enter showroom</button
+        >
+    {/if}
 </div>
 
 <style>
@@ -192,5 +243,12 @@
         border: 0.5px solid #999999;
         border-radius: 15px;
         overflow: hidden;
+    }
+
+    #fullscreen {
+        width: 318px;
+        height: 72px;
+        left: 360px;
+        bottom: 0px;
     }
 </style>

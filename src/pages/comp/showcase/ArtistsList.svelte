@@ -3,16 +3,23 @@
     export let artistsList = [];
 </script>
 
-<div>
+<div class="mt-24">
     <p id="title">Artists Involved -</p>
-    <HorizenLine width={113} />
-    <div class="flex flex-rows" style="margin-top: 35px;">
+    <HorizenLine width={140} />
+    <div
+        id="artist_list"
+        class="flex flex-rows justify-between"
+        style="margin-top: 35px;"
+    >
         {#each artistsList as artists}
             <div class="flex flex-rows" style="margin-right:20px">
                 <div>
-                    <img src={artists.img} alt="tempShowRoom" />
+                    <img src={artists.img} alt="tempShowRoom" width="60px" />
                 </div>
-                <div class="flex flex-col items-center justify-center" style="margin-left:16px">
+                <div
+                    class="flex flex-col items-center justify-center"
+                    style="margin-left:16px"
+                >
                     <div>
                         <p class="name">@{artists.name}</p>
                     </div>
@@ -47,5 +54,11 @@
         font-weight: bold;
         font-size: 13px;
         line-height: 17px;
+    }
+
+    #artist_list {
+        box-shadow: 0px 11px 17px rgba(116, 134, 198, 0.2);
+        border-radius: 10px;
+        padding:40px;
     }
 </style>

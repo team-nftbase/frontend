@@ -48,28 +48,29 @@
       </div>
     </div>
     <ItemList {assetsList} />
-    <div class="container flex justify-end" id="button_set">
-      <button
-        class="flex justify-center items-center btn_size background-gradient text-white"
-      >
-        <img class="mr-2" src="images/mypage/sell.png" alt="sell" />Sell</button
-      >
-      <button class="flex justify-center items-center btn_size"
-        ><img
-          class="mr-2"
-          src="images/mypage/send.png"
-          alt="transfer"
-        />Transfer</button
-      >
-      <button class="flex justify-center items-center btn_size"
-        ><img
-          class="mr-2"
-          src="images/mypage/x-circle.png"
-          alt="cancel"
-        />Cancel</button
-      >
-      <!-- <button><img src="images/mypage/btn_sell.png" alt="btn_sell"/></button> -->
-    </div>
+    {#if assetsList.length !== 0}
+      <div class="container flex justify-end" id="button_set">
+        <button
+          class="flex justify-center items-center btn_size background-gradient"
+        >
+          <i class="fas fa-tag text-2xl mr-2" />
+          <p>Sell</p>
+        </button>
+        <button
+          class="flex justify-center items-center btn_size background-gradient"
+        >
+          <i class="far fa-paper-plane text-2xl mr-2" />
+          <p>Transfer</p>
+        </button>
+        <button
+          class="flex justify-center items-center btn_size background-gradient"
+        >
+          <i class="far fa-times-circle text-2xl mr-2" />
+          <p>Cancel</p>
+        </button>
+        <!-- <button><img src="images/mypage/btn_sell.png" alt="btn_sell"/></button> -->
+      </div>
+    {/if}
     <HorizenLine width={471.5} />
     <div style="margin-top:29px;" />
   </div>
@@ -83,6 +84,13 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
+  }
+
+  .background-gradient:hover {
+    background-image: url(/images/Gradient.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
   }
   .profile {
     margin-left: 150px;
@@ -173,11 +181,5 @@
     box-sizing: border-box;
     filter: drop-shadow(0px 19px 35px rgba(80, 101, 173, 0.25));
     border-radius: 10px;
-  }
-
-  .background-gradient {
-    background-image: url(/images/Gradient.png);
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 </style>

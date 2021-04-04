@@ -11,7 +11,7 @@
   {/each}
 </div>
 {#if assetsList.length === 0}
-  <div>
+  <div class="mb-24">
     <p class="flex justify-center items-center mt-24">{$_("common.no_assets")}</p>
   </div>
 {/if}

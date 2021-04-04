@@ -59,12 +59,15 @@
 
 <div id="container" class="container mx-auto flex flex-col items-center">
   <div class="flex" style="width:976px;">
-    <div
+    <button
       id="back"
+      on:click={() => {
+        navigate(`create`, { replace: true });
+      }}
       class="rounded-full bg-black flex items-center justify-center"
     >
       <img src="images/arrow-left.png" alt="arrow" />
-    </div>
+    </button>
     <p id="title">{$_("create.create_single_collectible")}</p>
   </div>
   <div style="width:976px;">
@@ -99,7 +102,11 @@
 
       <div id="inputBox" class="flex flex-col border">
         <p class="font-bold" style="font-size:18px;">{$_("create.name")}</p>
-        <input name="name" on:change={handleChange} placeholder="e.g T shirt" />
+        <input
+          name="name"
+          on:change={handleChange}
+          placeholder="Enter the name of your NFT item"
+        />
         <p class="font-bold" style="font-size:18px;">
           {$_("create.description")}
         </p>
@@ -108,7 +115,7 @@
           on:change={handleChange}
           cols="40"
           rows="5"
-          placeholder="e.g 이 제품은 메우 기깔 납니다."
+          placeholder="Enter introduction of this NFT item"
         />
         <p class="font-bold" style="font-size:18px;">Royalties</p>
         <input

@@ -2,6 +2,7 @@
   import { Link } from "svelte-routing";
   import { user } from "./store/common.store";
   import { login } from "./account";
+  import { SNSIcon } from "common/comp/index.js";
 
   let userData = true;
 
@@ -44,8 +45,12 @@
       </div>
     </div>
     <div />
-    <div class="flex justify-end">
-      <p id="socialLink">SOCIAL MEDIA LINKS</p>
+    <div class="flex justify-end items-center">
+      <SNSIcon name="fab fa-medium-m" href="https://nftbase.medium.com/" />
+      <SNSIcon name="fab fa-github" href="https://github.com/nftbase" />
+      <SNSIcon name="fab fa-twitter" href="https://twitter.com/BaseNFT" />
+      <SNSIcon name="fab fa-telegram-plane" href="https://t.me/nftbase" />
+      <SNSIcon name="fas fa-envelope" href="contact@nftbase.ai" />
     </div>
   </div>
 </div>
@@ -65,9 +70,5 @@
 
   #footerLogo {
     margin-top: 2.37px;
-  }
-  #socialLink {
-    color: white;
-    font-size: 36px;
   }
 </style>
