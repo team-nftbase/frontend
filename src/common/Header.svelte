@@ -13,7 +13,7 @@
 </script>
 
 <div
-  class="flex flex-col justify-between items-center px-5 py-2"
+  class="flex justify-center px-5 py-2"
   id="header_container"
 >
   <div class="flex flex-col w-full sm:w-auto sm:flex-row items-center">

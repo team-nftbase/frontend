@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Router, Route } from "svelte-routing";
 	import Header from "common/Header.svelte";
+	import BannerLanguage from "common/BannerLanguage.svelte";
 	import Footer from "common/Footer.svelte";
 
 	import { getwallet } from "./common/account";
@@ -44,6 +45,8 @@
 
 <Router {url}>
 	<div>
+		<BannerLanguage/>
+		<hr/>
 		<Header />
 		<!-- {#await balance}
 			<span>waiting...</span>

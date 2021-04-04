@@ -3,7 +3,7 @@
     export let showcaseList = [];
 </script>
 
-<div class="border-radius" style="width:250px; padding:0 20px 0">
+<div class="border border-gray-400 rounded-xl" style="width:250px; padding:0 20px 0">
     <p id="title">Live Showrooms</p>
     <HorizenLine width={113} />
     {#each showcaseList as showcase}
@@ -15,12 +15,6 @@
 </div>
 
 <style>
-    .border-radius {
-        border: 0.5px solid #000000;
-        box-sizing: border-box;
-        border-radius: 15px;
-    }
-
     #title {
         font-style: normal;
         font-weight: 500;
