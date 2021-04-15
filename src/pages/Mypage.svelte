@@ -15,6 +15,8 @@
   });
   let assetsList = [];
 
+  let status = "normal";
+
   onMount(async () => {
     if (userData.id) {
       const response = await axios.post(
@@ -26,6 +28,18 @@
       assetsList = response.data;
     }
   });
+
+  const handleSell = () => {
+    status = "sell";
+  };
+
+  const handleTransfer = () => {
+    status = "transfer";
+  };
+
+  const handleCancel = () => {
+    status = "normal";
+  };
 </script>
 
 <div>
@@ -51,19 +65,28 @@
     {#if assetsList.length !== 0}
       <div class="container flex justify-end" id="button_set">
         <button
-          class="flex justify-center items-center btn_size background-gradient"
+          class={status === "transfer"
+            ? "hidden w-0 h-0"
+            : "flex justify-center items-center btn_size background-gradient"}
+          on:click={handleSell}
         >
           <i class="fas fa-tag text-2xl mr-2" />
           <p>Sell</p>
         </button>
         <button
-          class="flex justify-center items-center btn_size background-gradient"
+          class={status === "sell"
+            ? "hidden w-0 h-0"
+            : "flex justify-center items-center btn_size background-gradient"}
+          on:click={handleTransfer}
         >
           <i class="far fa-paper-plane text-2xl mr-2" />
           <p>Transfer</p>
         </button>
         <button
-          class="flex justify-center items-center btn_size background-gradient"
+          class={status === "normal"
+            ? "hidden w-0 h-0"
+            : "flex justify-center items-center btn_size background-gradient"}
+          on:click={handleCancel}
         >
           <i class="far fa-times-circle text-2xl mr-2" />
           <p>Cancel</p>
