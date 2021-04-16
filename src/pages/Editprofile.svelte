@@ -1,4 +1,6 @@
 <script>
+    import axios from "axios";
+    import { base_url } from "common/properties.js";
     import { Banner } from "./comp/mypage";
     import { HorizenLine } from "common/comp/index.js";
     import { user } from "../common/store/common.store";
@@ -14,22 +16,50 @@
     let reader = new FileReader();
     let profileInfo = {};
 
-    const imageChanged = (e) => {
+    const imageChanged = async (e) => {
         if (e.target.files.length) {
             reader.readAsDataURL(e.target.files[0]);
             reader.onload = (e) => {
                 profilePreview = e.target.result;
             };
             imageFile = e.target.files[0];
+
+            const formData = new FormData();
+            formData.append("user_id", userData.id);
+            formData.append("file", imageFile);
+
+            const request = await axios.post(
+                base_url + "api/account/editProfileImage",
+                formData
+            );
+            if (request.data.result) {
+                navigate(`mypage`, { replace: true });
+            } else {
+                alert("Check your info");
+            }
         } else {
             profilePreview = "Fail to upload, please reupload file";
         }
     };
 
-    const coverImageChanged = (e) => {
+    const coverImageChanged = async (e) => {
         if (e.target.files.length) {
             reader.readAsDataURL(e.target.files[0]);
             coverImageFile = e.target.files[0];
+
+            const formData = new FormData();
+            formData.append("user_id", userData.id);
+            formData.append("file", coverImageFile);
+
+            const request = await axios.post(
+                base_url + "api/account/editProfileBanner",
+                formData
+            );
+            if (request.data.result) {
+                navigate(`mypage`, { replace: true });
+            } else {
+                alert("Check your info");
+            }
         } else {
             alert("Fail to upload, please reupload file");
         }
@@ -40,29 +70,15 @@
     };
 
     async function editProfile() {
-        console.log("profileInfo");
-        console.log(profileInfo);
-        console.log("imageFile");
-        console.log(imageFile);
-        console.log("coverImageFile");
-        console.log(coverImageFile);
-        //   const formData = new FormData();
-        //   formData.append("name", profileInfo.name);
-        //   formData.append("username", profileInfo.username);
-        //   formData.append("email", profileInfo.email);
-        //   formData.append("bio", profileInfo.bio);
-        //   formData.append("cover", coverImageFile);
-        //   formData.append("image", imageFile);
-
-        //   const request = await axios.post(
-        //     base_url + "api/profile/edit",
-        //     formData
-        //   );
-        //   if(request.data.result){
-        //     navigate(`mypage`, {replace : true});
-        //   } else {
-        //     alert("Check your info");
-        //   }
+        const request = await axios.post(base_url + "api/account/editProfile", {
+            ...profileInfo,
+            user_id: userData.id,
+        });
+        if (request.data.result) {
+            navigate(`mypage`, { replace: true });
+        } else {
+            alert("Check your info");
+        }
     }
 </script>
 
