@@ -42,6 +42,7 @@
     "svelte-i18n": "^3.3.0",
     "svelte-routing": "^1.5.0",
     "svelte-skeleton": "^1.0.1",
+    "svelte-spa-history-router": "^2.0.0",
     "svelte-web3": "^1.2.9",
     "truffle-contract": "^4.0.31",
     "web3": "^1.3.4"

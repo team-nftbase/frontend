@@ -1,12 +1,16 @@
 <script>
-  import Link from "svelte-routing/src/Link.svelte";
+  // import Link from "svelte-routing/src/Link.svelte";
   import { _ } from "svelte-i18n";
   import { base_url } from "common/properties.js";
-
+  import { push } from "svelte-spa-history-router";
   export let itemInfo;
+
+  const handleCard = () => {
+    push(`itemdetail/${itemInfo.id}`);
+  };
 </script>
 
-<Link to={`itemdetail/${itemInfo.id}`}>
+<div on:click={handleCard}>
   <div id="layout">
     <div class="flex justify-center">
       {#if itemInfo.image_thumbnail && itemInfo.image_thumbnail.slice(-3) !== "mp4"}
@@ -36,9 +40,7 @@
       {/if}
     </div>
 
-    <div
-      class="bid grid grid-cols-3 items-center jusify-items-center"
-    >
+    <div class="bid grid grid-cols-3 items-center jusify-items-center">
       <div class="flex flex-col items-center">
         <p class="currnt_bid">Current price</p>
         <p class="eth">{itemInfo.price} ETH</p>
@@ -58,7 +60,7 @@
       </div>
     </div>
   </div>
-</Link>
+</div>
 
 <style>
   #layout {
