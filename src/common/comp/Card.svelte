@@ -6,7 +6,7 @@
   export let itemInfo;
 
   const handleCard = () => {
-    push(`itemdetail/${itemInfo.id}`);
+    navigate(`itemdetail/${itemInfo.id}`, {replace : true});
   };
 </script>
 
