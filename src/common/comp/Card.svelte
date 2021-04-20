@@ -2,11 +2,18 @@
   // import Link from "svelte-routing/src/Link.svelte";
   import { _ } from "svelte-i18n";
   import { base_url } from "common/properties.js";
-  import { push } from "svelte-spa-history-router";
+  import { navigate } from "svelte-routing";
   export let itemInfo;
+  export let status;
+  export let checkedItems;
 
   const handleCard = () => {
-    navigate(`itemdetail/${itemInfo.id}`, {replace : true});
+    if (status === "normal") {
+      navigate(`itemdetail/${itemInfo.id}`, { replace: true });
+    } else {
+      checkedItems.push(itemInfo.id);
+      console.log(checkedItems);
+    }
   };
 </script>
 

@@ -16,6 +16,7 @@
   let assetsList = [];
 
   let status = "normal";
+  let checkedItems = [];
 
   onMount(async () => {
     if (userData.id) {
@@ -61,7 +62,7 @@
         <Link to="editprofile"><p>Edit Profile</p></Link>
       </div>
     </div>
-    <ItemList {assetsList} />
+    <ItemList {assetsList} {status} {checkedItems}/>
     {#if assetsList.length !== 0}
       <div class="container flex justify-end" id="button_set">
         <button
