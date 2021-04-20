@@ -74,6 +74,10 @@
   "mypage":{
     "edit_your_profile":"프로파일 정보를 수정해 주세요.",
     "nickname":"닉네임",
-    "introduce_yourself":"자기소개를 수정해 주세요."
+    "introduce_yourself":"자기소개를 수정해 주세요.",
+    "edit_profile":"프로필 수정",
+    "sell":"sell",
+    "transfer":"transfer",
+    "cancel":"cancel"
   }
 }

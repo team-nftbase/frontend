@@ -74,6 +74,10 @@
   "mypage":{
     "edit_your_profile":"编辑您的个人资料",
     "nickname":"昵称",
-    "introduce_yourself":"自我介绍"
+    "introduce_yourself":"自我介绍",
+    "edit_profile":"Edit Profile",
+    "sell":"sell",
+    "transfer":"transfer",
+    "cancel":"cancel"
   }
 }

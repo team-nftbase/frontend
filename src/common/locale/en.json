@@ -74,6 +74,10 @@
   "mypage":{
     "edit_your_profile":"Edit your profile",
     "nickname":"nickname",
-    "introduce_yourself":"Introduce yourself"
+    "introduce_yourself":"Introduce yourself",
+    "edit_profile":"Edit Profile",
+    "sell":"sell",
+    "transfer":"transfer",
+    "cancel":"cancel"
   }
 }
