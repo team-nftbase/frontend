@@ -3,13 +3,11 @@
   import { _ } from "svelte-i18n";
 
   export let assetsList;
-  export let status = "normal";
-  export let checkedItems = [];
 </script>
 
 <div class="grid grid-cols-4 gap-4 mt-2">
   {#each assetsList as itemInfo}
-    <Card {itemInfo} {status} {checkedItems} />
+    <Card {itemInfo} />
   {/each}
 </div>
 {#if assetsList.length === 0}

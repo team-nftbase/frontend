@@ -8,15 +8,17 @@
   import { base_url } from "common/properties.js";
   import { HorizenLine } from "common/comp/index.js";
   import { user } from "../common/store/common.store";
+  import { status, checkedItems } from "./store/mypage.store";
 
   let userData;
   user.subscribe(async (value) => {
     userData = value;
   });
+  let statusData;
+  status.subscribe(async (value) => {
+    statusData = value;
+  });
   let assetsList = [];
-
-  let status = "normal";
-  let checkedItems = [];
 
   onMount(async () => {
     if (userData.id) {
@@ -31,15 +33,15 @@
   });
 
   const handleSell = () => {
-    status = "sell";
+    status.update((value) => "sell");
   };
 
   const handleTransfer = () => {
-    status = "transfer";
+    status.update((value) => "transfer");
   };
 
   const handleCancel = () => {
-    status = "normal";
+    status.update((value) => "normal");
   };
 </script>
 
@@ -62,11 +64,11 @@
         <Link to="editprofile"><p>Edit Profile</p></Link>
       </div>
     </div>
-    <ItemList {assetsList} {status} {checkedItems}/>
+    <ItemList {assetsList} />
     {#if assetsList.length !== 0}
       <div class="container flex justify-end" id="button_set">
         <button
-          class={status === "transfer"
+          class={statusData === "transfer"
             ? "hidden w-0 h-0"
             : "flex justify-center items-center btn_size background-gradient"}
           on:click={handleSell}
@@ -75,7 +77,7 @@
           <p>Sell</p>
         </button>
         <button
-          class={status === "sell"
+          class={statusData === "sell"
             ? "hidden w-0 h-0"
             : "flex justify-center items-center btn_size background-gradient"}
           on:click={handleTransfer}
@@ -84,7 +86,7 @@
           <p>Transfer</p>
         </button>
         <button
-          class={status === "normal"
+          class={statusData === "normal"
             ? "hidden w-0 h-0"
             : "flex justify-center items-center btn_size background-gradient"}
           on:click={handleCancel}

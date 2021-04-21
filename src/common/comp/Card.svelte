@@ -4,15 +4,28 @@
   import { base_url } from "common/properties.js";
   import { navigate } from "svelte-routing";
   export let itemInfo;
-  export let status;
-  export let checkedItems;
+  import { status, checkedItems } from "../../pages/store/mypage.store";
+
+  let statusData;
+  status.subscribe(async (value) => {
+    statusData = value;
+  });
+
+  let checkedItemsData;
+  checkedItems.subscribe(async (value) => {
+    checkedItemsData = value;
+    console.log(checkedItemsData);
+  });
 
   const handleCard = () => {
-    if (status === "normal") {
+    if (statusData === "normal") {
       navigate(`itemdetail/${itemInfo.id}`, { replace: true });
+    } else if (checkedItemsData.filter((item) => item === itemInfo.id).length) {
+      let temp = checkedItemsData.filter((item) => item !== itemInfo.id);
+      checkedItems.update((value) => temp);
     } else {
-      checkedItems.push(itemInfo.id);
-      console.log(checkedItems);
+      let temp = [...checkedItemsData, itemInfo.id];
+      checkedItems.update((value) => temp);
     }
   };
 </script>

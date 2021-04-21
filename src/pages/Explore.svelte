@@ -9,7 +9,6 @@
   onMount(async () => {
     const assets = await axios.post(base_url + "api/explore/selectListAll", null);
     assetsList = assets.data.filter((item) => item.image_thumbnail);
-    console.log(assets)
   });
 </script>
 

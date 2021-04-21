@@ -6,8 +6,6 @@
 
   export let list;
   export let title;
-  let status='normal';
-  let checkedItems=[];
 </script>
 
 <div class="flex justify-between mt-12 mb-3">
@@ -27,7 +25,7 @@
   class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-4"
 >
   {#each list as itemInfo}
-    <Card {itemInfo} {status} {checkedItems}/>
+    <Card {itemInfo}/>
   {/each}
   {#if !list.length}
     {#each [0, 1, 2, 3] as item}
