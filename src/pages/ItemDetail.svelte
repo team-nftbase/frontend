@@ -5,6 +5,7 @@
   import axios from "axios";
   import ethPrice from "eth-price";
   import { base_url } from "common/properties.js";
+  import { _ } from "svelte-i18n";
 
   let assetsInfo = {},
     ethprice = "0",
@@ -63,9 +64,9 @@ odio. Nam vitae nibh eget porta velit, sem.`,
         <p id="title">{assetsInfo.name}</p>
         <PriceInfo price={assetsInfo.price} {ethpricenum} />
         <p class="border-2 rounded-3xl w-12 text-center my-6">Art</p>
-        <p id="desc_title">Description -</p>
+        <p id="desc_title">{$_("itemdetail.description")}</p>
         <p id="description">{assetsInfo.description}</p>
-        <button id="buy_button"><p>Buy</p></button>
+        <button id="buy_button"><p>{$_("itemdetail.buy")}</p></button>
         <HorizenLine width={176.5} />
         <!-- <button
         class="bg-blue-200 text-blue-500 focus:outline-none w-1/2 py-2 rounded-3xl mx-1"
@@ -75,7 +76,7 @@ odio. Nam vitae nibh eget porta velit, sem.`,
           <UserInfo userType="Owner" userName={assetsInfo.owner_name} />
         </div>
         <p class="text-gray-400 text-sm text-center mt-2">
-          Service fee <span class="text-black font-bold">2.5%</span>, {price *
+          {$_("itemdetail.service_fee")} <span class="text-black font-bold">2.5%</span>, {price *
             2.5}ETH ${Math.ceil(price * 2.5 * ethpricenum)}
         </p>
       {/if}

@@ -7,7 +7,26 @@
   "main": {
     "title": "具价值数码资产的市场",
     "sub_title": "你可以购买、出售、拥有数字资产 - 艺术、ENS领域、游戏项目、收藏品",
-    "view_all": "全看"
+    "view_all": "全看",
+    "explore_artworks": "Explore artworks"
+  },
+  "tagbar": {
+    "art": "Art",
+    "domains": "Domains",
+    "virtual_worlds": "Virtual Worlds",
+    "collectibles": "Collectibles",
+    "game": "Game",
+    "defi": "DeFi",
+    "others": "Others"
+  },
+  "card":{
+    "current_price" : "Current price",
+    "view": "View"
+  },
+  "itemdetail": {
+    "description": "Description -",
+    "buy": "Buy",
+    "service_fee": "Service fee"
   },
   "fnq": {
     "whatisnft": "什么是NFT？",

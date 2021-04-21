@@ -1,16 +1,17 @@
 <script>
   import { Link } from "svelte-routing";
+  import { _ } from "svelte-i18n";
 </script>
 
 <div class="flex justify-center">
   <div class="flex flex-row bg-black" id="layout">
-    <Link to="explore"><p id="art">Art</p></Link>
-    <Link to="explore"><p id="domains">Domains</p></Link>
-    <Link to="explore"><p id="virtual_worlds">Virtual Worlds</p></Link>
-    <Link to="explore"><p id="collectibles">Collectibles</p></Link>
-    <Link to="explore"><p id="game">Game</p></Link>
-    <Link to="explore"><p id="defi">DeFi</p></Link>
-    <Link to="explore"><p id="others">Others</p></Link>
+    <Link to="explore"><p id="art">{$_("tagbar.art")}</p></Link>
+    <Link to="explore"><p id="domains">{$_("tagbar.domains")}</p></Link>
+    <Link to="explore"><p id="virtual_worlds">{$_("tagbar.virtual_worlds")}</p></Link>
+    <Link to="explore"><p id="collectibles">{$_("tagbar.collectibles")}</p></Link>
+    <Link to="explore"><p id="game">{$_("tagbar.game")}</p></Link>
+    <Link to="explore"><p id="defi">{$_("tagbar.defi")}</p></Link>
+    <Link to="explore"><p id="others">{$_("tagbar.others")}</p></Link>
   </div>
 </div>
 

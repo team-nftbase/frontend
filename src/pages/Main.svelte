@@ -30,7 +30,7 @@
       class="bg-black text-white border-0"
       on:click={() => {
         navigate(`explore`, { replace: true });
-      }}>Explore artworks</button
+      }}>{$_("main.explore_artworks")}</button
     >
   </div>
 </div>
