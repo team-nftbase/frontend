@@ -20,6 +20,11 @@
   });
   let assetsList = [];
 
+  let checkedItemsData;
+  checkedItems.subscribe(async (value) => {
+    checkedItemsData = value;
+  });
+
   onMount(async () => {
     if (userData.id) {
       const response = await axios.post(
@@ -33,14 +38,27 @@
   });
 
   const handleSell = () => {
-    status.update((value) => "sell");
+    if (statusData === "sell") {
+      //변경 아이템 업데이트 api
+      checkedItems.update((value) => []);
+      status.update((value) => "normal");
+    } else {
+      status.update((value) => "sell");
+    }
   };
 
   const handleTransfer = () => {
-    status.update((value) => "transfer");
+    if (statusData === "transfer") {
+      //판매 아이템 업데이트 api
+      checkedItems.update((value) => []);
+      status.update((value) => "normal");
+    } else {
+      status.update((value) => "transfer");
+    }
   };
 
   const handleCancel = () => {
+    checkedItems.update((value) => []);
     status.update((value) => "normal");
   };
 </script>

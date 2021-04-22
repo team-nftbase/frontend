@@ -14,7 +14,6 @@
   let checkedItemsData;
   checkedItems.subscribe(async (value) => {
     checkedItemsData = value;
-    console.log(checkedItemsData);
   });
 
   const handleCard = () => {
