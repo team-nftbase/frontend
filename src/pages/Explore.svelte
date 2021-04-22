@@ -4,6 +4,7 @@
   import { ItemList } from "common/comp/index.js";
   import axios from "axios";
   import { base_url } from "common/properties.js";
+  import { _ } from "svelte-i18n";
 
   let assetsList = [];
   onMount(async () => {
@@ -22,7 +23,7 @@
       <Categories />
       <button class="flex items-center px-4 focus:outline-none rounded-2xl">
         <span class="material-icons"> tune </span>
-        <p>Filter & Sort</p>
+        <p>{$_("explore.filter_sort")}</p>
       </button>
     </div>
     <ItemList {assetsList} />

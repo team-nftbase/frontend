@@ -98,5 +98,8 @@
     "sell":"sell",
     "transfer":"transfer",
     "cancel":"cancel"
+  },
+  "explore" : {
+    "filter_sort": "Filter & Sort"
   }
 }
