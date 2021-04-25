@@ -7,7 +7,26 @@
   "main": {
     "title": "가치있는 디지털 자산을 위한 마켓플레이스",
     "sub_title": "나만의 디지털 자산을 거래하고 가져보세요 - 예술품 | ENS 도메인 | 게임 아이템 | 수집품",
-    "view_all": "더 보기"
+    "view_all": "더 보기",
+    "explore_artworks": "Explore artworks"
+  },
+  "tagbar": {
+    "art": "Art",
+    "domains": "Domains",
+    "virtual_worlds": "Virtual Worlds",
+    "collectibles": "Collectibles",
+    "game": "Game",
+    "defi": "DeFi",
+    "others": "Others"
+  },
+  "card":{
+    "current_price" : "Current price",
+    "view": "View"
+  },
+  "itemdetail": {
+    "description": "Description -",
+    "buy": "Buy",
+    "service_fee": "Service fee"
   },
   "fnq": {
     "whatisnft": "NFT가 뭔가요?",
@@ -74,6 +93,14 @@
   "mypage":{
     "edit_your_profile":"프로파일 정보를 수정해 주세요.",
     "nickname":"닉네임",
-    "introduce_yourself":"자기소개를 수정해 주세요."
+    "introduce_yourself":"자기소개를 수정해 주세요.",
+    "edit_profile":"프로필 수정",
+    "sell":"sell",
+    "transfer":"transfer",
+    "cancel":"cancel"
+  },
+  "explore" : {
+    "filter_sort": "Filter & Sort"
   }
+    
 }

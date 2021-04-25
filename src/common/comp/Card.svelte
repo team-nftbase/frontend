@@ -40,7 +40,7 @@
       class="bid grid grid-cols-3 items-center jusify-items-center"
     >
       <div class="flex flex-col items-center">
-        <p class="currnt_bid">Current price</p>
+        <p class="currnt_bid">{$_("card.current_price")}</p>
         <p class="eth">{itemInfo.price} ETH</p>
       </div>
       <div class="flex flex-col justify-center items-center">
@@ -54,7 +54,7 @@
       </div>
       <div class="flex flex-row items-center justify-center">
         <img class="eye" src="images/eye.png" alt="images/eye.png" />
-        <p>View</p>
+        <p>{$_("card.view")}</p>
       </div>
     </div>
   </div>

@@ -7,7 +7,26 @@
   "main": {
     "title": "The New Metaverse Marketplace For NFT Items",
     "sub_title": "You can buy, sell, own digital assets - Art | ENS Domains | Game items | Collectibles",
-    "view_all": "View All"
+    "view_all": "View All",
+    "explore_artworks": "Explore artworks"
+  },
+  "tagbar": {
+    "art": "Art",
+    "domains": "Domains",
+    "virtual_worlds": "Virtual Worlds",
+    "collectibles": "Collectibles",
+    "game": "Game",
+    "defi": "DeFi",
+    "others": "Others"
+  },
+  "card":{
+    "current_price" : "Current price",
+    "view": "View"
+  },
+  "itemdetail": {
+    "description": "Description -",
+    "buy": "Buy",
+    "service_fee": "Service fee"
   },
   "fnq": {
     "whatisnft": "What is NFT?",
@@ -74,6 +93,13 @@
   "mypage":{
     "edit_your_profile":"Edit your profile",
     "nickname":"nickname",
-    "introduce_yourself":"Introduce yourself"
+    "introduce_yourself":"Introduce yourself",
+    "edit_profile":"Edit Profile",
+    "sell":"sell",
+    "transfer":"transfer",
+    "cancel":"cancel"
+  },
+  "explore" : {
+    "filter_sort": "Filter & Sort"
   }
 }

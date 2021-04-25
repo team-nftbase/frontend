@@ -58,7 +58,7 @@
     </p>
     <div class="w-full flex flex-row-reverse">
       <div class="edit_profile_button flex justify-center items-center">
-        <Link to="editprofile"><p>Edit Profile</p></Link>
+        <Link to="editprofile"><p>{$_("mypage.edit_profile")}</p></Link>
       </div>
     </div>
     <ItemList {assetsList} />
@@ -71,7 +71,7 @@
           on:click={handleSell}
         >
           <i class="fas fa-tag text-2xl mr-2" />
-          <p>Sell</p>
+          <p>{$_("mypage.sell")}</p>
         </button>
         <button
           class={status === "sell"
@@ -80,7 +80,7 @@
           on:click={handleTransfer}
         >
           <i class="far fa-paper-plane text-2xl mr-2" />
-          <p>Transfer</p>
+          <p>{$_("mypage.transfer")}</p>
         </button>
         <button
           class={status === "normal"
@@ -89,7 +89,7 @@
           on:click={handleCancel}
         >
           <i class="far fa-times-circle text-2xl mr-2" />
-          <p>Cancel</p>
+          <p>{$_("mypage.cancel")}</p>
         </button>
         <!-- <button><img src="images/mypage/btn_sell.png" alt="btn_sell"/></button> -->
       </div>
