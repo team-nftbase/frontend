@@ -16,15 +16,19 @@
     checkedItemsData = value;
   });
 
+  let checked = false;
+
   const handleCard = () => {
     if (statusData === "normal") {
       navigate(`itemdetail/${itemInfo.id}`, { replace: true });
     } else if (checkedItemsData.filter((item) => item === itemInfo.id).length) {
       let temp = checkedItemsData.filter((item) => item !== itemInfo.id);
       checkedItems.update((value) => temp);
+      checked = false;
     } else {
       let temp = [...checkedItemsData, itemInfo.id];
       checkedItems.update((value) => temp);
+      checked = true;
     }
   };
 </script>
@@ -36,16 +40,22 @@
         <img
           src={`${base_url}resource/${itemInfo.image_thumbnail}`}
           alt="main_image"
+          class="relative"
         />
+        <p class={checked ? "absolute" : "hidden"}>checked</p>
       {:else if itemInfo.image_thumbnail}
-        <video src={`${base_url}resource/${itemInfo.image_thumbnail}`}
+        <video
+          class="relative"
+          src={`${base_url}resource/${itemInfo.image_thumbnail}`}
           ><track default kind="captions" />
           Sorry, your browser doesn't support embedded videos.
+          <p class={checked ? "absolute" : "hidden"}>checked</p>
         </video>
       {:else if itemInfo.animation_url}
-        <video src={itemInfo.animation_url}
+        <video class="relative" src={itemInfo.animation_url}
           ><track default kind="captions" />
           Sorry, your browser doesn't support embedded videos.
+          <p class={checked ? "absolute" : "hidden"}>checked</p>
         </video>
       {/if}
     </div>
