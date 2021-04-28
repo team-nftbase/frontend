@@ -35,27 +35,33 @@
 
 <div on:click={handleCard}>
   <div id="layout">
-    <div class="flex justify-center">
+    <div class="flex">
       {#if itemInfo.image_thumbnail && itemInfo.image_thumbnail.slice(-3) !== "mp4"}
         <img
           src={`${base_url}resource/${itemInfo.image_thumbnail}`}
           alt="main_image"
           class="relative"
         />
-        <p class={checked ? "absolute" : "hidden"}>checked</p>
+        <div class={checked ? "absolute" : "hidden"}>
+          <p>checked</p>
+        </div>
       {:else if itemInfo.image_thumbnail}
         <video
           class="relative"
           src={`${base_url}resource/${itemInfo.image_thumbnail}`}
           ><track default kind="captions" />
           Sorry, your browser doesn't support embedded videos.
-          <p class={checked ? "absolute" : "hidden"}>checked</p>
+          <div class={checked ? "absolute" : "hidden"}>
+            <p>checked</p>
+          </div>
         </video>
       {:else if itemInfo.animation_url}
         <video class="relative" src={itemInfo.animation_url}
           ><track default kind="captions" />
           Sorry, your browser doesn't support embedded videos.
-          <p class={checked ? "absolute" : "hidden"}>checked</p>
+          <div class={checked ? "absolute" : "hidden"}>
+            <p>checked</p>
+          </div>
         </video>
       {/if}
     </div>
