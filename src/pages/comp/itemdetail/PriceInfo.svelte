@@ -1,4 +1,5 @@
 <script>
+  import { _ } from "svelte-i18n";
   export let price = 0.1;
   export let ethpricenum = 100;
   export let total = 1;
@@ -9,7 +10,7 @@
   <p id="ethprice">{price} ETH</p>
   <p id="dprice">${Math.ceil(price * ethpricenum)}</p>
   <div>
-    <p id="edition_title">Edition</p>
+    <p>{$_("priceinfo.edition")}</p>
     <p id="edition">{editionNum}/{total}</p>
   </div>
 </div>

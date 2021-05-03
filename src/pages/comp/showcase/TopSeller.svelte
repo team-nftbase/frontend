@@ -1,4 +1,5 @@
 <script>
+  import { _ } from "svelte-i18n";
   export let sellers = [];
 </script>
 
@@ -11,7 +12,7 @@
     style="height:40px; margin:6px"
   >
     <p class="text-white" style="font-size:18px; margin-left:17px;">
-      Top Sellers
+      {$_("topseller.title")}
     </p>
   </div>
   {#each sellers as seller}

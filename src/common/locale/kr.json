@@ -101,6 +101,21 @@
   },
   "explore" : {
     "filter_sort": "Filter & Sort"
+  },
+  "priceinfo" : {
+    "edition" : "Edition"
+  },
+  "floatingbutton" : {
+    "sell" : "Sell",
+    "transfer" : "transfer"
+  },
+  "myinfo" : {
+    "alert" : "wallet has copied"
+  },
+  "artists" : {
+    "title" : "Artists Involved -"
+  },
+  "topseller" : {
+    "title" : "Top Sellers"
   }
-    
 }
