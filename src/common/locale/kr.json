@@ -79,11 +79,22 @@
     "create_collectible": "collectible 생성하기",
     "single": "단일",
     "multiple": "여러개",
-    "create_single_collectible": "단일 collectible 생성하기",
     "choose_file": "파일 선택하기",
     "name": "이름",
     "description": "설명",
-    "create_item": "생성하기"
+    "create_item": "생성하기",
+    "caption" : "Create a ‘Single’ collectible if you wish to sell a single limited edition of a collectible or choose ‘Multiple’ if you wish to sell a collectible multiple times."
+  },
+  "createsingle" : {
+    "collectible": "단일 collectible 생성하기",
+    "uploadfiletitle" : "Upload file", 
+    "choosephoto" : "Choose Photo or Video",
+    "royalties" : "Royalties",
+    "choosecollection": "Choose a collection",
+    "collection": "Collection - First 5000 Days",
+    "create": "Create a new collection",
+    "preview": "Preview",
+    "uploadfile": "Please upload your file"
   },
   "getwallet": {
     "need_wallet": "NFTBase를 사용하기 위해 MetaMask가 필요합니다.",
@@ -101,6 +112,35 @@
   },
   "explore" : {
     "filter_sort": "Filter & Sort"
+  },
+  "priceinfo" : {
+    "edition" : "Edition"
+  },
+  "floatingbutton" : {
+    "sell" : "Sell",
+    "transfer" : "transfer"
+  },
+  "myinfo" : {
+    "alert" : "wallet has copied"
+  },
+  "artists" : {
+    "title" : "Artists Involved -"
+  },
+  "topseller" : {
+    "title" : "Top Sellers"
+  },
+  "editprofile" : {
+    "editprofile" : "Edit your profile",
+    "enterdetails" : "Enter your details",
+    "name" : "Name",
+    "username" : "Username",
+    "emailid" : "Email ID",
+    "sendverificationemail" : "Send verification e-mail",
+    "bio" : "Bio",
+    "editbanner" : "Edit your banner image",
+    "uploadphoto" : "Upload Photo",
+    "editprofileimage" : "Edit your profile image",
+    "sociallinks" : "Social Links",
+    "save" : "Save Changes"
   }
-    
 }

@@ -4,6 +4,7 @@
     import { Banner } from "./comp/mypage";
     import { HorizenLine } from "common/comp/index.js";
     import { user } from "../common/store/common.store";
+    import { _ } from "svelte-i18n";
 
     let userData;
     user.subscribe(async (value) => {
@@ -85,7 +86,7 @@
 <Banner is_use_sns={false} />
 <div class="flex justify-center">
     <div id="card" class="flex flex-col items-center justify-center">
-        <p id="title">Edit your profile</p>
+        <p id="title">{$_("editprofile.editprofile")}</p>
         <div
             id="content"
             class="grid grid-cols-2 items-center justify-items-center"
@@ -93,24 +94,24 @@
         >
             <div id="content-left" class="flex flex-col">
                 <p id="content-left-title" style="margin-bottom:18px">
-                    Enter your details
+                    {$_("editprofile.enterdetails")}
                 </p>
                 <HorizenLine width={112} />
-                <p class="input-label">Name</p>
+                <p class="input-label">{$_("editprofile.name")}</p>
                 <input
                     name="name"
                     class="content-input"
                     placeholder="Full Name"
                     on:change={handleChange}
                 />
-                <p class="input-label">Username</p>
+                <p class="input-label">{$_("editprofile.username")}</p>
                 <input
                     name="username"
                     class="content-input"
                     placeholder="@username"
                     on:change={handleChange}
                 />
-                <p class="input-label">Email ID</p>
+                <p class="input-label">{$_("editprofile.emailid")}</p>
                 <input
                     name="email"
                     class="content-input flex justify-center"
@@ -118,9 +119,9 @@
                     on:change={handleChange}
                 />
                 <button class="send-email flex justify-center items-center">
-                    <p>Send verification e-mail</p>
+                    <p>{$_("editprofile.sendverificationemail")}</p>
                 </button>
-                <p class="input-label">Bio</p>
+                <p class="input-label">{$_("editprofile.bio")}</p>
                 <textarea
                     name="bio"
                     cols="40"
@@ -129,7 +130,7 @@
                     placeholder="Tell us a bit about yourselt"
                     on:change={handleChange}
                 />
-                <p class="input-label">Edit your banner image</p>
+                <p class="input-label">{$_("editprofile.editbanner")}</p>
                 <div
                     id="edit-cover-image"
                     class="flex justify-center items-center"
@@ -149,7 +150,7 @@
                         <div
                             class="upload_photo_button flex justify-center items-center"
                         >
-                            <p>Upload Photo</p>
+                            <p>{$_("editprofile.uploadphoto")}</p>
                         </div>
                     </label>
                 </div>
@@ -180,10 +181,10 @@
                         <img src="images/mypage/addimage.png" alt="addimage" />
                     {/if}
                 </label>
-                <p id="content-right-title">Edit your profile image</p>
+                <p id="content-right-title">{$_("editprofile.editprofileimage")}</p>
                 <div style="margin-bottom:22px">
                     <p id="content-right-sns-title" class="text-center">
-                        Social Links
+                        {$_("editprofile.sociallinks")}
                     </p>
                     <HorizenLine width={112} />
                 </div>
@@ -252,7 +253,7 @@
             class="save flex justify-center items-center"
             on:click={editProfile}
         >
-            <p>Save Changes</p>
+            <p>{$_("editprofile.save")}</p>
         </button>
     </div>
 </div>

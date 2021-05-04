@@ -1,10 +1,11 @@
 <script>
+    import { _ } from "svelte-i18n";
     import HorizenLine from "../../../common/comp/HorizenLine.svelte";
     export let artistsList = [];
 </script>
 
 <div class="mt-24">
-    <p id="title">Artists Involved -</p>
+    <p id="title">{$_("artists.title")}</p>
     <HorizenLine width={140} />
     <div
         id="artist_list"

@@ -68,7 +68,7 @@
     >
       <img src="images/arrow-left.png" alt="arrow" />
     </button>
-    <p id="title">{$_("create.create_single_collectible")}</p>
+    <p id="title">{$_("createsingle.collectible")}</p>
   </div>
   <div style="width:976px;">
     <div id="line" />
@@ -76,7 +76,7 @@
 
   <div class="flex">
     <div style="margin-right:42px;">
-      <p class="font-bold" style="font-size:24px;">Upload file</p>
+      <p class="font-bold" style="font-size:24px;">{$_("createsingle.uploadfiletitle")}</p>
       <div id="uploadBox" class="flex flex-col items-center border">
         <p style="font-size:14px;">PNG, GIF, WEBP, MP4 or MP3 ( MAX 30 mb )</p>
         <input
@@ -95,7 +95,7 @@
             class="relative text-white border-0"
             style="margin-top:15px; z-index:-1;"
             ><img src="images/uploadButton.png" alt="uploadbutton" />
-            <p id="btn_text">Choose Photo or Video</p></button
+            <p id="btn_text">{$_("createsingle.choosephoto")}</p></button
           >
         </label>
       </div>
@@ -117,19 +117,19 @@
           rows="5"
           placeholder="Enter introduction of this NFT item"
         />
-        <p class="font-bold" style="font-size:18px;">Royalties</p>
+        <p class="font-bold" style="font-size:18px;">{$_("createsingle.royalties")}</p>
         <input
           name="royalty"
           on:change={handleChange}
           placeholder="% Of share of the secondary sales"
         />
         <p class="font-bold" style="font-size:18px; margin-bottom:26px;">
-          Choose a collection
+          {$_("createsingle.choosecollection")}
         </p>
 
         <button class="collection flex items-center" disabled>
           <img src="images/Emoji.png" alt="emoji" />
-          Collection - First 5000 Days
+          {$_("createsingle.collection")}
         </button>
 
         <button class="collection flex items-center">
@@ -138,18 +138,18 @@
         </button>
 
         <button id="btn_create_collection" disabled
-          >Create a new collection</button
+          >{$_("createsingle.create")}</button
         >
       </div>
     </div>
     <div>
-      <p class="font-bold" style="font-size:24px;">Preview</p>
+      <p class="font-bold" style="font-size:24px;">{$_("createsingle.preview")}</p>
 
       <div id="previewBox" class="border flex justify-center items-center">
         {#if preview}
           <img class="mb-4" src={preview} alt="preview_image" />
         {:else}
-          <p style="font-size:14px;">Please upload your file</p>
+          <p style="font-size:14px;">{$_("createsingle.uploadfile")}</p>
         {/if}
       </div>
 

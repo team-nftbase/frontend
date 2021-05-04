@@ -1,5 +1,6 @@
 <script>
   import Clipboard from "svelte-clipboard";
+  import { _ } from "svelte-i18n";
 
   export let userData;
 
@@ -11,7 +12,7 @@
     text={userData.wallet}
     let:copy
     on:copy={() => {
-      alert("wallet has copied");
+      alert($_("myinfo.alert"));
     }}
   >
     <button class="border-none text-2xl" on:click={copy}
