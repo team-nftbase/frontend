@@ -10,9 +10,7 @@
       <p class="font-bold" id="title">{$_("create.create_collectible")}</p>
       <HorizenLine width={307.5} />
       <p id="caption">
-        Create a ‘Single’ collectible if you wish to sell a single limited
-        edition of a collectible or choose ‘Multiple’ if you wish to sell a
-        collectible multiple times.
+        {$_("create.caption")}
       </p>
     </div>
     <div id="createBox" class="flex">

@@ -79,11 +79,22 @@
     "create_collectible": "制作收藏品",
     "single": "单数",
     "multiple": "复数",
-    "create_single_collectible": "制作单数收藏品",
     "choose_file": "选择文件",
     "name": "名称",
     "description": "详细说明",
-    "create_item": "制作收藏品"
+    "create_item": "制作收藏品",
+    "caption" : "Create a ‘Single’ collectible if you wish to sell a single limited edition of a collectible or choose ‘Multiple’ if you wish to sell a collectible multiple times."
+  },
+  "createsingle" : {
+    "collectible": "制作单数收藏品",
+    "uploadfiletitle" : "Upload file", 
+    "choosephoto" : "Choose Photo or Video",
+    "royalties" : "Royalties",
+    "choosecollection": "Choose a collection",
+    "collection": "Collection - First 5000 Days",
+    "create": "Create a new collection",
+    "preview": "Preview",
+    "uploadfile": "Please upload your file"
   },
   "getwallet": {
     "need_wallet": "要登录 NFTbase， 必须使用 Metamask 。",
@@ -117,5 +128,19 @@
   },
   "topseller" : {
     "title" : "Top Sellers"
+  },
+  "editprofile" : {
+    "editprofile" : "Edit your profile",
+    "enterdetails" : "Enter your details",
+    "name" : "Name",
+    "username" : "Username",
+    "emailid" : "Email ID",
+    "sendverificationemail" : "Send verification e-mail",
+    "bio" : "Bio",
+    "editbanner" : "Edit your banner image",
+    "uploadphoto" : "Upload Photo",
+    "editprofileimage" : "Edit your profile image",
+    "sociallinks" : "Social Links",
+    "save" : "Save Changes"
   }
 }

@@ -79,11 +79,22 @@
     "create_collectible": "Create collectible",
     "single": "Single",
     "multiple": "Multiple",
-    "create_single_collectible": "Create single collectible",
     "choose_file": "Choose File",
     "name": "Name",
     "description": "Description",
-    "create_item": "Create Item"
+    "create_item": "Create Item",
+    "caption" : "Create a ‘Single’ collectible if you wish to sell a single limited edition of a collectible or choose ‘Multiple’ if you wish to sell a collectible multiple times."
+  },
+  "createsingle" : {
+    "collectible": "Create single collectible",
+    "uploadfiletitle" : "Upload file", 
+    "choosephoto" : "Choose Photo or Video",
+    "royalties" : "Royalties",
+    "choosecollection": "Choose a collection",
+    "collection": "Collection - First 5000 Days",
+    "create": "Create a new collection",
+    "preview": "Preview",
+    "uploadfile": "Please upload your file"
   },
   "getwallet": {
     "need_wallet": "You need an Metamask to use NFTBase.",
@@ -117,5 +128,19 @@
   },
   "topseller" : {
     "title" : "Top Sellers"
+  },
+  "editprofile" : {
+    "editprofile" : "Edit your profile",
+    "enterdetails" : "Enter your details",
+    "name" : "Name",
+    "username" : "Username",
+    "emailid" : "Email ID",
+    "sendverificationemail" : "Send verification e-mail",
+    "bio" : "Bio",
+    "editbanner" : "Edit your banner image",
+    "uploadphoto" : "Upload Photo",
+    "editprofileimage" : "Edit your profile image",
+    "sociallinks" : "Social Links",
+    "save" : "Save Changes"
   }
 }
