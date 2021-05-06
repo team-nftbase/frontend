@@ -11,12 +11,18 @@
     statusData = value;
   });
 
+  let checked = false;
+
   let checkedItemsData;
   checkedItems.subscribe(async (value) => {
     checkedItemsData = value;
+    if(checkedItemsData.filter((item) => item === itemInfo.id).length){
+      checked = true;
+    }else{
+      checked = false;
+    }
   });
 
-  let checked = false;
 
   const handleCard = () => {
     if (statusData === "normal") {
@@ -24,11 +30,9 @@
     } else if (checkedItemsData.filter((item) => item === itemInfo.id).length) {
       let temp = checkedItemsData.filter((item) => item !== itemInfo.id);
       checkedItems.update((value) => temp);
-      checked = false;
     } else {
       let temp = [...checkedItemsData, itemInfo.id];
       checkedItems.update((value) => temp);
-      checked = true;
     }
   };
 </script>
